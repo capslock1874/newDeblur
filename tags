@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	makefile	/^CC = gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS = -c -std=c99 -Wall$/;"	m
+DEBLUR_WIN_SIZE	deblur.c	8;"	d	file:
+EXES	makefile	/^EXES = deblur.exe$/;"	m
+LAMBDA	deblur.c	10;"	d	file:
+LINK	makefile	/^LINK = gcc$/;"	m
+LINKFLAGS	makefile	/^LINKFLAGS = -lopencv_core243 -lopencv_highgui243 -lopencv_imgproc243 -lopencv_video243 -lopencv_calib3d243$/;"	m
+MAX_CORNERS	homo.c	8;"	d	file:
+MAX_IMAGE	deblur.h	4;"	d
+OBJS	makefile	/^OBJS = main.o homo.o blurfunc.o deblur.o luckiness.o$/;"	m
+PATCH_SIZE	deblur.c	7;"	d	file:
+SIGMA_L	luckiness.c	5;"	d	file:
+SIGMA_W	deblur.c	9;"	d	file:
+WIN_SIZE	homo.c	9;"	d	file:
+_DEBLUR_H	deblur.h	2;"	d
+blur_function	blurfunc.c	/^void blur_function(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2)$/;"	f	signature:(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2)
+blur_function	deblur.h	/^void blur_function(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2);$/;"	p	signature:(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2)
+calc_homography	deblur.h	/^void calc_homography(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num);$/;"	p	signature:(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num)
+calc_homography	homo.c	/^void calc_homography(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num)$/;"	f	signature:(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num)
+deblur_image	deblur.c	/^void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)$/;"	f	signature:(int image_num, int n, IplImage *result, IplImage *result_luck)
+deblur_image	deblur.h	/^void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck);$/;"	p	signature:(int image_num, int n, IplImage *result, IplImage *result_luck)
+deblur_patch	deblur.c	/^static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)$/;"	f	file:	signature:(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)
+fourcc	main.c	/^long long fourcc;$/;"	v
+fps	main.c	/^int fps;$/;"	v
+hom	main.c	/^CvMat *hom[MAX_IMAGE][MAX_IMAGE];$/;"	v
+image_size	main.c	/^CvSize image_size;$/;"	v
+images	main.c	/^IplImage *images[MAX_IMAGE];$/;"	v
+images_luck	main.c	/^IplImage *images_luck[MAX_IMAGE];$/;"	v
+input_image	deblur.h	/^int input_image();$/;"	p	signature:()
+input_image	main.c	/^int input_image()$/;"	f
+luck	main.c	/^double luck[MAX_IMAGE];$/;"	v
+luck_diff	deblur.c	/^static double luck_diff(const IplImage *luck)$/;"	f	file:	signature:(const IplImage *luck)
+luck_image	deblur.h	/^double luck_image(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2);$/;"	p	signature:(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)
+luck_image	luckiness.c	/^double luck_image(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)$/;"	f	signature:(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)
+luck_pixel	luckiness.c	/^static double luck_pixel(int x, int y, const CvMat *hom1, const CvMat *hom2)$/;"	f	file:	signature:(int x, int y, const CvMat *hom1, const CvMat *hom2)
+main	main.c	/^int main()$/;"	f
+sqrdiff	deblur.c	/^int sqrdiff(const IplImage *p1, const IplImage *p2)$/;"	f	signature:(const IplImage *p1, const IplImage *p2)
+sqrdiff	deblur.h	/^int sqrdiff(const IplImage *p1, const IplImage *p2);$/;"	p	signature:(const IplImage *p1, const IplImage *p2)
+st1	homo.c	/^int st1 = 0;$/;"	v
+st2	homo.c	/^int st2 = 0;$/;"	v
+st3	homo.c	/^int st3 = 0;$/;"	v
+st4	homo.c	/^int st4 = 0;$/;"	v
+weighted_average	deblur.c	/^static CvScalar weighted_average(const CvScalar *s, const double *w, int n)$/;"	f	file:	signature:(const CvScalar *s, const double *w, int n)

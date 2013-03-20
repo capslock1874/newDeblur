@@ -1,0 +1,2 @@
+编译要用到gcc和make，Linux下基本都自带，WINDOWS下可以装个MinGW
+另需要有2.4.3版本的OpenCV库
