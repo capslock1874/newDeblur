@@ -8,6 +8,11 @@
 #define DEBLUR_WIN_SIZE 11
 #define SIGMA_W 10
 #define LAMBDA 10
+#define CENTER 5 
+#define BORD 3 
+#define CORNER 4
+
+#define P(E) printf(#E"=%d\n",E);
 
 extern IplImage *images[MAX_IMAGE];
 extern IplImage *images_luck[MAX_IMAGE];
@@ -65,62 +70,227 @@ static double luck_diff(const IplImage *luck)
 	return sum;
 }
 
+static double search(IplImage *blur , IplImage *image , IplImage *luck ,  int* x , int* y , int* index , int step)
+{
+	int minx = -1;
+	int miny = -1;
+	double mindiff = 20000000000 ;
+	double diff , diff2 ; 
+	int pos = 1 ;
+
+	for( int i = *x - step ; i <= *x + step ; i += step)
+	{
+		for( int j = *y - step; j <= *y + step ; j += step)
+		{
+			cvSetImageROI(blur, cvRect(i-PATCH_SIZE/2, j-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
+			diff = sqrdiff(image , blur) ;
+			cvSetImageROI(luck, cvRect(i-PATCH_SIZE/2, j-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
+			diff2 = luck_diff(luck);
+			diff += LAMBDA * diff2 ; 
+			if( diff < mindiff )
+			{
+				*index = pos ;
+				mindiff = diff;
+				minx = i;
+				miny = j;
+			}
+			/*P(pos);*/
+			++pos ;
+		}
+	}
+	
+	/*P(*index);*/
+	*x = minx ;
+	*y = miny ;
+	return mindiff ; 
+	
+}
 
 static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)
 {
+	
 	if (n < 1 || n >= image_num-1 || x-PATCH_SIZE/2 < 0 || y-PATCH_SIZE/2 < 0 || x+PATCH_SIZE/2 >= image_size.width || y+PATCH_SIZE/2 >= image_size.height) return -1;
 	
 	cvSetImageROI(images[n], cvRect(x-PATCH_SIZE/2, y-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
-	
-	int minj = -1;
-	int minx = -1;
-	int miny = -1;
-	double mindiff = 2000000000;
+
+	int left = x-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
+	left = left < 0 ? PATCH_SIZE/2 : left+PATCH_SIZE/2;
+	int right = x+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
+	right = right >= image_size.width ? image_size.width-1-PATCH_SIZE/2 : right-PATCH_SIZE/2;
+	int top = y-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
+	top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;
+	int bottom = y+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
+	bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;
+
+	int minj = -21;
+	int minx = -21;
+	int miny = -21;
+	int mx = x , my = y ; 
+	double mindiff = 200000000000 ;
+	int pos = 0 ;
 	for (int j = 0; j < image_num; ++j)
 	{
-		int left = x-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
-		left = left < 0 ? PATCH_SIZE/2 : left+PATCH_SIZE/2;
-		int right = x+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
-		right = right >= image_size.width ? image_size.width-1-PATCH_SIZE/2 : right-PATCH_SIZE/2;
-		int top = y-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
-		top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;
-		int bottom = y+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
-		bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;
-		
-		for (int my = top; my <= bottom; ++my)
-			for (int mx = left; mx <= right; ++mx)
+		while( mx + 2 <= right && mx - 2 >= left
+				&& my + 2 <= bottom && my - 2 >= top)
+		{
+			int flag = 0 ;
+			int searchX , searchY ;
+			double tmpDiff ;
+			searchX = mx ;
+			searchY = my ; 
+			tmpDiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 2 ) ;
+
+			/*if( searchX == mx && searchY == my)*/
+			/*{*/
+				/*flag = CENTER ;*/
+			/*}else*/
+			/*if( searchX == mx -2 && searchY == my -2*/
+					/*|| searchX == mx -2 && searchY == my + 2*/
+					/*|| searchX == mx + 2 && searchY == my + 2*/
+					/*|| searchX == mx +2 && searchY == my -2 )*/
+			/*{*/
+				/*flag = CORNER ;*/
+			/*} else*/
+			/*{*/
+				/*flag = BORD ;*/
+			/*}*/
+
+			if( pos == CENTER )
 			{
-				cvSetImageROI(blur[j], cvRect(mx-PATCH_SIZE/2, my-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
-				double diff = sqrdiff(images[n], blur[j]);
-				cvSetImageROI(luck[j], cvRect(mx-PATCH_SIZE/2, my-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
-				double diff2 = luck_diff(luck[j]);
-				//printf("%d:%d,%d <- %d:%d,%d : %f %f\n", n, x, y, j, mx, my, diff, diff2);
-				diff += LAMBDA * diff2;
-				if (diff < mindiff)
+					flag = -1 ;
+					mindiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 1 ) ;
+					minj = j ; 
+					minx = searchX ; 
+					miny = searchY ;
+					break ;
+			}
+			else/* if( flag == CORNER )*/
+			{
+				int newX , newY ;
+				newX = searchX ;
+				newY = searchY ;
+				if( searchX -2 >= left && searchX + 2 <= right 
+						&& searchY -2 >= top && searchY + 2 <= bottom)
 				{
-					mindiff = diff;
-					minj = j;
-					minx = mx;
-					miny = my;
+					/*search(blur[j] , images[n] , luck[j] , &newX , &newY , &pos , 2 ) ;*/
+					/*if( newX == searchX && newY == searchY  )*/
+					/*{*/
+						/*mindiff = search(blur[j] , images[n] , luck[j] , &newX , &newY , &pos , 1 ) ;*/
+						/*minj = j ; */
+						/*minx = newX ;*/
+						/*miny = newY ;*/
+						/*flag = -1; */
+					/*}*/
+					/*else*/
+					/*{*/
+					/* */   mx = newX ;
+					/* */   my = newY ;
+					/*}*/
+				}
+				else
+				{
+					mindiff = tmpDiff ;
+					minj = j ; 
+					minx = searchX ;
+					miny = searchY ;
+					flag = -1; 
 				}
 			}
+			/*else */
+			/*{*/
+				/*int newX , newY ;*/
+				/*newX = searchX ;*/
+				/*newY = searchY ;*/
+				/*search(blur[j] , images[n] , luck[j] , &newX , &newY , 2 ) ;*/
+				/*if( newX == searchX && newY == searchY  )*/
+				/*{*/
+					/*mindiff = search(blur[j] , images[n] , luck[j] , &newX , &newY , 1 ) ;*/
+					/*minj = j ; */
+					/*minx = newX ;*/
+					/*miny = newY ;*/
+					/*flag = CENTER ;*/
+				/*}*/
+				/*else*/
+				/*{*/
+					/*mx = newX ;*/
+					/*my = newY ;*/
+				/*}*/
+			/*}*/
+			if( flag == -1)
+				break ;
+		}
 		cvResetImageROI(blur[j]);
 		cvResetImageROI(luck[j]);
 	}
-	
-	/*
-	if (n != minj || x != minx || y != miny)
-	{
-		printf("optimal %d:%d,%d <- %d:%d,%d : %f\n", n, x, y, minj, minx, miny, mindiff);
-	}*/
 		
 	cvResetImageROI(images[n]);
 	res->val[0] = minj;
 	res->val[1] = minx;
 	res->val[2] = miny;
 	res->val[3] = mindiff;
+	if( minj == -21 )
+	{
+		return 1 ;	
+	}
 	return 0;
+
 }
+
+/*static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)*/
+/*{*/
+	/*if (n < 1 || n >= image_num-1 || x-PATCH_SIZE/2 < 0 || y-PATCH_SIZE/2 < 0 || x+PATCH_SIZE/2 >= image_size.width || y+PATCH_SIZE/2 >= image_size.height) return -1;*/
+	
+	/*cvSetImageROI(images[n], cvRect(x-PATCH_SIZE/2, y-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));*/
+	
+	/*int minj = -1;*/
+	/*int minx = -1;*/
+	/*int miny = -1;*/
+	/*double mindiff = 2000000000;*/
+	/*for (int j = 0; j < image_num; ++j)*/
+	/*{*/
+		/*int left = x-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;*/
+		/*left = left < 0 ? PATCH_SIZE/2 : left+PATCH_SIZE/2;*/
+		/*int right = x+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;*/
+		/*right = right >= image_size.width ? image_size.width-1-PATCH_SIZE/2 : right-PATCH_SIZE/2;*/
+		/*int top = y-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;*/
+		/*top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;*/
+		/*int bottom = y+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;*/
+		/*bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;*/
+		
+		/*for (int my = top; my <= bottom; ++my)*/
+			/*for (int mx = left; mx <= right; ++mx)*/
+			/*{*/
+				/*cvSetImageROI(blur[j], cvRect(mx-PATCH_SIZE/2, my-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));*/
+				/*double diff = sqrdiff(images[n], blur[j]);*/
+				/*cvSetImageROI(luck[j], cvRect(mx-PATCH_SIZE/2, my-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));*/
+				/*double diff2 = luck_diff(luck[j]);*/
+				/*//printf("%d:%d,%d <- %d:%d,%d : %f %f\n", n, x, y, j, mx, my, diff, diff2);*/
+				/*diff += LAMBDA * diff2;*/
+				/*if (diff < mindiff)*/
+				/*{*/
+					/*mindiff = diff;*/
+					/*minj = j;*/
+					/*minx = mx;*/
+					/*miny = my;*/
+				/*}*/
+			/*}*/
+		/*cvResetImageROI(blur[j]);*/
+		/*cvResetImageROI(luck[j]);*/
+	/*}*/
+	
+	/*
+	if (n != minj || x != minx || y != miny)*/
+	/*{*/
+		/*printf("optimal %d:%d,%d <- %d:%d,%d : %f\n", n, x, y, minj, minx, miny, mindiff);*/
+	/*}*/
+		
+	/*cvResetImageROI(images[n]);*/
+	/*res->val[0] = minj;*/
+	/*res->val[1] = minx;*/
+	/*res->val[2] = miny;*/
+	/*res->val[3] = mindiff;*/
+	/*return 0;*/
+/*}*/
 
 /*
 static void copy_pixel(IplImage *dst, int x1, int y1, const IplImage *src, int x2, int y2)
@@ -186,20 +356,20 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 	cvWaitKey(0);
 	cvDestroyAllWindows();
 	
-	int grid_r = (image_size.height-PATCH_SIZE/2-1) / (PATCH_SIZE/2);
-	int grid_c = (image_size.width-PATCH_SIZE/2-1) / (PATCH_SIZE/2);
+	int grid_r = (image_size.height-PATCH_SIZE/2-5) / (PATCH_SIZE/2);
+	int grid_c = (image_size.width-PATCH_SIZE/2-5) / (PATCH_SIZE/2);
 	if (grid_r > 0 && grid_c > 0)
 	{
 		CvMat *patch = cvCreateMat(grid_r, grid_c, CV_64FC4);
 		for (int i = 0; i < grid_r; ++i)
 		{
-			int y = (i+1)*(PATCH_SIZE/2);
+			int y = (i+1)*(PATCH_SIZE/2)+2;
 			
 			int t1 = clock();
 			for (int j = 0; j < grid_c; ++j)
 			{
 				CvScalar res;
-				int x = (j+1)*(PATCH_SIZE/2);
+				int x = (j+1)*(PATCH_SIZE/2)+2;
 				
 				
 				if (deblur_patch(blur, trans_luck, image_num, n, x, y, &res) != 0)
@@ -209,14 +379,7 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 					res.val[1] = x;
 					res.val[2] = y;
 					res.val[3] = 0;
-					//copy_pixel(result, x, y, images[n], x, y);
 				}
-				
-				/*
-				res.val[0] = 2;
-				res.val[1] = x;
-				res.val[2] = y;
-				res.val[3] = 100000;*/
 				
 				res.val[3] = exp(-res.val[3]/(2*SIGMA_W*SIGMA_W));
 				

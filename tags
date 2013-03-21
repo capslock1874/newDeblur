@@ -4,46 +4,1871 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AFTER_PACKET_LENGTH	match/MPLEX.H	38;"	d
+ALIGNING	match/BITSTRM.H	41;"	d
+ALIGNING	match/COMMON.H	147;"	d
+AQtimeParser	gprof2dot.py	/^class AQtimeParser(XmlParser):$/;"	c	inherits:XmlParser
+AQtimeTable	gprof2dot.py	/^class AQtimeTable:$/;"	c	inherits:
+ASCII	match/BITSTRM.H	43;"	d
+ASCII	match/COMMON.H	149;"	d
+AUDIO_STREAMS	match/MPLEX.H	56;"	d
+AUDIO_STR_0	match/MPLEX.H	58;"	d
+AUDIO_SYNCWORD	match/MPLEX.H	27;"	d
+Aaunit_struc	match/MPLEX.H	/^} Aaunit_struc;$/;"	t	typeref:struct:aaunit_struc
+Audio_struc	match/MPLEX.H	/^} Audio_struc; 	$/;"	t	typeref:struct:audio_struc
+B	match/Readpic.c	/^float R, G, B;$/;"	v
+BFRAME	match/MPLEX.H	24;"	d
+BINARY	match/BITSTRM.H	42;"	d
+BINARY	match/COMMON.H	148;"	d
+BITS_IN_A_BYTE	match/BITSTRM.H	32;"	d
+BITS_IN_A_BYTE	match/COMMON.H	121;"	d
+BLKSIZE	match/ENCODER.H	38;"	d
+BLKSIZE_S	match/SUBS.C	24;"	d	file:
+BOTTOM_FIELD	match/AVI2M1V.H	28;"	d
+BS_FORMAT	match/BITSTRM.H	44;"	d
+BS_FORMAT	match/COMMON.H	150;"	d
+BU	match/Readpic.c	/^const float RU = (-44.0\/256.0), GU = (-87.0\/256.0), BU = (131.0\/256.0);$/;"	v
+BUFFER_SIZE	match/BITSTRM.H	45;"	d
+BUFFER_SIZE	match/COMMON.H	151;"	d
+BV	match/Readpic.c	/^const float RV = (131.0\/256.0), GV = (-110.0\/256.0), BV = (-21.0\/256.0);$/;"	v
+BW_COLORMAP	gprof2dot.py	/^BW_COLORMAP = Theme($/;"	v
+BY	match/Readpic.c	/^const float RY = (77.0\/256.0), GY = (150.0\/256.0), BY = (29.0\/256.0);$/;"	v
+B_TYPE	match/AVI2M1V.H	23;"	d
+Bit_stream_struc	match/BITSTRM.H	/^} Bit_stream_struc;$/;"	t	typeref:struct:bit_stream_struc
+Bit_stream_struc	match/COMMON.H	/^} Bit_stream_struc;$/;"	t	typeref:struct:bit_stream_struc
+BitrateIndex	match/COMMON.H	/^extern int            BitrateIndex(int, int);$/;"	p	signature:(int, int)
+Buffer_queue	match/MPLEX.H	/^} Buffer_queue;$/;"	t	typeref:struct:buffer_queue
+Buffer_struc	match/MPLEX.H	/^} Buffer_struc;$/;"	t	typeref:struct:buffer_struc
+CALLS	gprof2dot.py	/^CALLS = Event("Calls", 0, add, times)$/;"	v
+CBANDS	match/ENCODER.H	40;"	d
+CB_FRACTION	match/ENCODER.H	26;"	d
 CC	makefile	/^CC = gcc$/;"	m
-CFLAGS	makefile	/^CFLAGS = -c -std=c99 -Wall$/;"	m
+CENTER	deblur.c	11;"	d	file:
+CFLAGS	makefile	/^CFLAGS = -pg -c -std=c99 -Wall $/;"	m
+CHROMA420	match/AVI2M1V.H	49;"	d
+CHROMA422	match/AVI2M1V.H	50;"	d
+CHROMA444	match/AVI2M1V.H	51;"	d
+CLOCKS	match/MPLEX.H	36;"	d
+CODING_ID	match/AVI2M1V.H	60;"	d
+CRC16_POLYNOMIAL	match/COMMON.H	130;"	d
+CSPF	match/MPLEX.H	/^    unsigned int CSPF 		;$/;"	m	struct:video_struc	access:public
+CSPS	match/SYSTEMS.C	/^unsigned char	 CSPS;$/;"	v
+Call	gprof2dot.py	/^class Call(Object):$/;"	c	inherits:Object
+CallgrindParser	gprof2dot.py	/^class CallgrindParser(LineParser):$/;"	c	inherits:LineParser
+Cycle	gprof2dot.py	/^class Cycle(Object):$/;"	c	inherits:Object
+D10	match/ENCODER.H	/^typedef double     D10[10];$/;"	t
+D1408	match/ENCODER.H	/^typedef double     D1408[1408];$/;"	t
+D2SBL	match/ENCODER.H	/^typedef double     D2SBL[2][SBLIMIT];$/;"	t
+D640	match/ENCODER.H	/^typedef double     D640[640];$/;"	t
+D9	match/ENCODER.H	/^typedef double     D9[9];$/;"	t
+DBMIN	match/ENCODER.H	30;"	d
+DCBB	match/ENCODER.H	/^typedef double     DCBB[CBANDS];$/;"	t
+DCchromtab	match/VLC.H	/^static sVLCtable DCchromtab[12]=$/;"	v
+DClumtab	match/VLC.H	/^static sVLCtable DClumtab[12]=$/;"	v
 DEBLUR_WIN_SIZE	deblur.c	8;"	d	file:
+DFFT	match/ENCODER.H	/^typedef double     DFFT[FFT_SIZE];$/;"	t
+DFFT2	match/ENCODER.H	/^typedef double     DFFT2[FFT_SIZE\/2];$/;"	t
+DFLT_BRT	match/ENCODER.H	17;"	d
+DFLT_EMP	match/ENCODER.H	18;"	d
+DFLT_EXT	match/ENCODER.H	19;"	d
+DFLT_LAY	match/ENCODER.H	13;"	d
+DFLT_MOD	match/ENCODER.H	14;"	d
+DFLT_PSY	match/ENCODER.H	15;"	d
+DFLT_SFQ	match/ENCODER.H	16;"	d
+DFRAME	match/MPLEX.H	25;"	d
+DISP_ID	match/AVI2M1V.H	56;"	d
+DMV	match/PREDICT.C	/^int DMV[][2];$/;"	v
+DSBL	match/ENCODER.H	/^typedef double     DSBL[SBLIMIT];$/;"	t
+DTS	match/MPLEX.H	/^    Timecode_struc DTS		;$/;"	m	struct:vaunit_struc	access:public
+DTS	match/MPLEX.H	/^    Timecode_struc DTS	;$/;"	m	struct:buffer_queue	access:public
+DTS	match/SYSTEMS.C	/^Timecode_struc   *DTS;$/;"	v
+D_TYPE	match/AVI2M1V.H	24;"	d
+DotWriter	gprof2dot.py	/^class DotWriter:$/;"	c	inherits:
 EXES	makefile	/^EXES = deblur.exe$/;"	m
+EXTERN	match/Global.h	14;"	d
+EXTERN	match/Global.h	16;"	d
+EXT_START_CODE	match/AVI2M1V.H	13;"	d
+Event	gprof2dot.py	/^class Event(object):$/;"	c	inherits:object
+F22HBLK	match/ENCODER.H	/^typedef FLOAT      F22HBLK[2][2][HBLKSIZE];$/;"	t
+F2HBLK	match/ENCODER.H	/^typedef FLOAT      F2HBLK[2][HBLKSIZE];$/;"	t
+F2_32	match/ENCODER.H	/^typedef FLOAT      F2_32[2][32];$/;"	t
+F32	match/ENCODER.H	/^typedef FLOAT      F32[32];$/;"	t
+FALSE	match/BITSTRM.H	28;"	d
+FALSE	match/COMMON.H	105;"	d
+FBLK	match/ENCODER.H	/^typedef FLOAT      FBLK[BLKSIZE];$/;"	t
+FCB	match/ENCODER.H	/^typedef FLOAT      FCB[CBANDS];$/;"	t
+FCBCB	match/ENCODER.H	/^typedef FLOAT      FCBCB[CBANDS][CBANDS];$/;"	t
+FFT_SIZE	match/COMMON.H	125;"	d
+FHBLK	match/ENCODER.H	/^typedef FLOAT      FHBLK[HBLKSIZE];$/;"	t
+FLOAT	match/BITSTRM.H	26;"	d
+FLOAT	match/COMMON.H	103;"	d
+FRAME_PICTURE	match/AVI2M1V.H	29;"	d
+Filtersize	match/Readpic.c	/^const int Filtersize = 6;$/;"	v
+Function	gprof2dot.py	/^class Function(Object):$/;"	c	inherits:Object
+G	match/Readpic.c	/^float R, G, B;$/;"	v
+GLOBAL	match/Avi2mpg1.c	10;"	d	file:
+GOP_START_CODE	match/AVI2M1V.H	15;"	d
+GRAY_COLORMAP	gprof2dot.py	/^GRAY_COLORMAP = Theme($/;"	v
+GROUP_START	match/MPLEX.H	20;"	d
+GU	match/Readpic.c	/^const float RU = (-44.0\/256.0), GU = (-87.0\/256.0), BU = (131.0\/256.0);$/;"	v
+GV	match/Readpic.c	/^const float RV = (131.0\/256.0), GV = (-110.0\/256.0), BV = (-21.0\/256.0);$/;"	v
+GY	match/Readpic.c	/^const float RY = (77.0\/256.0), GY = (150.0\/256.0), BY = (29.0\/256.0);$/;"	v
+GprofParser	gprof2dot.py	/^class GprofParser(Parser):$/;"	c	inherits:Parser
+HAN_SIZE	match/COMMON.H	126;"	d
+HBLKSIZE	match/ENCODER.H	39;"	d
+HProfParser	gprof2dot.py	/^class HProfParser(LineParser):$/;"	c	inherits:LineParser
+ICB	match/ENCODER.H	/^typedef int        ICB[CBANDS];$/;"	t
+IFFT	match/ENCODER.H	/^typedef int        IFFT[FFT_SIZE];$/;"	t
+IFFT2	match/ENCODER.H	/^typedef int        IFFT2[FFT_SIZE\/2];$/;"	t
+IFRAME	match/MPLEX.H	22;"	d
+IHBLK	match/ENCODER.H	/^typedef int        IHBLK[HBLKSIZE];$/;"	t
+II_CRC_calc	match/COMMON.H	/^extern void           II_CRC_calc(frame_params*, unsigned int[2][SBLIMIT],$/;"	p	signature:(frame_params*, unsigned int[2][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int*)
+II_a_bit_allocation	match/ENCODER.H	/^extern int    II_a_bit_allocation(double[2][SBLIMIT], unsigned int[2][SBLIMIT],$/;"	p	signature:(double[2][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int[2][SBLIMIT], int*, frame_params*)
+II_a_bit_allocation	match/Encode.c	/^int II_a_bit_allocation(perm_smr, scfsi, bit_alloc, adb, fr_ps)$/;"	f
+II_bits_for_nonoise	match/ENCODER.H	/^extern int    II_bits_for_nonoise(double[2][SBLIMIT], unsigned int[2][SBLIMIT],$/;"	p	signature:(double[2][SBLIMIT], unsigned int[2][SBLIMIT], frame_params*)
+II_bits_for_nonoise	match/Encode.c	/^int II_bits_for_nonoise(perm_smr, scfsi, fr_ps)$/;"	f
+II_combine_LR	match/ENCODER.H	/^extern void   II_combine_LR(double[2][3][SCALE_BLOCK][SBLIMIT],$/;"	p	signature:(double[2][3][SCALE_BLOCK][SBLIMIT], double[3][SCALE_BLOCK][SBLIMIT], int)
+II_combine_LR	match/Encode.c	/^void II_combine_LR(sb_sample, joint_sample, sblimit)$/;"	f
+II_encode_bit_alloc	match/ENCODER.H	/^extern void   II_encode_bit_alloc(unsigned int[2][SBLIMIT], frame_params*,$/;"	p	signature:(unsigned int[2][SBLIMIT], frame_params*, Bit_stream_struc*)
+II_encode_bit_alloc	match/Encode.c	/^void II_encode_bit_alloc(bit_alloc, fr_ps, bs)$/;"	f
+II_encode_scale	match/ENCODER.H	/^extern void   II_encode_scale(unsigned int[2][SBLIMIT],$/;"	p	signature:(unsigned int[2][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int[2][3][SBLIMIT], frame_params*, Bit_stream_struc*)
+II_encode_scale	match/Encode.c	/^void II_encode_scale(bit_alloc, scfsi, scalar, fr_ps, bs)$/;"	f
+II_main_bit_allocation	match/ENCODER.H	/^extern void   II_main_bit_allocation(double[2][SBLIMIT],$/;"	p	signature:(double[2][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int[2][SBLIMIT], int*, frame_params*)
+II_main_bit_allocation	match/Encode.c	/^void II_main_bit_allocation(perm_smr, scfsi, bit_alloc, adb, fr_ps)$/;"	f
+II_sample_encoding	match/ENCODER.H	/^extern void   II_sample_encoding(unsigned int[2][3][SCALE_BLOCK][SBLIMIT],$/;"	p	signature:(unsigned int[2][3][SCALE_BLOCK][SBLIMIT], unsigned int[2][SBLIMIT], frame_params*, Bit_stream_struc*)
+II_sample_encoding	match/Encode.c	/^void II_sample_encoding(sbband, bit_alloc, fr_ps, bs)$/;"	f
+II_scale_factor_calc	match/ENCODER.H	/^extern void   II_scale_factor_calc(double[][3][SCALE_BLOCK][SBLIMIT],$/;"	p	signature:(double[][3][SCALE_BLOCK][SBLIMIT], unsigned int[][3][SBLIMIT], int, int)
+II_scale_factor_calc	match/Encode.c	/^void II_scale_factor_calc(sb_sample,scalar,stereo,sblimit)$/;"	f
+II_subband_quantization	match/ENCODER.H	/^extern void   II_subband_quantization(unsigned int[2][3][SBLIMIT],$/;"	p	signature:(unsigned int[2][3][SBLIMIT], double[2][3][SCALE_BLOCK][SBLIMIT], unsigned int[3][SBLIMIT], double[3][SCALE_BLOCK][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int[2][3][SCALE_BLOCK][SBLIMIT], frame_params*)
+II_subband_quantization	match/Encode.c	/^void II_subband_quantization(scalar, sb_samples, j_scale, j_samps,$/;"	f
+II_transmission_pattern	match/ENCODER.H	/^extern void   II_transmission_pattern(unsigned int[2][3][SBLIMIT],$/;"	p	signature:(unsigned int[2][3][SBLIMIT], unsigned int[2][SBLIMIT], frame_params*)
+II_transmission_pattern	match/Encode.c	/^void II_transmission_pattern(scalar, scfsi, fr_ps)$/;"	f
+ISO11172_END	match/MPLEX.H	31;"	d
+ISO_END_CODE	match/AVI2M1V.H	16;"	d
+I_CRC_calc	match/COMMON.H	/^extern void           I_CRC_calc(frame_params*, unsigned int[2][SBLIMIT],$/;"	p	signature:(frame_params*, unsigned int[2][SBLIMIT], unsigned int*)
+I_TYPE	match/AVI2M1V.H	21;"	d
+I_a_bit_allocation	match/ENCODER.H	/^extern int    I_a_bit_allocation(double[2][SBLIMIT], unsigned int[2][SBLIMIT],$/;"	p	signature:(double[2][SBLIMIT], unsigned int[2][SBLIMIT], int*, frame_params*)
+I_a_bit_allocation	match/Encode.c	/^int I_a_bit_allocation(perm_smr, bit_alloc, adb, fr_ps) \/* return noisy sbs *\/$/;"	f
+I_bits_for_nonoise	match/ENCODER.H	/^extern int    I_bits_for_nonoise(double[2][SBLIMIT], frame_params*);$/;"	p	signature:(double[2][SBLIMIT], frame_params*)
+I_bits_for_nonoise	match/Encode.c	/^int I_bits_for_nonoise(perm_smr, fr_ps)$/;"	f
+I_combine_LR	match/ENCODER.H	/^extern void   I_combine_LR(double[2][3][SCALE_BLOCK][SBLIMIT],$/;"	p	signature:(double[2][3][SCALE_BLOCK][SBLIMIT], double[3][SCALE_BLOCK][SBLIMIT])
+I_combine_LR	match/Encode.c	/^void I_combine_LR(sb_sample, joint_sample)$/;"	f
+I_encode_bit_alloc	match/ENCODER.H	/^extern void   I_encode_bit_alloc(unsigned int[2][SBLIMIT], frame_params*,$/;"	p	signature:(unsigned int[2][SBLIMIT], frame_params*, Bit_stream_struc*)
+I_encode_bit_alloc	match/Encode.c	/^void I_encode_bit_alloc(bit_alloc, fr_ps, bs)$/;"	f
+I_encode_scale	match/ENCODER.H	/^extern void   I_encode_scale(unsigned int[2][3][SBLIMIT],$/;"	p	signature:(unsigned int[2][3][SBLIMIT], unsigned int[2][SBLIMIT], frame_params*, Bit_stream_struc*)
+I_encode_scale	match/Encode.c	/^void I_encode_scale(scalar, bit_alloc, fr_ps, bs)$/;"	f
+I_main_bit_allocation	match/ENCODER.H	/^extern void   I_main_bit_allocation(double[2][SBLIMIT],$/;"	p	signature:(double[2][SBLIMIT], unsigned int[2][SBLIMIT], int*, frame_params*)
+I_main_bit_allocation	match/Encode.c	/^void I_main_bit_allocation(perm_smr, bit_alloc, adb, fr_ps)$/;"	f
+I_sample_encoding	match/ENCODER.H	/^extern void   I_sample_encoding(unsigned int[2][3][SCALE_BLOCK][SBLIMIT],$/;"	p	signature:(unsigned int[2][3][SCALE_BLOCK][SBLIMIT], unsigned int[2][SBLIMIT], frame_params*, Bit_stream_struc*)
+I_sample_encoding	match/Encode.c	/^void I_sample_encoding(sbband, bit_alloc, fr_ps, bs)$/;"	f
+I_scale_factor_calc	match/ENCODER.H	/^extern void   I_scale_factor_calc(double[][3][SCALE_BLOCK][SBLIMIT],$/;"	p	signature:(double[][3][SCALE_BLOCK][SBLIMIT], unsigned int[][3][SBLIMIT], int)
+I_scale_factor_calc	match/Encode.c	/^void I_scale_factor_calc(sb_sample,scalar,stereo)$/;"	f
+I_subband_quantization	match/ENCODER.H	/^extern void   I_subband_quantization(unsigned int[2][3][SBLIMIT],$/;"	p	signature:(unsigned int[2][3][SBLIMIT], double[2][3][SCALE_BLOCK][SBLIMIT], unsigned int[3][SBLIMIT], double[3][SCALE_BLOCK][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int[2][3][SCALE_BLOCK][SBLIMIT], frame_params*)
+I_subband_quantization	match/Encode.c	/^void I_subband_quantization(scalar, sb_samples, j_scale, j_samps,$/;"	f
 LAMBDA	deblur.c	10;"	d	file:
+LAST	match/ENCODER.H	31;"	d
+LAST_SCR_BYTE_IN_PACK	match/MPLEX.H	40;"	d
 LINK	makefile	/^LINK = gcc$/;"	m
-LINKFLAGS	makefile	/^LINKFLAGS = -lopencv_core243 -lopencv_highgui243 -lopencv_imgproc243 -lopencv_video243 -lopencv_calib3d243$/;"	m
+LINKFLAGS	makefile	/^LINKFLAGS = -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_video -lopencv_calib3d$/;"	m
+LN_TO_LOG10	match/COMMON.H	113;"	d
+LOGBLKSIZE	match/ENCODER.H	37;"	d
+LOGBLKSIZE_S	match/SUBS.C	25;"	d	file:
+LXMIN	match/ENCODER.H	41;"	d
+LineParser	gprof2dot.py	/^class LineParser(Parser):$/;"	c	inherits:Parser
+M	match/Global.h	/^EXTERN int M;           \/* I\/P帧之间的距离*\/$/;"	v
+MAC_WINDOW_SIZE	match/COMMON.H	117;"	d
+MARKER_DTS	match/MPLEX.H	72;"	d
+MARKER_JUST_PTS	match/MPLEX.H	70;"	d
+MARKER_NO_TIMESTAMPS	match/MPLEX.H	73;"	d
+MARKER_PTS	match/MPLEX.H	71;"	d
+MARKER_SCR	match/MPLEX.H	69;"	d
+MAX	match/BITSTRM.H	48;"	d
+MAX	match/COMMON.H	154;"	d
+MAX	match/Readpic.c	58;"	d	file:
+MAX_AVI_FILES	match/VIDEO.H	4;"	d
 MAX_CORNERS	homo.c	8;"	d	file:
+MAX_FFFFFFFF	match/MPLEX.H	34;"	d
 MAX_IMAGE	deblur.h	4;"	d
+MAX_LENGTH	match/BITSTRM.H	38;"	d
+MAX_LENGTH	match/COMMON.H	143;"	d
+MAX_NAME_SIZE	match/COMMON.H	123;"	d
+MAX_SECTOR_SIZE	match/MPLEX.H	50;"	d
+MAX_SNR	match/ENCODER.H	27;"	d
+MAX_U_32_NUM	match/COMMON.H	109;"	d
+MB_BACKWARD	match/AVI2M1V.H	34;"	d
+MB_FORWARD	match/AVI2M1V.H	35;"	d
+MB_INTRA	match/AVI2M1V.H	32;"	d
+MB_PATTERN	match/AVI2M1V.H	33;"	d
+MB_QUANT	match/AVI2M1V.H	36;"	d
+MC_16X8	match/AVI2M1V.H	41;"	d
+MC_DMV	match/AVI2M1V.H	42;"	d
+MC_FIELD	match/AVI2M1V.H	39;"	d
+MC_FRAME	match/AVI2M1V.H	40;"	d
+MIN	match/BITSTRM.H	47;"	d
+MIN	match/COMMON.H	153;"	d
+MIN	match/Readpic.c	59;"	d	file:
+MINIMUM	match/BITSTRM.H	37;"	d
+MINIMUM	match/COMMON.H	142;"	d
+MONO	match/COMMON.H	119;"	d
+MPEG_AUDIO_ID	match/COMMON.H	116;"	d
+MPG_MD_DUAL_CHANNEL	match/COMMON.H	136;"	d
+MPG_MD_JOINT_STEREO	match/COMMON.H	135;"	d
+MPG_MD_MONO	match/COMMON.H	137;"	d
+MPG_MD_STEREO	match/COMMON.H	134;"	d
+MPLEX_DATE	match/MPLEX.H	15;"	d
+MPLEX_VER	match/MPLEX.H	14;"	d
+MSC60	match/COMMON.H	72;"	d
+MS_DOS	match/BITSTRM.H	3;"	d
+MS_DOS	match/COMMON.H	71;"	d
+MS_DOS	match/COMMON.H	76;"	d
+MV	match/AVI2M1V.H	/^  int MV[2][2][2];        \/* 运动向量*\/$/;"	m	struct:mbinfo	access:public
+MV	match/PUTPIC.C	/^int MV[2][2][2],PMV[2][2][2];$/;"	v
+MV_FIELD	match/AVI2M1V.H	45;"	d
+MV_FRAME	match/AVI2M1V.H	46;"	d
+Main	gprof2dot.py	/^class Main:$/;"	c	inherits:
+N	match/COMMON.C	/^int N;                  $/;"	v
+N	match/COMMON.C	/^int N;                 $/;"	v
+N	match/COMMON.C	/^int N;         $/;"	v
+N	match/COMMON.C	/^int N;$/;"	v
+N	match/Global.h	/^EXTERN int N;           \/* 图像组中的帧的数目 *\/$/;"	v
+N	match/SUBS.C	/^int	N;$/;"	v
+NOISE	match/ENCODER.H	28;"	d
+NOISY_MIN_MNR	match/ENCODER.H	22;"	d
+NULL_CHAR	match/BITSTRM.H	30;"	d
+NULL_CHAR	match/COMMON.H	107;"	d
+Nb	match/RATECTL.C	/^static int Np, Nb, S, Q;$/;"	v	file:
+Np	match/RATECTL.C	/^static int Np, Nb, S, Q;$/;"	v	file:
+NumericQ	match/COMMON.H	/^extern int            NumericQ(char*);$/;"	p	signature:(char*)
 OBJS	makefile	/^OBJS = main.o homo.o blurfunc.o deblur.o luckiness.o$/;"	m
+Object	gprof2dot.py	/^class Object(object):$/;"	c	inherits:object
+OprofileParser	gprof2dot.py	/^class OprofileParser(LineParser):$/;"	c	inherits:LineParser
+P	match/Global.h	/^EXTERN int P;           \/* 片断刷新间隔 *\/$/;"	v
+PACKED_0	match/MOTION.C	/^static short PACKED_0[4] = { 0, 0, 0, 0 };$/;"	v	file:
+PACKED_0	match/PREDICT.C	/^static short PACKED_0[4] = { 0, 0, 0, 0 };$/;"	v	file:
+PACKED_0	match/RATECTL.C	/^static short PACKED_0[4] = { 0, 0, 0, 0 };$/;"	v	file:
+PACKED_0	match/Readpic.c	/^static short PACKED_0[4] = { 0, 0, 0, 0 };$/;"	v	file:
+PACKED_0	match/TRANSFRM.C	/^static short PACKED_0[4] = { 0, 0, 0, 0 };$/;"	v	file:
+PACKED_0x07	match/Readpic.c	/^static short PACKED_0x07[4] = { 0x07, 0x07, 0x07, 0x07 };$/;"	v	file:
+PACKED_0xFF00	match/QUANTIZE.C	/^static short PACKED_0xFF00[4] = { 0xff00U, 0xff00U, 0xff00U, 0xff00U };$/;"	v	file:
+PACKED_0xf8	match/Readpic.c	/^static short PACKED_0xf8[4] = { 0xf8, 0xf8, 0xf8, 0xf8 };$/;"	v	file:
+PACKED_1	match/MOTION.C	/^static short PACKED_1[4] = { 1, 1, 1, 1 };$/;"	v	file:
+PACKED_1	match/PREDICT.C	/^static short PACKED_1[4] = { 1, 1, 1, 1 };$/;"	v	file:
+PACKED_11	match/Readpic.c	/^static short PACKED_11[4] = { 11, 11, 11, 11 };$/;"	v	file:
+PACKED_128	match/Readpic.c	/^static short PACKED_128[4] = { 128, 128, 128, 128 };$/;"	v	file:
+PACKED_128	match/TRANSFRM.C	/^static short PACKED_128[4] = { 128, 128, 128, 128 };$/;"	v	file:
+PACKED_128B	match/Readpic.c	/^static unsigned char PACKED_128B[8] = { 128, 128, 128, 128, 128, 128, 128, 128 };$/;"	v	file:
+PACKED_128B	match/TRANSFRM.C	/^static unsigned char PACKED_128B[8] = { 128, 128, 128, 128, 128, 128, 128, 128 };$/;"	v	file:
+PACKED_128L	match/Readpic.c	/^static long PACKED_128L[2] = { 128, 128 };$/;"	v	file:
+PACKED_2	match/MOTION.C	/^static short PACKED_2[4] = { 2, 2, 2, 2 };$/;"	v	file:
+PACKED_2	match/PREDICT.C	/^static short PACKED_2[4] = { 2, 2, 2, 2 };$/;"	v	file:
+PACKED_2048	match/QUANTIZE.C	/^static unsigned short PACKED_2048[4] = { 2048, 2048, 2048, 2048 };$/;"	v	file:
+PACKED_228	match/Readpic.c	/^static short PACKED_228[4] = { 228, 228, 228, 228 };$/;"	v	file:
+PACKED_255	match/Readpic.c	/^static short PACKED_255[4] = { 255, 255, 255, 255 };$/;"	v	file:
+PACKED_256	match/Readpic.c	/^static long PACKED_256[2] = { 256, 256 };$/;"	v	file:
+PACKED_30720	match/QUANTIZE.C	/^static unsigned short PACKED_30720[4] = { 30720, 30720, 30720, 30720 };$/;"	v	file:
+PACKED_32768	match/QUANTIZE.C	/^static unsigned short PACKED_32768[4] = { 32768, 32768, 32768, 32768 };$/;"	v	file:
+PACKED_5	match/Readpic.c	/^static short PACKED_5[4] = { 5, 5, 5, 5 };$/;"	v	file:
+PACKED_61440	match/QUANTIZE.C	/^static unsigned short PACKED_61440[4] = { 61440, 61440, 61440, 61440 };$/;"	v	file:
+PACKED_70	match/Readpic.c	/^static short PACKED_70[4] = { 70, 70, 70, 70 };$/;"	v	file:
+PACKED_BU	match/Readpic.c	/^static short PACKED_BU[4] = { 131, 131, 131, 131 };$/;"	v	file:
+PACKED_BV	match/Readpic.c	/^static short PACKED_BV[4] = { -21, -21, -21, -21 };$/;"	v	file:
+PACKED_BY	match/Readpic.c	/^static short PACKED_BY[4] = { 29, 29, 29, 29 };$/;"	v	file:
+PACKED_GU	match/Readpic.c	/^static short PACKED_GU[4] = { -87, -87, -87, -87 };$/;"	v	file:
+PACKED_GV	match/Readpic.c	/^static short PACKED_GV[4] = { -110, -110, -110, -110 };$/;"	v	file:
+PACKED_GY	match/Readpic.c	/^static short PACKED_GY[4] = { 150, 150, 150, 150 };$/;"	v	file:
+PACKED_MINUS21	match/Readpic.c	/^static short PACKED_MINUS21[4] = { -21, -21, -21, -21 };$/;"	v	file:
+PACKED_MINUS37	match/Readpic.c	/^static short PACKED_MINUS37[4] = { -37, -37, -37, -37 };$/;"	v	file:
+PACKED_RU	match/Readpic.c	/^static short PACKED_RU[4] = { -44, -44, -44, -44 };$/;"	v	file:
+PACKED_RV	match/Readpic.c	/^static short PACKED_RV[4] = { 131, 131, 131, 131 };$/;"	v	file:
+PACKED_RY	match/Readpic.c	/^static short PACKED_RY[4] = { 77, 77, 77, 77 };$/;"	v	file:
+PACKED_U	match/Readpic.c	/^static short PACKED_U[4] = { 131, -87, -44, 0 };$/;"	v	file:
+PACKED_V	match/Readpic.c	/^static short PACKED_V[4] = { -21, -110, 131, 0 };$/;"	v	file:
+PACKED_Y	match/Readpic.c	/^static short PACKED_Y[4] = { 29, 150, 77, 0 };$/;"	v	file:
+PACKET_HEADER_SIZE	match/MPLEX.H	48;"	d
+PACKET_START	match/MPLEX.H	32;"	d
+PACK_HEADER_SIZE	match/MPLEX.H	46;"	d
+PACK_START	match/MPLEX.H	29;"	d
+PACK_START_CODE	match/AVI2M1V.H	17;"	d
+PADDING_STR	match/MPLEX.H	60;"	d
+PANSCAN_ID	match/AVI2M1V.H	59;"	d
 PATCH_SIZE	deblur.c	7;"	d	file:
+PCM_BUFFER	match/ENCODER.H	45;"	d
+PFRAME	match/MPLEX.H	23;"	d
+PI	match/COMMON.H	110;"	d
+PI	match/FDCTREF.C	11;"	d	file:
+PI	match/FDCTREF.C	9;"	d	file:
+PI4	match/COMMON.H	111;"	d
+PI64	match/COMMON.H	112;"	d
+PICTURE_START	match/MPLEX.H	19;"	d
+PICTURE_START_CODE	match/AVI2M1V.H	8;"	d
+PINK_COLORMAP	gprof2dot.py	/^PINK_COLORMAP = Theme($/;"	v
+PMV	match/PREDICT.C	/^int PMV[2][2][2], mv_field_sel[2][2], dmvector[2];$/;"	v
+PMV	match/PUTPIC.C	/^int MV[2][2][2],PMV[2][2][2];$/;"	v
+POWERNORM	match/ENCODER.H	33;"	d
+PTS	match/MPLEX.H	/^    Timecode_struc PTS		;$/;"	m	struct:aaunit_struc	access:public
+PTS	match/MPLEX.H	/^    Timecode_struc PTS		;$/;"	m	struct:vaunit_struc	access:public
+PTS	match/SYSTEMS.C	/^Timecode_struc   *PTS;$/;"	v
+P_TYPE	match/AVI2M1V.H	22;"	d
+Pack_struc	match/MPLEX.H	/^} Pack_struc;$/;"	t	typeref:struct:pack_struc
+ParseError	gprof2dot.py	/^class ParseError(Exception):$/;"	c	inherits:Exception
+Parser	gprof2dot.py	/^class Parser:$/;"	c	inherits:
+PerfParser	gprof2dot.py	/^class PerfParser(LineParser):$/;"	c	inherits:LineParser
+Profile	gprof2dot.py	/^class Profile(Object):$/;"	c	inherits:Object
+PstatsParser	gprof2dot.py	/^class PstatsParser:$/;"	c	inherits:
+Q	match/RATECTL.C	/^static int Np, Nb, S, Q;$/;"	v	file:
+QUANT_ID	match/AVI2M1V.H	57;"	d
+R	match/RATECTL.C	/^static int R, T, d;$/;"	v	file:
+R	match/Readpic.c	/^float R, G, B;$/;"	v
+READ_MODE	match/BITSTRM.H	39;"	d
+READ_MODE	match/COMMON.H	145;"	d
+RESERVED_BYTE	match/MPLEX.H	64;"	d
+RU	match/Readpic.c	/^const float RU = (-44.0\/256.0), GU = (-87.0\/256.0), BU = (131.0\/256.0);$/;"	v
+RV	match/Readpic.c	/^const float RV = (131.0\/256.0), GV = (-110.0\/256.0), BV = (-21.0\/256.0);$/;"	v
+RY	match/Readpic.c	/^const float RY = (77.0\/256.0), GY = (150.0\/256.0), BY = (29.0\/256.0);$/;"	v
+S	match/RATECTL.C	/^static int Np, Nb, S, Q;$/;"	v	file:
+SAMPLES	gprof2dot.py	/^SAMPLES = Event("Samples", 0, add)$/;"	v
+SAMPLES2	gprof2dot.py	/^SAMPLES2 = Event("Samples", 0, add)$/;"	v
+SBLIMIT	match/COMMON.H	124;"	d
+SCALE	match/COMMON.H	129;"	d
+SCALE_BLOCK	match/COMMON.H	127;"	d
+SCALE_RANGE	match/COMMON.H	128;"	d
+SCR	match/BUFFER.C	/^Timecode_struc *SCR;$/;"	v
+SCR	match/MPLEX.H	/^    Timecode_struc SCR;$/;"	m	struct:pack_struc	access:public
+SCR	match/MULTPLEX.C	/^Timecode_struc *SCR;$/;"	v
+SCR	match/SYSTEMS.C	/^Timecode_struc   *SCR;$/;"	v
+SCR_delay	match/MULTPLEX.C	/^Timecode_struc *SCR_delay;$/;"	v
+SEQSCAL_ID	match/AVI2M1V.H	58;"	d
+SEQUENCE_END	match/MPLEX.H	18;"	d
+SEQUENCE_HEADER	match/MPLEX.H	17;"	d
+SEQ_END_CODE	match/AVI2M1V.H	14;"	d
+SEQ_ID	match/AVI2M1V.H	55;"	d
+SEQ_START_CODE	match/AVI2M1V.H	12;"	d
 SIGMA_L	luckiness.c	5;"	d	file:
 SIGMA_W	deblur.c	9;"	d	file:
+SLICE_MAX_START	match/AVI2M1V.H	10;"	d
+SLICE_MIN_START	match/AVI2M1V.H	9;"	d
+SPATSCAL_ID	match/AVI2M1V.H	61;"	d
+STATUS_AUDIO_END	match/MPLEX.H	75;"	d
+STATUS_AUDIO_TIME_OUT	match/MPLEX.H	77;"	d
+STATUS_VIDEO_END	match/MPLEX.H	76;"	d
+STATUS_VIDEO_TIME_OUT	match/MPLEX.H	78;"	d
+STEREO	match/COMMON.H	120;"	d
+STOP	match/ENCODER.H	32;"	d
+STREAMS_AUDIO	match/MPLEX.H	53;"	d
+STREAMS_BOTH	match/MPLEX.H	54;"	d
+STREAMS_VIDEO	match/MPLEX.H	52;"	d
+STUFFING_BYTE	match/MPLEX.H	63;"	d
+SYNCWORD_START	match/MPLEX.H	21;"	d
+SYSTEM_START_CODE	match/AVI2M1V.H	18;"	d
+SYS_HEADER_LENGTH	match/MPLEX.H	43;"	d
+SYS_HEADER_SIZE	match/MPLEX.H	45;"	d
+SYS_HEADER_START	match/MPLEX.H	30;"	d
+Sector_struc	match/MPLEX.H	/^} Sector_struc;$/;"	t	typeref:struct:sector_struc
+SharkParser	gprof2dot.py	/^class SharkParser(LineParser):$/;"	c	inherits:LineParser
+SleepyParser	gprof2dot.py	/^class SleepyParser(Parser):$/;"	c	inherits:Parser
+SmpFrqIndex	match/COMMON.H	/^extern int            SmpFrqIndex(long);$/;"	p	signature:(long)
+StripExtension	match/Avi2mpg1.c	/^void StripExtension(char *, char *);$/;"	p	file:	signature:(char *, char *)
+StripExtension	match/Avi2mpg1.c	/^void StripExtension(char *base, char *source)$/;"	f	signature:(char *base, char *source)
+StripPath	match/Avi2mpg1.c	/^void StripPath(char *, char *);$/;"	p	file:	signature:(char *, char *)
+StripPath	match/Avi2mpg1.c	/^void StripPath(char *base, char *source)$/;"	f	signature:(char *base, char *source)
+Struct	gprof2dot.py	/^class Struct:$/;"	c	inherits:
+Sys_header_struc	match/MPLEX.H	/^} Sys_header_struc;$/;"	t	typeref:struct:sys_header_struc
+SysprofParser	gprof2dot.py	/^class SysprofParser(XmlParser):$/;"	c	inherits:XmlParser
+T	match/RATECTL.C	/^static int R, T, d;$/;"	v	file:
+TEMPERATURE_COLORMAP	gprof2dot.py	/^TEMPERATURE_COLORMAP = Theme($/;"	v
+TEMPSCAL_ID	match/AVI2M1V.H	62;"	d
+TIME	gprof2dot.py	/^TIME = Event("Time", 0.0, add, lambda x: '(' + str(x) + ')')$/;"	v
+TIMESTAMPS_NO	match/MPLEX.H	65;"	d
+TIMESTAMPS_PTS	match/MPLEX.H	66;"	d
+TIMESTAMPS_PTS_DTS	match/MPLEX.H	67;"	d
+TIME_RATIO	gprof2dot.py	/^TIME_RATIO = Event("Time ratio", 0.0, add, lambda x: '(' + percentage(x) + ')')$/;"	v
+TONE	match/ENCODER.H	29;"	d
+TOP_FIELD	match/AVI2M1V.H	27;"	d
+TOTAL_TIME	gprof2dot.py	/^TOTAL_TIME = Event("Total time", 0.0, fail)$/;"	v
+TOTAL_TIME_RATIO	gprof2dot.py	/^TOTAL_TIME_RATIO = Event("Total time ratio", 0.0, fail, percentage)$/;"	v
+TRUE	match/BITSTRM.H	29;"	d
+TRUE	match/COMMON.H	106;"	d
+TS	match/BUFFER.C	/^Timecode_struc *TS;$/;"	v
+TS	match/MPLEX.H	/^    Timecode_struc TS                ;$/;"	m	struct:sector_struc	access:public
+TS1	match/TIMECODE.C	/^Timecode_struc *TS1;$/;"	v
+TS2	match/TIMECODE.C	/^Timecode_struc *TS2;$/;"	v
+TempFilterBuffer	match/Global.h	/^EXTERN unsigned char *Ubuffer, *Vbuffer, *Ubuffer422, *Vbuffer422, *TempFilterBuffer;$/;"	v
+TestCPU	match/Avi2mpg1.c	/^void TestCPU(void)$/;"	f	signature:(void)
+TestCPU	match/Global.h	/^void TestCPU(void);$/;"	p	signature:(void)
+Theme	gprof2dot.py	/^class Theme:$/;"	c	inherits:
+Timecode_struc	match/MPLEX.H	/^} Timecode_struc;	$/;"	t	typeref:struct:timecode_struc
+Tolerance	match/Readpic.c	/^const int Tolerance  = 10;$/;"	v
+UNIX	match/BITSTRM.H	2;"	d
+USER_START_CODE	match/AVI2M1V.H	11;"	d
+Ubuffer	match/Global.h	/^EXTERN unsigned char *Ubuffer, *Vbuffer, *Ubuffer422, *Vbuffer422, *TempFilterBuffer;$/;"	v
+Ubuffer422	match/Global.h	/^EXTERN unsigned char *Ubuffer, *Vbuffer, *Ubuffer422, *Vbuffer422, *TempFilterBuffer;$/;"	v
+UndefinedEvent	gprof2dot.py	/^class UndefinedEvent(Exception):$/;"	c	inherits:Exception
+VERSION	match/AVI2MPG1.H	5;"	d
+VIDEO_STREAMS	match/MPLEX.H	57;"	d
+VIDEO_STR_0	match/MPLEX.H	59;"	d
+VLCtable	match/VLC.H	/^} VLCtable;$/;"	t	typeref:struct:__anon1
+VOL_REF_NUM	match/COMMON.H	115;"	d
+ValidBitrate	match/Avi2mpg1.c	/^int ValidBitrate(layr, bRate)   \/* return 1 if legal bit rate for layer, 0 otherwise *\/$/;"	f
+ValidBitrate	match/Avi2mpg1.c	/^int ValidBitrate(unsigned int, unsigned int);$/;"	p	file:	signature:(unsigned int, unsigned int)
+Vaunit_struc	match/MPLEX.H	/^} Vaunit_struc;$/;"	t	typeref:struct:vaunit_struc
+Vbuffer	match/Global.h	/^EXTERN unsigned char *Ubuffer, *Vbuffer, *Ubuffer422, *Vbuffer422, *TempFilterBuffer;$/;"	v
+Vbuffer422	match/Global.h	/^EXTERN unsigned char *Ubuffer, *Vbuffer, *Ubuffer422, *Vbuffer422, *TempFilterBuffer;$/;"	v
+Video_struc	match/MPLEX.H	/^} Video_struc; 		$/;"	t	typeref:struct:video_struc
+W1	match/IDCT.C	6;"	d	file:
+W2	match/IDCT.C	7;"	d	file:
+W3	match/IDCT.C	8;"	d	file:
+W5	match/IDCT.C	9;"	d	file:
+W6	match/IDCT.C	10;"	d	file:
+W7	match/IDCT.C	11;"	d	file:
 WIN_SIZE	homo.c	9;"	d	file:
+WORD	match/BITSTRM.H	33;"	d
+WORD	match/COMMON.H	122;"	d
+WRITE_MODE	match/BITSTRM.H	40;"	d
+WRITE_MODE	match/COMMON.H	146;"	d
+WriteBitAlloc	match/COMMON.H	/^extern void           WriteBitAlloc(unsigned int[2][SBLIMIT], frame_params*,$/;"	p	signature:(unsigned int[2][SBLIMIT], frame_params*, FILE*)
+WriteHdr	match/COMMON.H	/^extern void           WriteHdr(frame_params*, FILE*);$/;"	p	signature:(frame_params*, FILE*)
+WriteSamples	match/COMMON.H	/^extern void           WriteSamples(int, unsigned int [SBLIMIT],$/;"	p	signature:(int, unsigned int [SBLIMIT], unsigned int[SBLIMIT], frame_params*, FILE*)
+WriteScale	match/COMMON.H	/^extern void           WriteScale(unsigned int[2][SBLIMIT],$/;"	p	signature:(unsigned int[2][SBLIMIT], unsigned int[2][SBLIMIT], unsigned int[2][3][SBLIMIT], frame_params*, FILE*)
+XPerfParser	gprof2dot.py	/^class XPerfParser(Parser):$/;"	c	inherits:Parser
+Xb	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+Xi	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+XmlParser	gprof2dot.py	/^class XmlParser(Parser):$/;"	c	inherits:Parser
+XmlToken	gprof2dot.py	/^class XmlToken:$/;"	c	inherits:
+XmlTokenMismatch	gprof2dot.py	/^class XmlTokenMismatch(Exception):$/;"	c	inherits:Exception
+XmlTokenizer	gprof2dot.py	/^class XmlTokenizer:$/;"	c	inherits:
+Xp	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+ZERO_STUFFING_BYTE	match/MPLEX.H	62;"	d
 _DEBLUR_H	deblur.h	2;"	d
+__anon1::code	match/VLC.H	/^  unsigned char code; \/* right justified *\/$/;"	m	struct:__anon1	access:public
+__anon1::len	match/VLC.H	/^  char len;$/;"	m	struct:__anon1	access:public
+__anon2::code	match/VLC.H	/^  unsigned short code; \/* right justified *\/$/;"	m	struct:__anon2	access:public
+__anon2::len	match/VLC.H	/^  char len;$/;"	m	struct:__anon2	access:public
+__anon3::bits	match/COMMON.H	/^    unsigned int    bits;$/;"	m	struct:__anon3	access:public
+__anon3::group	match/COMMON.H	/^    unsigned int    group;$/;"	m	struct:__anon3	access:public
+__anon3::quant	match/COMMON.H	/^    unsigned int    quant;$/;"	m	struct:__anon3	access:public
+__anon3::steps	match/COMMON.H	/^    unsigned int    steps;$/;"	m	struct:__anon3	access:public
+__anon4::bitrate_index	match/COMMON.H	/^    int bitrate_index;$/;"	m	struct:__anon4	access:public
+__anon4::copyright	match/COMMON.H	/^    int copyright;$/;"	m	struct:__anon4	access:public
+__anon4::emphasis	match/COMMON.H	/^    int emphasis;$/;"	m	struct:__anon4	access:public
+__anon4::error_protection	match/COMMON.H	/^    int error_protection;$/;"	m	struct:__anon4	access:public
+__anon4::extension	match/COMMON.H	/^    int extension;$/;"	m	struct:__anon4	access:public
+__anon4::lay	match/COMMON.H	/^    int lay;$/;"	m	struct:__anon4	access:public
+__anon4::mode	match/COMMON.H	/^    int mode;$/;"	m	struct:__anon4	access:public
+__anon4::mode_ext	match/COMMON.H	/^    int mode_ext;$/;"	m	struct:__anon4	access:public
+__anon4::original	match/COMMON.H	/^    int original;$/;"	m	struct:__anon4	access:public
+__anon4::padding	match/COMMON.H	/^    int padding;$/;"	m	struct:__anon4	access:public
+__anon4::sampling_frequency	match/COMMON.H	/^    int sampling_frequency;$/;"	m	struct:__anon4	access:public
+__anon4::version	match/COMMON.H	/^    int version;$/;"	m	struct:__anon4	access:public
+__anon5::actual_mode	match/COMMON.H	/^    int         actual_mode;    \/* when writing IS, may forget if 0 chs *\/$/;"	m	struct:__anon5	access:public
+__anon5::alloc	match/COMMON.H	/^    al_table    *alloc;         \/* bit allocation table read in *\/$/;"	m	struct:__anon5	access:public
+__anon5::header	match/COMMON.H	/^    layer       *header;        \/* raw header information *\/$/;"	m	struct:__anon5	access:public
+__anon5::jsbound	match/COMMON.H	/^    int         jsbound;        \/* first band of joint stereo coding *\/$/;"	m	struct:__anon5	access:public
+__anon5::sblimit	match/COMMON.H	/^    int         sblimit;        \/* total number of sub bands *\/$/;"	m	struct:__anon5	access:public
+__anon5::stereo	match/COMMON.H	/^    int         stereo;         \/* 1 for mono, 2 for stereo *\/$/;"	m	struct:__anon5	access:public
+__anon5::tab_num	match/COMMON.H	/^    int         tab_num;        \/* number of table as loaded *\/$/;"	m	struct:__anon5	access:public
+__anon6::bark	match/ENCODER.H	/^        double     bark, hear, x;$/;"	m	struct:__anon6	access:public
+__anon6::hear	match/ENCODER.H	/^        double     bark, hear, x;$/;"	m	struct:__anon6	access:public
+__anon6::line	match/ENCODER.H	/^        int        line;$/;"	m	struct:__anon6	access:public
+__anon6::x	match/ENCODER.H	/^        double     bark, hear, x;$/;"	m	struct:__anon6	access:public
+__anon7::map	match/ENCODER.H	/^        int        type, next, map;$/;"	m	struct:__anon7	access:public
+__anon7::next	match/ENCODER.H	/^        int        type, next, map;$/;"	m	struct:__anon7	access:public
+__anon7::type	match/ENCODER.H	/^        int        type, next, map;$/;"	m	struct:__anon7	access:public
+__anon7::x	match/ENCODER.H	/^        double     x;$/;"	m	struct:__anon7	access:public
+__author__	gprof2dot.py	/^__author__ = "Jose Fonseca"$/;"	v
+__contains__	gprof2dot.py	/^    def __contains__(self, event):$/;"	m	class:Object	file:	access:private
+__eq__	gprof2dot.py	/^    def __eq__(self, other):$/;"	m	class:Event	file:	access:private
+__eq__	gprof2dot.py	/^    def __eq__(self, other):$/;"	m	class:Object	file:	access:private
+__getattr__	gprof2dot.py	/^    def __getattr__(self, name):$/;"	m	class:Struct	file:	access:private
+__getitem__	gprof2dot.py	/^    def __getitem__(self, event):$/;"	m	class:Object	file:	access:private
+__hash__	gprof2dot.py	/^    def __hash__(self):$/;"	m	class:Event	file:	access:private
+__hash__	gprof2dot.py	/^    def __hash__(self):$/;"	m	class:Object	file:	access:private
+__init__	gprof2dot.py	/^    def __init__(self):$/;"	m	class:Cycle	access:public
+__init__	gprof2dot.py	/^    def __init__(self):$/;"	m	class:Parser	access:public
+__init__	gprof2dot.py	/^    def __init__(self):$/;"	m	class:Profile	access:public
+__init__	gprof2dot.py	/^    def __init__(self, $/;"	m	class:Theme	access:public
+__init__	gprof2dot.py	/^    def __init__(self, *filename):$/;"	m	class:PstatsParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, attrs = None):$/;"	m	class:Struct	access:public
+__init__	gprof2dot.py	/^    def __init__(self, callee_id):$/;"	m	class:Call	access:public
+__init__	gprof2dot.py	/^    def __init__(self, event):$/;"	m	class:UndefinedEvent	access:public
+__init__	gprof2dot.py	/^    def __init__(self, events=None):$/;"	m	class:Object	access:public
+__init__	gprof2dot.py	/^    def __init__(self, expected, found):$/;"	m	class:XmlTokenMismatch	access:public
+__init__	gprof2dot.py	/^    def __init__(self, file):$/;"	m	class:LineParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, filename):$/;"	m	class:SleepyParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:DotWriter	access:public
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:GprofParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:XmlParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, fp, skip_ws = True):$/;"	m	class:XmlTokenizer	access:public
+__init__	gprof2dot.py	/^    def __init__(self, id, name):$/;"	m	class:Function	access:public
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:CallgrindParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:HProfParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:OprofileParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:PerfParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:SharkParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, msg, line):$/;"	m	class:ParseError	access:public
+__init__	gprof2dot.py	/^    def __init__(self, name, fields):$/;"	m	class:AQtimeTable	access:public
+__init__	gprof2dot.py	/^    def __init__(self, name, null, aggregator, formatter = str):$/;"	m	class:Event	access:public
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:AQtimeParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:SysprofParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:XPerfParser	access:public
+__init__	gprof2dot.py	/^    def __init__(self, type, name_or_data, attrs = None, line = None, column = None):$/;"	m	class:XmlToken	access:public
+__iter__	gprof2dot.py	/^    def __iter__(self):$/;"	m	class:AQtimeTable	file:	access:private
+__len__	gprof2dot.py	/^    def __len__(self):$/;"	m	class:AQtimeTable	file:	access:private
+__repr__	gprof2dot.py	/^    def __repr__(self):$/;"	m	class:Function	file:	access:private
+__repr__	gprof2dot.py	/^    def __repr__(self):$/;"	m	class:Struct	file:	access:private
+__setattr__	gprof2dot.py	/^    def __setattr__(self, name, value):$/;"	m	class:Struct	file:	access:private
+__setitem__	gprof2dot.py	/^    def __setitem__(self, event, value):$/;"	m	class:Object	file:	access:private
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:ParseError	file:	access:private
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:Struct	file:	access:private
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:UndefinedEvent	file:	access:private
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:XmlToken	file:	access:private
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:XmlTokenMismatch	file:	access:private
+__subpos_re	gprof2dot.py	/^    __subpos_re = r'(0x[0-9a-fA-F]+|\\d+|\\+\\d+|-\\d+|\\*)'$/;"	v	class:CallgrindParser
+__version__	gprof2dot.py	/^__version__ = "1.0"$/;"	v
+_angles_re	gprof2dot.py	/^    _angles_re = re.compile(r'<[^<>]*>')$/;"	v	class:Function
+_call_ratios_cycle	gprof2dot.py	/^    def _call_ratios_cycle(self, cycle, function, ranks, call_ratios, visited):$/;"	m	class:Profile	access:public
+_call_re	gprof2dot.py	/^    _call_re = re.compile('^calls=\\s*(\\d+)\\s+((\\d+|\\+\\d+|-\\d+|\\*)\\s+)+$')$/;"	v	class:CallgrindParser
+_cg_child_re	gprof2dot.py	/^    _cg_child_re = _cg_parent_re$/;"	v	class:GprofParser
+_cg_cycle_header_re	gprof2dot.py	/^    _cg_cycle_header_re = re.compile($/;"	v	class:GprofParser
+_cg_cycle_member_re	gprof2dot.py	/^    _cg_cycle_member_re = re.compile($/;"	v	class:GprofParser
+_cg_header_re	gprof2dot.py	/^    _cg_header_re = re.compile($/;"	v	class:GprofParser
+_cg_ignore_re	gprof2dot.py	/^    _cg_ignore_re = re.compile($/;"	v	class:GprofParser
+_cg_parent_re	gprof2dot.py	/^    _cg_parent_re = re.compile($/;"	v	class:GprofParser
+_cg_primary_re	gprof2dot.py	/^    _cg_primary_re = re.compile($/;"	v	class:GprofParser
+_cg_sep_re	gprof2dot.py	/^    _cg_sep_re = re.compile(r'^--+$')$/;"	v	class:GprofParser
+_const_re	gprof2dot.py	/^    _const_re = re.compile(r'\\s+const$')$/;"	v	class:Function
+_cost_re	gprof2dot.py	/^    _cost_re = re.compile(r'^' + $/;"	v	class:CallgrindParser
+_detail_keys	gprof2dot.py	/^    _detail_keys = set(('cmd', 'pid', 'thread', 'part'))$/;"	v	class:CallgrindParser
+_dump_events	gprof2dot.py	/^    def _dump_events(self, events):$/;"	m	class:Profile	access:public
+_fields_re	gprof2dot.py	/^    _fields_re = {$/;"	v	class:OprofileParser
+_float_re	gprof2dot.py	/^    _float_re = re.compile(r'^\\d+\\.\\d+$')$/;"	v	class:GprofParser
+_hue_to_rgb	gprof2dot.py	/^    def _hue_to_rgb(self, m1, m2, h):$/;"	m	class:Theme	access:public
+_int_re	gprof2dot.py	/^    _int_re = re.compile(r'^\\d+$')$/;"	v	class:GprofParser
+_integrate_call	gprof2dot.py	/^    def _integrate_call(self, call, outevent, inevent):$/;"	m	class:Profile	access:public
+_integrate_cycle	gprof2dot.py	/^    def _integrate_cycle(self, cycle, outevent, inevent):$/;"	m	class:Profile	access:public
+_integrate_cycle_function	gprof2dot.py	/^    def _integrate_cycle_function(self, cycle, function, partial_ratio, partials, ranks, call_ratios, outevent, inevent):$/;"	m	class:Profile	access:public
+_integrate_function	gprof2dot.py	/^    def _integrate_function(self, function, outevent, inevent):$/;"	m	class:Profile	access:public
+_key_re	gprof2dot.py	/^    _key_re = re.compile(r'^(\\w+):')$/;"	v	class:CallgrindParser
+_parenthesis_re	gprof2dot.py	/^    _parenthesis_re = re.compile(r'\\([^()]*\\)')$/;"	v	class:Function
+_position_map	gprof2dot.py	/^    _position_map = {$/;"	v	class:CallgrindParser
+_position_re	gprof2dot.py	/^    _position_re = re.compile('^(?P<position>[cj]?(?:ob|fl|fi|fe|fn))=\\s*(?:\\((?P<id>\\d+)\\))?(?:\\s*(?P<name>.+))?')$/;"	v	class:CallgrindParser
+_position_table_map	gprof2dot.py	/^    _position_table_map = {$/;"	v	class:CallgrindParser
+_rank_cycle_function	gprof2dot.py	/^    def _rank_cycle_function(self, cycle, function, rank, ranks):$/;"	m	class:Profile	access:public
+_stklen	match/Encode.c	/^extern unsigned _stklen = 16384;$/;"	v
+_symbol_re	gprof2dot.py	/^    _symbol_re = re.compile($/;"	v	class:SleepyParser
+_tarjan	gprof2dot.py	/^    def _tarjan(self, function, order, stack, orders, lowlinks, visited):$/;"	m	class:Profile	access:public
+a	match/Encode.c	/^static double a[17] = {$/;"	v	file:
+aaunit_struc	match/MPLEX.H	/^typedef struct aaunit_struc	$/;"	s
+aaunit_struc::PTS	match/MPLEX.H	/^    Timecode_struc PTS		;$/;"	m	struct:aaunit_struc	access:public
+aaunit_struc::length	match/MPLEX.H	/^{   unsigned long length	;$/;"	m	struct:aaunit_struc	access:public
+abitrate	match/Avi2mpg1.c	/^unsigned int abitrate[2][14] = {$/;"	v
+absthr	match/PSY.C	/^FLOAT *absthr;$/;"	v
+absthr_1	match/ABSTHR_1.H	/^static FLOAT absthr_1[HBLKSIZE] = {$/;"	v
+act	match/AVI2M1V.H	/^  double act;             \/* activity measure *\/$/;"	m	struct:mbinfo	access:public
+actsum	match/RATECTL.C	/^static double actsum;$/;"	v	file:
+actual_mode	match/COMMON.H	/^    int         actual_mode;    \/* when writing IS, may forget if 0 chs *\/$/;"	m	struct:__anon5	access:public
+add	gprof2dot.py	/^def add(a, b):$/;"	f	access:public
+add	match/TIMECODE.C	/^Timecode_struc *add;$/;"	v
+add_call	gprof2dot.py	/^    def add_call(self, call):$/;"	m	class:Function	access:public
+add_callee	gprof2dot.py	/^    def add_callee(self, function, callee):$/;"	m	class:SharkParser	access:public
+add_cycle	gprof2dot.py	/^    def add_cycle(self, cycle):$/;"	m	class:Profile	access:public
+add_entry	gprof2dot.py	/^    def add_entry(self, callers, function, callees):$/;"	m	class:OprofileParser	access:public
+add_entry	gprof2dot.py	/^    def add_entry(self, function):$/;"	m	class:SharkParser	access:public
+add_function	gprof2dot.py	/^    def add_function(self, function):$/;"	m	class:Cycle	access:public
+add_function	gprof2dot.py	/^    def add_function(self, function):$/;"	m	class:Profile	access:public
+add_pred	match/TRANSFRM.C	/^static void add_pred(unsigned char *pred, unsigned char *cur,$/;"	p	file:	signature:(unsigned char *pred, unsigned char *cur, int lx, short *blk)
+add_row	gprof2dot.py	/^    def add_row(self, values, children=()):$/;"	m	class:AQtimeTable	access:public
+add_to_timecode	match/MPLEX.H	/^void add_to_timecode      ();	$/;"	p	signature:()
+addflag	match/PREDICT.C	/^int addflag;$/;"	v
+addrinc	match/PUTVLC.C	/^int addrinc;$/;"	v
+addrinctab	match/VLC.H	/^static VLCtable addrinctab[33]=$/;"	v
+afile	match/INPTSTRM.C	/^char *vfile, *afile, *mfile;$/;"	v
+afile	match/MPLEX.C	/^char *vfile, *afile, *mfile;$/;"	v
+aggregate	gprof2dot.py	/^    def aggregate(self, event):$/;"	m	class:Profile	access:public
+aggregate	gprof2dot.py	/^    def aggregate(self, val1, val2):$/;"	m	class:Event	access:public
+al_table	match/COMMON.H	/^typedef sb_alloc        al_table[SBLIMIT][16];$/;"	t
+alignbits	match/Global.h	/^void alignbits(void);$/;"	p	signature:(void)
+alignbits	match/PUTBITS.C	/^void alignbits()$/;"	f	signature:()
+alloc	match/COMMON.C	/^al_table *alloc;$/;"	v
+alloc	match/COMMON.H	/^    al_table    *alloc;         \/* bit allocation table read in *\/$/;"	m	struct:__anon5	access:public
+alloc_0	match/ALLOC_0.H	/^static unsigned int alloc_0[288][6] = {$/;"	v
+alloc_0_size	match/ALLOC_0.H	/^static unsigned int alloc_0_size = 288;$/;"	v
+alloc_1	match/ALLOC_1.H	/^static unsigned int alloc_1[300][6] = {$/;"	v
+alloc_1_size	match/ALLOC_1.H	/^static unsigned int alloc_1_size = 300;$/;"	v
+alloc_2	match/ALLOC_2.H	/^static unsigned int alloc_2[80][6] = {$/;"	v
+alloc_2_size	match/ALLOC_2.H	/^static unsigned int alloc_2_size = 80;$/;"	v
+alloc_buffer	match/BITSTRM.H	/^extern void           alloc_buffer(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+alloc_buffer	match/COMMON.H	/^extern void           alloc_buffer(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+alloc_ptr	match/COMMON.H	/^} sb_alloc, *alloc_ptr;$/;"	t	typeref:struct:__anon3
+alternate_scan	match/Global.h	/^EXTERN unsigned char alternate_scan[64]$/;"	v
+altscan	match/Global.h	/^EXTERN int altscan_tab[3], altscan;           \/* 其他扫描方式(I,P,B,current) *\/$/;"	v
+altscan_tab	match/Global.h	/^EXTERN int altscan_tab[3], altscan;           \/* 其他扫描方式(I,P,B,current) *\/$/;"	v
+array	match/COMMON.C	/^char *array;$/;"	v
+ask_continue	match/INTERACT.C	/^void ask_continue ()$/;"	f	signature:()
+ask_continue	match/MPLEX.H	/^void ask_continue	  ();	$/;"	p	signature:()
+ask_verbose	match/INTERACT.C	/^unsigned char ask_verbose ()$/;"	f	signature:()
+ask_verbose	match/MPLEX.H	/^unsigned char ask_verbose ();	$/;"	p	signature:()
+aspect_ratio	match/MPLEX.H	/^    unsigned int aspect_ratio	;$/;"	m	struct:video_struc	access:public
+aspectratio	match/Global.h	/^EXTERN int aspectratio;                    \/* 高宽比信息 *\/$/;"	v
+attr	gprof2dot.py	/^    def attr(self, what, **attrs):$/;"	m	class:DotWriter	access:public
+attr_list	gprof2dot.py	/^    def attr_list(self, attrs):$/;"	m	class:DotWriter	access:public
+audio_au	match/MULTPLEX.C	/^Aaunit_struc *audio_au;$/;"	v
+audio_bitrate_parm	match/Global.h	/^EXTERN unsigned int audio_bitrate_parm;$/;"	v
+audio_bound	match/SYSTEMS.C	/^unsigned char	 audio_bound;$/;"	v
+audio_buffer_size	match/MULTPLEX.C	/^unsigned long audio_buffer_size;$/;"	v
+audio_bytes	match/INPTSTRM.C	/^unsigned int *audio_bytes;$/;"	v
+audio_end_early	match/Global.h	/^EXTERN unsigned int audio_end_early;$/;"	v
+audio_file	match/INPTSTRM.C	/^char *audio_file;	$/;"	v
+audio_file	match/INPTSTRM.C	/^char** audio_file;$/;"	v
+audio_file	match/MULTPLEX.C	/^char 		*audio_file;$/;"	v
+audio_frame_start	match/MULTPLEX.C	/^unsigned char *audio_frame_start;$/;"	v
+audio_info	match/INPTSTRM.C	/^Audio_struc *audio_info;$/;"	v
+audio_info	match/MULTPLEX.C	/^Audio_struc 	*audio_info;$/;"	v
+audio_layer_parm	match/Global.h	/^EXTERN unsigned int audio_layer_parm;$/;"	v
+audio_lock	match/SYSTEMS.C	/^unsigned char	 audio_lock;$/;"	v
+audio_struc	match/MPLEX.H	/^typedef struct audio_struc	$/;"	s
+audio_struc::bit_rate	match/MPLEX.H	/^    unsigned int bit_rate	;$/;"	m	struct:audio_struc	access:public
+audio_struc::copyright	match/MPLEX.H	/^    unsigned int copyright      ;$/;"	m	struct:audio_struc	access:public
+audio_struc::emphasis	match/MPLEX.H	/^    unsigned int emphasis	;$/;"	m	struct:audio_struc	access:public
+audio_struc::frequency	match/MPLEX.H	/^    unsigned int frequency	;$/;"	m	struct:audio_struc	access:public
+audio_struc::layer	match/MPLEX.H	/^    unsigned int layer		;$/;"	m	struct:audio_struc	access:public
+audio_struc::mode	match/MPLEX.H	/^    unsigned int mode		;$/;"	m	struct:audio_struc	access:public
+audio_struc::mode_extension	match/MPLEX.H	/^    unsigned int mode_extension ;$/;"	m	struct:audio_struc	access:public
+audio_struc::num_frames	match/MPLEX.H	/^    unsigned int num_frames [2]	;$/;"	m	struct:audio_struc	access:public
+audio_struc::num_syncword	match/MPLEX.H	/^    unsigned int num_syncword	;$/;"	m	struct:audio_struc	access:public
+audio_struc::original_copy	match/MPLEX.H	/^    unsigned int original_copy  ;$/;"	m	struct:audio_struc	access:public
+audio_struc::protection	match/MPLEX.H	/^    unsigned int protection	;$/;"	m	struct:audio_struc	access:public
+audio_struc::size_frames	match/MPLEX.H	/^    unsigned int size_frames[2] ;$/;"	m	struct:audio_struc	access:public
+audio_struc::stream_length	match/MPLEX.H	/^{   unsigned int stream_length  ;$/;"	m	struct:audio_struc	access:public
+audio_time_out	match/Global.h	/^EXTERN unsigned int audio_time_out;$/;"	v
+audio_units	match/INPTSTRM.C	/^char *audio_units;$/;"	v
+audio_units	match/MULTPLEX.C	/^char 		*audio_units;$/;"	v
+aunits_info	match/MULTPLEX.C	/^FILE *aunits_info;$/;"	v
+author	match/Global.h	/^EXTERN char author[]$/;"	v
+auxframe	match/Global.h	/^EXTERN unsigned char *newrefframe[3], *oldrefframe[3], *auxframe[3];$/;"	v
+auxorgframe	match/Global.h	/^EXTERN unsigned char *neworgframe[3], *oldorgframe[3], *auxorgframe[3];$/;"	v
+avg_act	match/RATECTL.C	/^double avg_act;$/;"	v
+avg_frames	match/MPLEX.H	/^    unsigned int avg_frames[4]  ;$/;"	m	struct:video_struc	access:public
+avi2m1v	match/Avi2m1v.c	/^int avi2m1v(outputfile)$/;"	f
+avi2m1v	match/Global.h	/^int avi2m1v(char *);$/;"	p	signature:(char *)
+avi2mp2	match/AVI2MPG1.H	/^void avi2mp2(char*);/;"	p	signature:(char*)
+b	match/Encode.c	/^static double b[17] = {$/;"	v	file:
+bRate	match/COMMON.C	/^int     bRate;          $/;"	v
+back_hor_f_code	match/AVI2M1V.H	/^  int back_hor_f_code,back_vert_f_code;$/;"	m	struct:motion_data	access:public
+back_hor_f_code	match/Global.h	/^EXTERN int back_hor_f_code, back_vert_f_code; \/* 运动向量范围 *\/$/;"	v
+back_track_buffer	match/BITSTRM.H	/^extern void           back_track_buffer(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+back_track_buffer	match/COMMON.H	/^extern void           back_track_buffer(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+back_vert_f_code	match/AVI2M1V.H	/^  int back_hor_f_code,back_vert_f_code;$/;"	m	struct:motion_data	access:public
+back_vert_f_code	match/Global.h	/^EXTERN int back_hor_f_code, back_vert_f_code; \/* 运动向量范围 *\/$/;"	v
+bad_audio_count	match/Global.h	/^EXTERN unsigned int bad_audio_count;$/;"	v
+bad_frame_count	match/Global.h	/^EXTERN unsigned int bad_frame_count;$/;"	v
+bark	match/ENCODER.H	/^        double     bark, hear, x;$/;"	m	struct:__anon6	access:public
+bcopy	match/SYSTEMS.C	/^void bcopy(unsigned char *source, unsigned char *dest, int k)$/;"	f	signature:(unsigned char *source, unsigned char *dest, int k)
+bdist1	match/MOTION.C	/^static int bdist1(unsigned char *pf, unsigned char *pb,$/;"	p	file:	signature:(unsigned char *pf, unsigned char *pb, unsigned char *p2, int lx, int hxf, int hyf, int hxb, int hyb, int h)
+bdist2	match/MOTION.C	/^static int bdist2(unsigned char *pf, unsigned char *pb,$/;"	p	file:	signature:(unsigned char *pf, unsigned char *pb, unsigned char *p2, int lx, int hxf, int hyf, int hxb, int hyb, int h)
+begin_graph	gprof2dot.py	/^    def begin_graph(self):$/;"	m	class:DotWriter	access:public
+bit	match/COMMON.C	/^int bit;                $/;"	v
+bit_alloc	match/COMMON.C	/^unsigned int bit_alloc[2][SBLIMIT], scfsi[2][SBLIMIT], scalar[2][3][SBLIMIT];$/;"	v
+bit_alloc	match/COMMON.C	/^unsigned int bit_alloc[2][SBLIMIT], scfsi[2][SBLIMIT];$/;"	v
+bit_alloc	match/COMMON.C	/^unsigned int bit_alloc[2][SBLIMIT];$/;"	v
+bit_alloc	match/COMMON.C	/^unsigned int bit_alloc[SBLIMIT];$/;"	v
+bit_rate	match/CONFORM.C	/^  int bit_rate; \/* Mbit\/s *\/$/;"	m	struct:level_limits	file:	access:public
+bit_rate	match/Global.h	/^EXTERN double bit_rate;                    \/* 每秒比特数 *\/$/;"	v
+bit_rate	match/MPLEX.H	/^    unsigned int bit_rate	;$/;"	m	struct:audio_struc	access:public
+bit_rate	match/MPLEX.H	/^    unsigned int bit_rate 	;$/;"	m	struct:video_struc	access:public
+bit_stream_struc	match/BITSTRM.H	/^typedef struct  bit_stream_struc {$/;"	s
+bit_stream_struc	match/COMMON.H	/^typedef struct  bit_stream_struc {$/;"	s
+bit_stream_struc::buf	match/BITSTRM.H	/^    unsigned char *buf;         $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf	match/COMMON.H	/^    unsigned char *buf;         \/* bit stream buffer *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf_bit_idx	match/BITSTRM.H	/^    int         buf_bit_idx;    $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf_bit_idx	match/COMMON.H	/^    int         buf_bit_idx;    \/* pointer to top bit of top byte in buffer *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf_byte_idx	match/BITSTRM.H	/^    int         buf_byte_idx;   $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf_byte_idx	match/COMMON.H	/^    int         buf_byte_idx;   \/* pointer to top byte in buffer *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf_size	match/BITSTRM.H	/^    int         buf_size;       $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::buf_size	match/COMMON.H	/^    int         buf_size;       \/* size of buffer (in number of bytes) *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::eob	match/BITSTRM.H	/^    int         eob;           $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::eob	match/COMMON.H	/^    int         eob;            \/* end of buffer index *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::eobs	match/BITSTRM.H	/^    int         eobs;          $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::eobs	match/COMMON.H	/^    int         eobs;           \/* end of bit stream flag *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::format	match/BITSTRM.H	/^    char        format;$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::format	match/COMMON.H	/^    char        format;$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::mode	match/BITSTRM.H	/^    int         mode;           $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::mode	match/COMMON.H	/^    int         mode;           \/* bit stream open in read or write mode *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::pt	match/BITSTRM.H	/^    FILE        *pt;            $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::pt	match/COMMON.H	/^    FILE        *pt;            \/* pointer to bit stream device *\/$/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::totbit	match/BITSTRM.H	/^    long        totbit;         $/;"	m	struct:bit_stream_struc	access:public
+bit_stream_struc::totbit	match/COMMON.H	/^    long        totbit;         \/* bit counter of bit stream *\/$/;"	m	struct:bit_stream_struc	access:public
+bitcnt_EOP	match/RATECTL.C	/^static int bitcnt_EOP;$/;"	v	file:
+bitcount	match/Global.h	/^int bitcount(void);$/;"	p	signature:(void)
+bitcount	match/PUTBITS.C	/^int bitcount()$/;"	f	signature:()
+bitrate	match/COMMON.C	/^int     bitrate[2][15] = {$/;"	v
+bitrate_index	match/COMMON.H	/^    int bitrate_index;$/;"	m	struct:__anon4	access:public
+bitrate_index	match/MPLEX.H	/^static unsigned int bitrate_index [3][16] =$/;"	v
+bits	match/COMMON.H	/^    unsigned int    bits;$/;"	m	struct:__anon3	access:public
+blk	match/IDCT.C	/^short *blk;$/;"	v
+blk	match/MOTION.C	/^unsigned char *org,*ref,*blk;$/;"	v
+blk	match/PUTMPG.C	/^short *blk;$/;"	v
+blk	match/TRANSFRM.C	/^short *blk;$/;"	v
+blk1	match/MOTION.C	/^unsigned char *blk1,*blk2;$/;"	v
+blk2	match/MOTION.C	/^unsigned char *blk1,*blk2;$/;"	v
+block	match/COMMON.C	/^unsigned long   block;$/;"	v
+block	match/FDCTREF.C	/^short *block;$/;"	v
+block	match/IDCT.C	/^short *block;$/;"	v
+block_count	match/Global.h	/^EXTERN int chrom_width,chrom_height,block_count;$/;"	v
+blocks	match/Global.h	/^EXTERN short (*blocks)[64];$/;"	v
+blocks	match/TRANSFRM.C	/^short blocks[][64];$/;"	v
 blur_function	blurfunc.c	/^void blur_function(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2)$/;"	f	signature:(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2)
 blur_function	deblur.h	/^void blur_function(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2);$/;"	p	signature:(const IplImage *latent_image, IplImage *blur_image, const CvMat *hom1, const CvMat *hom2)
+bmpfile	match/VIDEO.H	/^EXTERN	FILE	*bmpfile;$/;"	v
+botorg	match/MOTION.C	/^unsigned char *toporg, *topref, *botorg, *botref, *mb;$/;"	v
+botref	match/MOTION.C	/^unsigned char *toporg, *topref, *botorg, *botref, *mb;$/;"	v
+botref	match/MOTION.C	/^unsigned char *topref, *botref, *mb;$/;"	v
+bpscanl	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+bs	match/AVI2MP2.C	/^Bit_stream_struc   bs;$/;"	v
+bs	match/COMMON.C	/^Bit_stream_struc *bs;   $/;"	v
+bs	match/COMMON.C	/^Bit_stream_struc *bs;  $/;"	v
+bs	match/INPTSTRM.C	/^Bit_stream_struc *bs;$/;"	v
+bs_filenam	match/COMMON.C	/^char *bs_filenam;       $/;"	v
+bselp	match/MOTION.C	/^int *tselp,*bselp;$/;"	v
+buf	match/BITSTRM.H	/^    unsigned char *buf;         $/;"	m	struct:bit_stream_struc	access:public
+buf	match/COMMON.H	/^    unsigned char *buf;         \/* bit stream buffer *\/$/;"	m	struct:bit_stream_struc	access:public
+buf	match/MPLEX.H	/^{   unsigned char  buf [MAX_SECTOR_SIZE] ;$/;"	m	struct:sector_struc	access:public
+buf	match/MPLEX.H	/^{   unsigned char  buf [PACK_HEADER_SIZE];$/;"	m	struct:pack_struc	access:public
+buf	match/MPLEX.H	/^{   unsigned char  buf [SYS_HEADER_SIZE];$/;"	m	struct:sys_header_struc	access:public
+buf_a	match/INTERACT.C	/^unsigned int buf_a;$/;"	v
+buf_bit_idx	match/BITSTRM.H	/^    int         buf_bit_idx;    $/;"	m	struct:bit_stream_struc	access:public
+buf_bit_idx	match/COMMON.H	/^    int         buf_bit_idx;    \/* pointer to top bit of top byte in buffer *\/$/;"	m	struct:bit_stream_struc	access:public
+buf_byte_idx	match/BITSTRM.H	/^    int         buf_byte_idx;   $/;"	m	struct:bit_stream_struc	access:public
+buf_byte_idx	match/COMMON.H	/^    int         buf_byte_idx;   \/* pointer to top byte in buffer *\/$/;"	m	struct:bit_stream_struc	access:public
+buf_size	match/BITSTRM.H	/^    int         buf_size;       $/;"	m	struct:bit_stream_struc	access:public
+buf_size	match/COMMON.H	/^    int         buf_size;       \/* size of buffer (in number of bytes) *\/$/;"	m	struct:bit_stream_struc	access:public
+buf_v	match/INTERACT.C	/^unsigned int buf_v;$/;"	v
+buffer	match/BUFFER.C	/^Buffer_struc  *buffer;$/;"	v
+buffer	match/BUFFER.C	/^Buffer_struc *buffer;$/;"	v
+buffer	match/MULTPLEX.C	/^Buffer_struc *buffer;$/;"	v
+buffer	match/PSY.C	/^short int *buffer;$/;"	v
+buffer	match/PUTBITS.C	/^static unsigned char buffer[65536];	\/* 大小为64KB缓存去 *\/$/;"	v	file:
+buffer	match/TIMECODE.C	/^unsigned char **buffer;$/;"	v
+buffer1_scale	match/SYSTEMS.C	/^unsigned char 	 buffer1_scale;$/;"	v
+buffer1_size	match/SYSTEMS.C	/^unsigned int 	 buffer1_size;$/;"	v
+buffer2_scale	match/SYSTEMS.C	/^unsigned char 	 buffer2_scale;$/;"	v
+buffer2_size	match/SYSTEMS.C	/^unsigned int 	 buffer2_size;$/;"	v
+buffer_clean	match/MPLEX.H	/^void buffer_clean	  ();	$/;"	p	signature:()
+buffer_queue	match/MPLEX.H	/^typedef struct buffer_queue	$/;"	s
+buffer_queue::DTS	match/MPLEX.H	/^    Timecode_struc DTS	;$/;"	m	struct:buffer_queue	access:public
+buffer_queue::next	match/MPLEX.H	/^    struct buffer_queue *next	;$/;"	m	struct:buffer_queue	typeref:struct:buffer_queue::buffer_queue	access:public
+buffer_queue::size	match/MPLEX.H	/^{   unsigned int size	;	$/;"	m	struct:buffer_queue	access:public
+buffer_scale	match/SYSTEMS.C	/^unsigned char 	 buffer_scale;$/;"	v
+buffer_size	match/SYSTEMS.C	/^unsigned int 	 buffer_size;$/;"	v
+buffer_space	match/MPLEX.H	/^unsigned int  buffer_space         ();	$/;"	p	signature:()
+buffer_struc	match/MPLEX.H	/^typedef struct buffer_struc	$/;"	s
+buffer_struc::first	match/MPLEX.H	/^    Buffer_queue *first;$/;"	m	struct:buffer_struc	access:public
+buffer_struc::max_size	match/MPLEX.H	/^{   unsigned int max_size;	$/;"	m	struct:buffer_struc	access:public
+buffer_timecode	match/MPLEX.H	/^void buffer_timecode      ();	$/;"	p	signature:()
+buffers	match/SYSTEMS.C	/^unsigned char 	 buffers;$/;"	v
+bufptr	match/PUTBITS.C	/^static unsigned char *bufptr;		$/;"	v	file:
+build_call	gprof2dot.py	/^    def build_call(self, fields):$/;"	m	class:AQtimeParser	access:public
+build_function	gprof2dot.py	/^    def build_function(self, fields):$/;"	m	class:AQtimeParser	access:public
+build_id	gprof2dot.py	/^    def build_id(self, fields):$/;"	m	class:AQtimeParser	access:public
+build_name	gprof2dot.py	/^    def build_name(self, fields):$/;"	m	class:AQtimeParser	access:public
+build_profile	gprof2dot.py	/^    def build_profile(self, objects, nodes):$/;"	m	class:SysprofParser	access:public
+build_profile	gprof2dot.py	/^    def build_profile(self, results):$/;"	m	class:AQtimeParser	access:public
+bx	match/PREDICT.C	/^int bx,by;$/;"	v
+by	match/PREDICT.C	/^int bx,by;$/;"	v
+byte_ali_getbits	match/BITSTRM.H	/^extern unsigned long  byte_ali_getbits(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+byte_ali_getbits	match/COMMON.H	/^extern unsigned long  byte_ali_getbits(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+byte_ali_putbits	match/BITSTRM.H	/^extern void           byte_ali_putbits(Bit_stream_struc*, unsigned int, int);$/;"	p	signature:(Bit_stream_struc*, unsigned int, int)
+byte_ali_putbits	match/COMMON.H	/^extern void           byte_ali_putbits(Bit_stream_struc*, unsigned int, int);$/;"	p	signature:(Bit_stream_struc*, unsigned int, int)
+bytecnt	match/PUTBITS.C	/^static int bytecnt;$/;"	v	file:
+bytes	match/BUFFER.C	/^unsigned int bytes;$/;"	v
+bytes	match/INTERACT.C	/^unsigned int *bytes;				$/;"	v
+bytes_left	match/MULTPLEX.C	/^unsigned int *bytes_left;$/;"	v
+bytes_output	match/MULTPLEX.C	/^unsigned int  *bytes_output;$/;"	v
+bytes_processed	match/Global.h	/^EXTERN unsigned long bytes_processed;$/;"	v
+c	match/FDCTREF.C	/^static double c[8][8];     \/*采用浮点运算时的转换系数*\/$/;"	v	file:
+c2	match/FDCTREF.C	/^static short   c2[8][8];   \/*采用整数运算时的转换系数*\/$/;"	v	file:
+calcDist16	match/MOTION.C	/^static int calcDist16(unsigned char *p1In, unsigned char *p2In)$/;"	f	file:	signature:(unsigned char *p1In, unsigned char *p2In)
+calcDist16	match/MOTION.C	/^static int calcDist16(unsigned char *p1In, unsigned char *p2In);$/;"	p	file:	signature:(unsigned char *p1In, unsigned char *p2In)
+calcSNR	match/Global.h	/^void calcSNR(unsigned char *org[3], unsigned char *rec[3]);$/;"	p	signature:(unsigned char *org[3], unsigned char *rec[3])
+calcSNR1	match/STATS.C	/^static void calcSNR1(unsigned char *org, unsigned char *rec,$/;"	p	file:	signature:(unsigned char *org, unsigned char *rec, int lx, int w, int h, double *pv, double *pe)
+calc_DMV	match/PREDICT.C	/^static void calc_DMV(int DMV[][2], int *dmvector, int mvx,$/;"	p	file:	signature:(int DMV[][2], int *dmvector, int mvx, int mvy)
+calc_actj	match/RATECTL.C	/^static void calc_actj(unsigned char *frame);$/;"	p	file:	signature:(unsigned char *frame)
 calc_homography	deblur.h	/^void calc_homography(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num);$/;"	p	signature:(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num)
 calc_homography	homo.c	/^void calc_homography(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num)$/;"	f	signature:(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num)
-deblur_image	deblur.c	/^void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)$/;"	f	signature:(int image_num, int n, IplImage *result, IplImage *result_luck)
+calc_vbv_delay	match/Global.h	/^void calc_vbv_delay(void);$/;"	p	signature:(void)
+calc_vbv_delay	match/RATECTL.C	/^void calc_vbv_delay()$/;"	f	signature:()
+call_ratios	gprof2dot.py	/^    def call_ratios(self, event):$/;"	m	class:Profile	access:public
+call_re	gprof2dot.py	/^    call_re = re.compile(r'^\\s+(?P<address>[0-9a-fA-F]+)\\s+(?P<symbol>.*)\\s+\\((?P<module>[^)]*)\\)$')$/;"	v	class:PerfParser
+cbp	match/AVI2M1V.H	/^  int cbp;                \/* 编码后块模型*\/$/;"	m	struct:mbinfo	access:public
+cbp	match/PUTVLC.C	/^int cbp;$/;"	v
+cbptable	match/VLC.H	/^static VLCtable cbptable[64]=$/;"	v
+cc	match/PUTMPG.C	/^int cc;$/;"	v
+ch	match/COMMON.C	/^int ch;$/;"	v
+channels	match/AVI2MP2.C	/^int	channels;$/;"	v
+character_data	gprof2dot.py	/^    def character_data(self, strip = True):$/;"	m	class:XmlParser	access:public
+check_files	match/MPLEX.H	/^void check_files          ();	$/;"	p	signature:()
+chn	match/PSY.C	/^int   chn, lay;$/;"	v
+chrom_height	match/Global.h	/^EXTERN int chrom_width,chrom_height,block_count;$/;"	v
+chrom_inter_q	match/Global.h	/^EXTERN unsigned char chrom_intra_q[64],chrom_inter_q[64];$/;"	v
+chrom_intra_q	match/Global.h	/^EXTERN unsigned char chrom_intra_q[64],chrom_inter_q[64];$/;"	v
+chrom_width	match/Global.h	/^EXTERN int chrom_width,chrom_height,block_count;$/;"	v
+chrom_width2	match/Global.h	/^EXTERN int width2, height2, mb_height2, chrom_width2; \/* 图像大小 *\/$/;"	v
+chroma_format	match/Global.h	/^EXTERN int chroma_format;$/;"	v
+clearblock	match/PREDICT.C	/^static void clearblock(unsigned char *cur[], int i0, int j0);$/;"	p	file:	signature:(unsigned char *cur[], int i0, int j0)
+clearmask	match/COMMON.C	/^int clearmask[9]={0xff, 0xfe, 0xfc, 0xf8, 0xf0, 0xe0, 0xc0, 0x80, 0x0};$/;"	v
+close_bit_stream_r	match/BITSTRM.H	/^extern void           close_bit_stream_r(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+close_bit_stream_r	match/COMMON.H	/^extern void           close_bit_stream_r(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+close_bit_stream_w	match/BITSTRM.H	/^extern void           close_bit_stream_w(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+close_bit_stream_w	match/COMMON.H	/^extern void           close_bit_stream_w(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+closed_gop	match/PUTHDR.C	/^int frame,closed_gop;$/;"	v
+clp	match/Global.h	/^EXTERN unsigned char *clp;$/;"	v
+code	match/VLC.H	/^  unsigned char code; \/* right justified *\/$/;"	m	struct:__anon1	access:public
+code	match/VLC.H	/^  unsigned short code; \/* right justified *\/$/;"	m	struct:__anon2	access:public
+color	gprof2dot.py	/^    def color(self, (r, g, b)):$/;"	m	class:DotWriter	access:public
+color	gprof2dot.py	/^    def color(self, weight):$/;"	m	class:Theme	access:public
+color_primaries	match/Global.h	/^EXTERN int color_primaries;          \/* 源的色坐标 *\/$/;"	v
+comp_bit_rate	match/MPLEX.H	/^    unsigned int comp_bit_rate	;$/;"	m	struct:video_struc	access:public
+comp_timecode	match/MPLEX.H	/^int  comp_timecode        ();$/;"	p	signature:()
+conceal_tab	match/Global.h	/^EXTERN int conceal_tab[3];                    \/* 使用隐藏运动向量 *\/$/;"	v
+constrparms	match/Global.h	/^EXTERN int constrparms;                    \/* 约束参数标志(MPEG-1) *\/$/;"	v
+consume	gprof2dot.py	/^    def consume(self):$/;"	m	class:LineParser	access:public
+consume	gprof2dot.py	/^    def consume(self):$/;"	m	class:XmlParser	access:public
+conv422to420	match/Readpic.c	/^static void conv422to420(src,dst)$/;"	f	file:
+conv422to420	match/Readpic.c	/^static void conv422to420(unsigned char[], unsigned char[]);$/;"	p	file:	signature:(unsigned char[], unsigned char[])
+conv444to422	match/Readpic.c	/^static void conv444to422(src,dst)$/;"	f	file:
+conv444to422	match/Readpic.c	/^static void conv444to422(unsigned char[], unsigned char[]);$/;"	p	file:	signature:(unsigned char[], unsigned char[])
+copy_timecode	match/MPLEX.H	/^void copy_timecode        ();	$/;"	p	signature:()
+copyright	match/COMMON.H	/^    int copyright;$/;"	m	struct:__anon4	access:public
+copyright	match/MPLEX.H	/^    unsigned int copyright      ;$/;"	m	struct:audio_struc	access:public
+copyright	match/MPLEX.H	/^static char copyright [2][20] =$/;"	v
+cpu_3DNow	match/Global.h	/^EXTERN unsigned int cpu_3DNow;$/;"	v
+cpu_MMX	match/Global.h	/^EXTERN unsigned int cpu_MMX;$/;"	v
+cpuid	match/Avi2mpg1.c	761;"	d	file:
+crc	match/COMMON.C	/^unsigned int *crc;$/;"	v
+crc	match/COMMON.C	/^unsigned int data, length, *crc;$/;"	v
+create_ana_filter	match/ENCODER.H	/^extern void   create_ana_filter(double[SBLIMIT][64]);$/;"	p	signature:(double[SBLIMIT][64])
+create_ana_filter	match/Encode.c	/^void create_ana_filter(filter)$/;"	f
+create_pack	match/MPLEX.H	/^void create_pack	  ();	$/;"	p	signature:()
+create_sector	match/MPLEX.H	/^void create_sector	  ();$/;"	p	signature:()
+create_sys_header	match/MPLEX.H	/^void create_sys_header	  ();	$/;"	p	signature:()
+crop_horz	match/Global.h	/^EXTERN unsigned int crop_horz;$/;"	v
+crop_size	match/Global.h	/^EXTERN unsigned int crop_size;$/;"	v
+crop_vert	match/Global.h	/^EXTERN unsigned int crop_vert;$/;"	v
+cur	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur,*curref;$/;"	v
+cur	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur;$/;"	v
+cur	match/PREDICT.C	/^unsigned char *cur[];$/;"	v
+cur	match/PREDICT.C	/^unsigned char *oldref[],*newref[],*cur[];$/;"	v
+cur	match/PREDICT.C	/^unsigned char *reff[],*refb[],*cur[3];$/;"	v
+cur	match/TRANSFRM.C	/^unsigned char *pred, *cur;$/;"	v
+cur	match/TRANSFRM.C	/^unsigned char *pred,*cur;$/;"	v
+cur	match/TRANSFRM.C	/^unsigned char *pred[], *cur[];$/;"	v
+cur	match/TRANSFRM.C	/^unsigned char *pred[],*cur[];$/;"	v
+curref	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur,*curref;$/;"	v
+d	match/RATECTL.C	/^static int R, T, d;$/;"	v	file:
+d0b	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+d0i	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+d0p	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+d8p	match/MOTION.C	/^int *dfieldp,*d8p;$/;"	v
+data	match/COMMON.C	/^unsigned int data, length, *crc;$/;"	v
+dc_dct_pred	match/Global.h	/^EXTERN int dc_dct_pred[3];$/;"	v
+dc_prec	match/Global.h	/^EXTERN int dc_prec;                           \/* 帧内编码块的DC系数精度*\/$/;"	v
+dc_prec	match/QUANTIZE.C	/^int dc_prec;$/;"	v
+dct_code_tab1	match/VLC.H	/^static VLCtable dct_code_tab1[2][40]=$/;"	v
+dct_code_tab1a	match/VLC.H	/^static VLCtable dct_code_tab1a[2][40]=$/;"	v
+dct_code_tab2	match/VLC.H	/^static VLCtable dct_code_tab2[30][5]=$/;"	v
+dct_code_tab2a	match/VLC.H	/^static VLCtable dct_code_tab2a[30][5]=$/;"	v
+dct_type	match/AVI2M1V.H	/^  int dct_type;           \/* 场或帧DCT *\/$/;"	m	struct:mbinfo	access:public
+dct_type_estimation	match/Global.h	/^void dct_type_estimation(unsigned char *pred, unsigned char *cur,$/;"	p	signature:(unsigned char *pred, unsigned char *cur, struct mbinfo *mbi)
 deblur_image	deblur.h	/^void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck);$/;"	p	signature:(int image_num, int n, IplImage *result, IplImage *result_luck)
 deblur_patch	deblur.c	/^static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)$/;"	f	file:	signature:(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)
+default_intra_quantizer_matrix	match/Global.h	/^EXTERN unsigned char default_intra_quantizer_matrix[64]$/;"	v
+desalloc_buffer	match/BITSTRM.H	/^extern void           desalloc_buffer(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+desalloc_buffer	match/COMMON.H	/^extern void           desalloc_buffer(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+destfile	match/VIDEO.H	/^EXTERN	char	sourcefile[256], destfile[256];$/;"	v
+dfield	match/PREDICT.C	/^int dfield;$/;"	v
+dfieldp	match/MOTION.C	/^int *dfieldp,*d8p;$/;"	v
+dfieldp	match/MOTION.C	/^int *dframep,*dfieldp;$/;"	v
+dframep	match/MOTION.C	/^int *dframep,*dfieldp;$/;"	v
+dib_offset	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+display_horizontal_size	match/Global.h	/^EXTERN int display_horizontal_size, display_vertical_size; \/* 显示大小 *\/$/;"	v
+display_vertical_size	match/Global.h	/^EXTERN int display_horizontal_size, display_vertical_size; \/* 显示大小 *\/$/;"	v
+dist1	match/MOTION.C	/^static int dist1(unsigned char *blk1, unsigned char *blk2,$/;"	p	file:	signature:(unsigned char *blk1, unsigned char *blk2, int lx, int hx, int hy, int h, int distlim)
+dist2	match/MOTION.C	/^static int dist2(unsigned char *blk1, unsigned char *blk2,$/;"	p	file:	signature:(unsigned char *blk1, unsigned char *blk2, int lx, int hx, int hy, int h)
+distlim	match/MOTION.C	/^int distlim;$/;"	v
+dmcp	match/MOTION.C	/^int *dmcp,*vmcp;$/;"	v
+dmv	match/PUTMPG.C	/^int dmv,f_code;$/;"	v
+dmv	match/PUTVLC.C	/^int dmv;$/;"	v
+dmvector	match/AVI2M1V.H	/^  int dmvector[2];        \/* dual prime向量 *\/$/;"	m	struct:mbinfo	access:public
+dmvector	match/PREDICT.C	/^int *dmvector;$/;"	v
+dmvector	match/PREDICT.C	/^int PMV[2][2][2], mv_field_sel[2][2], dmvector[2];$/;"	v
+dmvector	match/PUTPIC.C	/^int dmvector[2];$/;"	v
+doublePrecision	match/Global.h	/^EXTERN unsigned int doublePrecision;$/;"	v
+double_to_extended	match/COMMON.H	/^extern void           double_to_extended(double*, char[10]);$/;"	p	signature:(double*, char[10])
+dpfield_estimate	match/MOTION.C	/^static void dpfield_estimate(unsigned char *topref,$/;"	p	file:	signature:(unsigned char *topref, unsigned char *botref, unsigned char *mb, int i, int j, int imins, int jmins, int *imindmvp, int *jmindmvp, int *dmcp, int *vmcp)
+dpframe_estimate	match/MOTION.C	/^static void dpframe_estimate(unsigned char *ref,$/;"	p	file:	signature:(unsigned char *ref, unsigned char *mb, int i, int j, int iminf[2][2], int jminf[2][2], int *iminp, int *jminp, int *imindmvp, int *jmindmvp, int *dmcp, int *vmcp)
+dsp	match/MOTION.C	/^int *iminsp, *jminsp, *dsp;$/;"	v
+dst	match/PREDICT.C	/^unsigned char *dst;$/;"	v
+dst	match/PREDICT.C	/^unsigned char *dst[];$/;"	v
+dst	match/QUANTIZE.C	/^short *src, *dst;$/;"	v
+dump	gprof2dot.py	/^    def dump(self):$/;"	m	class:Profile	access:public
+dx	match/PREDICT.C	/^int dx, dy;$/;"	v
+dy	match/PREDICT.C	/^int dx, dy;$/;"	v
+edge	gprof2dot.py	/^    def edge(self, src, dst, **attrs):$/;"	m	class:DotWriter	access:public
+edge_arrowsize	gprof2dot.py	/^    def edge_arrowsize(self, weight):$/;"	m	class:Theme	access:public
+edge_color	gprof2dot.py	/^    def edge_color(self, weight):$/;"	m	class:Theme	access:public
+edge_fontsize	gprof2dot.py	/^    def edge_fontsize(self, weight):$/;"	m	class:Theme	access:public
+edge_penwidth	gprof2dot.py	/^    def edge_penwidth(self, weight):$/;"	m	class:Theme	access:public
+element_end	gprof2dot.py	/^    def element_end(self, name):$/;"	m	class:XmlParser	access:public
+element_start	gprof2dot.py	/^    def element_start(self, name):$/;"	m	class:XmlParser	access:public
+emphasis	match/COMMON.H	/^    int emphasis;$/;"	m	struct:__anon4	access:public
+emphasis	match/MPLEX.H	/^    unsigned int emphasis	;$/;"	m	struct:audio_struc	access:public
+emphasis	match/MPLEX.H	/^static char emphasis [4][20] =$/;"	v
+empty_aaunit_struc	match/MPLEX.H	/^void empty_aaunit_struc   ();	$/;"	p	signature:()
+empty_audio_struc	match/MPLEX.H	/^void empty_audio_struc    ();	$/;"	p	signature:()
+empty_buffer	match/BITSTRM.H	/^extern void           empty_buffer(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+empty_buffer	match/COMMON.H	/^extern void           empty_buffer(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+empty_sector_struc	match/MPLEX.H	/^void empty_sector_struc   ();	$/;"	p	signature:()
+empty_timecode_struc	match/MPLEX.H	/^void empty_timecode_struc ();	$/;"	p	signature:()
+empty_vaunit_struc	match/MPLEX.H	/^void empty_vaunit_struc   ();	$/;"	p	signature:()
+empty_video_struc	match/MPLEX.H	/^void empty_video_struc    ();	$/;"	p	signature:()
+encode_CRC	match/ENCODER.H	/^extern void   encode_CRC(unsigned int, Bit_stream_struc*);$/;"	p	signature:(unsigned int, Bit_stream_struc*)
+encode_CRC	match/Encode.c	/^void encode_CRC(crc, bs)$/;"	f
+encode_info	match/ENCODER.H	/^extern void   encode_info(frame_params*, Bit_stream_struc*);$/;"	p	signature:(frame_params*, Bit_stream_struc*)
+encode_info	match/Encode.c	/^void encode_info(fr_ps,bs)$/;"	f
+end_bs	match/BITSTRM.H	/^extern int            end_bs(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+end_bs	match/COMMON.H	/^extern int            end_bs(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+end_graph	gprof2dot.py	/^    def end_graph(self):$/;"	m	class:DotWriter	access:public
+endf	match/VIDEO.H	/^EXTERN	unsigned long	framenum, startf, endf;$/;"	v
+energy	match/SUBS.C	/^FLOAT x_real[BLKSIZE], x_imag[BLKSIZE], energy[BLKSIZE], phi[BLKSIZE];$/;"	v
+enwindow	match/ENWINDOW.H	/^static double enwindow[512] = {$/;"	v
+eob	match/BITSTRM.H	/^    int         eob;           $/;"	m	struct:bit_stream_struc	access:public
+eob	match/COMMON.H	/^    int         eob;            \/* end of buffer index *\/$/;"	m	struct:bit_stream_struc	access:public
+eobs	match/BITSTRM.H	/^    int         eobs;          $/;"	m	struct:bit_stream_struc	access:public
+eobs	match/COMMON.H	/^    int         eobs;           \/* end of bit stream flag *\/$/;"	m	struct:bit_stream_struc	access:public
+eof	gprof2dot.py	/^    def eof(self):$/;"	m	class:LineParser	access:public
+equal	gprof2dot.py	/^def equal(a, b):$/;"	f	access:public
+error	match/Avi2m1v.c	/^void error(text)$/;"	f
+error	match/Global.h	/^void error(char *text);$/;"	p	signature:(char *text)
+error_protection	match/COMMON.H	/^    int error_protection;$/;"	m	struct:__anon4	access:public
+errortext	match/Global.h	/^EXTERN char errortext[256];$/;"	v
+escape	gprof2dot.py	/^    def escape(self, s):$/;"	m	class:DotWriter	access:public
+extended_to_double	match/COMMON.H	/^extern void           extended_to_double(char[10], double*);$/;"	p	signature:(char[10], double*)
+extension	match/COMMON.H	/^    int extension;$/;"	m	struct:__anon4	access:public
+f_code	match/PUTMPG.C	/^int dmv,f_code;$/;"	v
+f_p	match/COMMON.C	/^frame_params *f_p;$/;"	v
+fail	gprof2dot.py	/^def fail(a, b):$/;"	f	access:public
+fake_bad_frames	match/Global.h	/^EXTERN unsigned int fake_bad_frames;$/;"	v
+fastMotionCompensationLevel	match/Global.h	/^EXTERN unsigned int fastMotionCompensationLevel;$/;"	v
+fastQuantization	match/Global.h	/^EXTERN unsigned int fastQuantization;$/;"	v
+fdct	match/FDCTREF.C	/^void fdct(short *block);$/;"	p	file:	signature:(short *block)
+fdct	match/Global.h	/^void fdct(short *block);$/;"	p	signature:(short *block)
+femmsInst	match/MOTION.C	1867;"	d	file:
+fft	match/ENCODER.H	/^extern void        fft(FLOAT[BLKSIZE], FLOAT[BLKSIZE], FLOAT[BLKSIZE],$/;"	p	signature:(FLOAT[BLKSIZE], FLOAT[BLKSIZE], FLOAT[BLKSIZE], FLOAT[BLKSIZE], int )
+field_ME	match/MOTION.C	/^static void field_ME(unsigned char *oldorg, unsigned char *neworg,$/;"	p	file:	signature:(unsigned char *oldorg, unsigned char *neworg, unsigned char *oldref, unsigned char *newref, unsigned char *cur, unsigned char *curref, int i, int j, int sxf, int syf, int sxb, int syb, struct mbinfo *mbi, int secondfield, int ipflag)
+field_estimate	match/MOTION.C	/^static void field_estimate(unsigned char *toporg,$/;"	p	file:	signature:(unsigned char *toporg, unsigned char *topref, unsigned char *botorg, unsigned char *botref, unsigned char *mb, int i, int j, int sx, int sy, int ipflag, int *iminp, int *jminp, int *imin8up, int *jmin8up, int *imin8lp, int *jmin8lp, int *dfieldp, int *d8p, int *selp, int *sel8up, int *sel8lp, int *iminsp, int *jminsp, int *dsp)
+fieldpic	match/Global.h	/^EXTERN int fieldpic;    \/* 使用场图片 *\/$/;"	v
+filter	match/Encode.c	/^void filter(short *work_buffer, unsigned int length, unsigned int stereo, unsigned int mult);$/;"	p	file:	signature:(short *work_buffer, unsigned int length, unsigned int stereo, unsigned int mult)
+filter	match/Encode.c	/^void filter(work_buffer, length, stereo, mult)$/;"	f
+filter_subband	match/ENCODER.H	/^extern void   filter_subband(double[HAN_SIZE], double[SBLIMIT]);$/;"	p	signature:(double[HAN_SIZE], double[SBLIMIT])
+filter_subband	match/Encode.c	/^void filter_subband(z,s)$/;"	f
+find_cycles	gprof2dot.py	/^    def find_cycles(self):$/;"	m	class:Profile	access:public
+finish_character_data	gprof2dot.py	/^    def finish_character_data(self):$/;"	m	class:XmlTokenizer	access:public
+first	match/MPLEX.H	/^    Buffer_queue *first;$/;"	m	struct:buffer_struc	access:public
+fixed	match/SYSTEMS.C	/^unsigned char	 fixed;$/;"	v
+float2int	gprof2dot.py	/^        def float2int(f):$/;"	f	function:DotWriter.color	access:public
+flushbits	match/Global.h	/^void flushbits(void);$/;"	p	signature:(void)
+flushbits	match/PUTBITS.C	/^void flushbits()$/;"	f	signature:()
+fname	match/WRITEPIC.C	/^char *fname;$/;"	v
+fontsize	gprof2dot.py	/^    def fontsize(self, weight):$/;"	m	class:Theme	access:public
+forced_frame_rate	match/Global.h	/^EXTERN unsigned int forced_frame_rate;$/;"	v
+format	gprof2dot.py	/^    def format(self, val):$/;"	m	class:Event	access:public
+format	match/BITSTRM.H	/^    char        format;$/;"	m	struct:bit_stream_struc	access:public
+format	match/COMMON.H	/^    char        format;$/;"	m	struct:bit_stream_struc	access:public
+forw_hor_f_code	match/AVI2M1V.H	/^  int forw_hor_f_code,forw_vert_f_code; $/;"	m	struct:motion_data	access:public
+forw_hor_f_code	match/Global.h	/^EXTERN int forw_hor_f_code, forw_vert_f_code;$/;"	v
+forw_vert_f_code	match/AVI2M1V.H	/^  int forw_hor_f_code,forw_vert_f_code; $/;"	m	struct:motion_data	access:public
+forw_vert_f_code	match/Global.h	/^EXTERN int forw_hor_f_code, forw_vert_f_code;$/;"	v
 fourcc	main.c	/^long long fourcc;$/;"	v
 fps	main.c	/^int fps;$/;"	v
+fr_ps	match/AVI2MP2.C	/^frame_params  *fr_ps;$/;"	v
+fr_ps	match/COMMON.C	/^frame_params *fr_ps;$/;"	v
+frame	match/PUTHDR.C	/^int frame,closed_gop;$/;"	v
+frame	match/PUTHDR.C	/^int frame;$/;"	v
+frame	match/PUTPIC.C	/^unsigned char *frame;$/;"	v
+frame	match/RATECTL.C	/^unsigned char *frame;$/;"	v
+frame	match/WRITEPIC.C	/^unsigned char *frame[];$/;"	v
+frame0	match/Global.h	/^EXTERN int frame0, tc0; \/* 第一帧的编号及时间代码 *\/$/;"	v
+frame_ME	match/MOTION.C	/^static void frame_ME(unsigned char *oldorg, unsigned char *neworg,$/;"	p	file:	signature:(unsigned char *oldorg, unsigned char *neworg, unsigned char *oldref, unsigned char *newref, unsigned char *cur, int i, int j, int sxf, int syf, int sxb, int syb, struct mbinfo *mbi)
+frame_estimate	match/MOTION.C	/^static void frame_estimate(unsigned char *org,$/;"	p	file:	signature:(unsigned char *org, unsigned char *ref, unsigned char *mb, int i, int j, int sx, int sy, int *iminp, int *jminp, int *imintp, int *jmintp, int *iminbp, int *jminbp, int *dframep, int *dfieldp, int *tselp, int *bselp, int imins[2][2], int jmins[2][2])
+frame_params	match/COMMON.H	/^} frame_params;$/;"	t	typeref:struct:__anon5
+frame_pred_dct	match/Global.h	/^EXTERN int frame_pred_dct_tab[3], frame_pred_dct;$/;"	v
+frame_pred_dct_tab	match/Global.h	/^EXTERN int frame_pred_dct_tab[3], frame_pred_dct;$/;"	v
+frame_rate	match/Global.h	/^EXTERN double frame_rate;                  \/* 每秒帧数 *\/$/;"	v
+frame_rate_code	match/Global.h	/^EXTERN int frame_rate_code;                \/* 帧速率的编码值 *\/$/;"	v
+frame_repl	match/Global.h	/^EXTERN unsigned int frame_repl;$/;"	v
+framenum	match/VIDEO.H	/^EXTERN	unsigned long	framenum, startf, endf;$/;"	v
+frametotc	match/PUTHDR.C	/^static int frametotc(int frame);$/;"	p	file:	signature:(int frame)
+freespace	match/PUTBITS.C	/^static int freespace;				\/* 缓存中的可用空间*\/$/;"	v	file:
+frequency	match/MPLEX.H	/^    unsigned int frequency	;$/;"	m	struct:audio_struc	access:public
+frequency	match/MPLEX.H	/^static double frequency [4] = {44.1, 48, 32, 0};$/;"	v
+fullsearch	match/MOTION.C	/^static int fullsearch(unsigned char *org, unsigned char *ref,$/;"	p	file:	signature:(unsigned char *org, unsigned char *ref, unsigned char *blk, int lx, int i0, int j0, int sx, int sy, int h, int xmax, int ymax, int *iminp, int *jminp)
+g_ptr	match/ENCODER.H	/^} g_thres, *g_ptr;$/;"	t	typeref:struct:__anon6
+g_thres	match/ENCODER.H	/^} g_thres, *g_ptr;$/;"	t	typeref:struct:__anon6
+gamma	gprof2dot.py	/^    gamma = 1.0$/;"	v
+get1bit	match/BITSTRM.H	/^extern unsigned int   get1bit(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+get1bit	match/COMMON.H	/^extern unsigned int   get1bit(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+getFunctionId	gprof2dot.py	/^    def getFunctionId(self, funcName):$/;"	m	class:Profile	access:public
+get_audio	match/ENCODER.H	/^extern unsigned long    get_audio(short[2][1152], unsigned long,$/;"	p	signature:(short[2][1152], unsigned long, int, int)
+get_audio	match/Encode.c	/^unsigned long get_audio(buffer, num_samples, stereo, lay)$/;"	f
+get_call	gprof2dot.py	/^    def get_call(self, callee_id):$/;"	m	class:Function	access:public
+get_callee	gprof2dot.py	/^    def get_callee(self):$/;"	m	class:CallgrindParser	access:public
+get_function	gprof2dot.py	/^    def get_function(self):$/;"	m	class:CallgrindParser	access:public
+get_function	gprof2dot.py	/^    def get_function(self, key):$/;"	m	class:PstatsParser	access:public
+get_function	gprof2dot.py	/^    def get_function(self, process, symbol):$/;"	m	class:XPerfParser	access:public
+get_function_name	gprof2dot.py	/^    def get_function_name(self, (filename, line, name)):$/;"	m	class:PstatsParser	access:public
+get_info_audio	match/MPLEX.H	/^void get_info_audio       ();	$/;"	p	signature:()
+get_info_video	match/MPLEX.H	/^void get_info_video       ();	$/;"	p	signature:()
+getbits	match/BITSTRM.H	/^extern unsigned long  getbits(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+getbits	match/COMMON.H	/^extern unsigned long  getbits(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+global_sec	match/MPLEX.C	/^    long global_sec = 0;$/;"	v
+global_usec	match/MPLEX.C	/^    long global_usec = 0;$/;"	v
+graph	gprof2dot.py	/^    def graph(self, profile, theme):$/;"	m	class:DotWriter	access:public
+graph_bgcolor	gprof2dot.py	/^    def graph_bgcolor(self):$/;"	m	class:Theme	access:public
+graph_fontname	gprof2dot.py	/^    def graph_fontname(self):$/;"	m	class:Theme	access:public
+graph_fontsize	gprof2dot.py	/^    def graph_fontsize(self):$/;"	m	class:Theme	access:public
+group	match/COMMON.H	/^    unsigned int    group;$/;"	m	struct:__anon3	access:public
+h	match/MOTION.C	/^int lx,hx,hy,h;$/;"	v
+h	match/MOTION.C	/^int lx,hxf,hyf,hxb,hyb,h;$/;"	v
+h	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+h	match/PREDICT.C	/^int w, h;$/;"	v
+h	match/STATS.C	/^int lx,w,h;$/;"	v
+hOutput	match/AVI2MP2.C	/^FILE *hOutput;$/;"	v
+hResult	match/VIDEO.H	/^EXTERN  HRESULT	hResult;$/;"	v
+handle_character_data	gprof2dot.py	/^    def handle_character_data(self, data):$/;"	m	class:XmlTokenizer	access:public
+handle_element_end	gprof2dot.py	/^    def handle_element_end(self, name):$/;"	m	class:XmlTokenizer	access:public
+handle_element_start	gprof2dot.py	/^    def handle_element_start(self, name, attributes):$/;"	m	class:XmlTokenizer	access:public
+hblank	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+hcrop	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+hdr_to_frps	match/COMMON.H	/^extern void           hdr_to_frps(frame_params*);$/;"	p	signature:(frame_params*)
+he	match/COMMON.C	/^static char *he = "0123456789ABCDEF";$/;"	v	file:
+header	match/COMMON.H	/^    layer       *header;        \/* raw header information *\/$/;"	m	struct:__anon5	access:public
+hear	match/ENCODER.H	/^        double     bark, hear, x;$/;"	m	struct:__anon6	access:public
+height	match/Global.h	/^EXTERN int width, height;                  \/* 编码后的帧的大小再乘上16或32 *\/$/;"	v
+height2	match/Global.h	/^EXTERN int width2, height2, mb_height2, chrom_width2; \/* 图像大小 *\/$/;"	v
 hom	main.c	/^CvMat *hom[MAX_IMAGE][MAX_IMAGE];$/;"	v
+hor_f_code	match/CONFORM.C	/^  int hor_f_code;$/;"	m	struct:level_limits	file:	access:public
+hor_f_code	match/PUTPIC.C	/^int s,motion_type,hor_f_code,vert_f_code;$/;"	v
+hor_size	match/CONFORM.C	/^  int hor_size;$/;"	m	struct:level_limits	file:	access:public
+horizontal_size	match/Global.h	/^EXTERN int horizontal_size, vertical_size; \/* 帧的大小*\/$/;"	v
+horizontal_size	match/MPLEX.H	/^    unsigned int horizontal_size;$/;"	m	struct:video_struc	access:public
+hsl_to_rgb	gprof2dot.py	/^    def hsl_to_rgb(self, h, s, l):$/;"	m	class:Theme	access:public
+hx	match/MOTION.C	/^int lx,hx,hy,h;$/;"	v
+hxb	match/MOTION.C	/^int lx,hxf,hyf,hxb,hyb,h;$/;"	v
+hxf	match/MOTION.C	/^int lx,hxf,hyf,hxb,hyb,h;$/;"	v
+hy	match/MOTION.C	/^int lx,hx,hy,h;$/;"	v
+hyb	match/MOTION.C	/^int lx,hxf,hyf,hxb,hyb,h;$/;"	v
+hyf	match/MOTION.C	/^int lx,hxf,hyf,hxb,hyb,h;$/;"	v
+i0	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+i0	match/PREDICT.C	/^int i0, j0;$/;"	v
+iclip	match/IDCT.C	/^static short iclip[1024]; $/;"	v	file:
+iclp	match/IDCT.C	/^static short *iclp;$/;"	v	file:
+id	gprof2dot.py	/^    def id(self, id):$/;"	m	class:DotWriter	access:public
+id_string	match/Global.h	/^EXTERN char id_string[256], tplorg[256], tplref[256];$/;"	v
+idct	match/Global.h	/^void idct(short *block);$/;"	p	signature:(short *block)
+idct	match/IDCT.C	/^void idct(short *block);$/;"	p	file:	signature:(short *block)
+idctcol	match/IDCT.C	/^static void idctcol(short *blk);$/;"	p	file:	signature:(short *blk)
+idctrow	match/IDCT.C	/^static void idctrow(short *blk);$/;"	p	file:	signature:(short *blk)
 image_size	main.c	/^CvSize image_size;$/;"	v
 images	main.c	/^IplImage *images[MAX_IMAGE];$/;"	v
 images_luck	main.c	/^IplImage *images_luck[MAX_IMAGE];$/;"	v
+imin2	match/MOTION.C	/^int imin2,j,sx,sy;$/;"	v
+imin2	match/MOTION.C	/^int imin2,j,sxf,syf,sxb,syb;$/;"	v
+imin2	match/MOTION.C	/^int imin2,j;$/;"	v
+imin8lp	match/MOTION.C	/^int *imin8up, *jmin8up, *imin8lp, *jmin8lp;$/;"	v
+imin8up	match/MOTION.C	/^int *imin8up, *jmin8up, *imin8lp, *jmin8lp;$/;"	v
+iminbp	match/MOTION.C	/^int *imintp,*jmintp,*iminbp,*jminbp;$/;"	v
+imindmvp	match/MOTION.C	/^int *imindmvp, *jmindmvp;$/;"	v
+iminf	match/MOTION.C	/^int iminf[2][2], jminf[2][2];$/;"	v
+iminp	match/MOTION.C	/^int *iminp, *jminp;$/;"	v
+iminp	match/MOTION.C	/^int *iminp,*jminp;$/;"	v
+imins	match/MOTION.C	/^int imins, jmins;$/;"	v
+imins	match/MOTION.C	/^int imins[2][2],jmins[2][2];$/;"	v
+iminsp	match/MOTION.C	/^int *iminsp, *jminsp, *dsp;$/;"	v
+imintp	match/MOTION.C	/^int *imintp,*jmintp,*iminbp,*jminbp;$/;"	v
+init	match/Avi2m1v.c	/^static void init()$/;"	f	file:
+init	match/Avi2m1v.c	/^static void init(void);$/;"	p	file:	signature:(void)
+init_buffer_struc	match/MPLEX.H	/^void init_buffer_struc    ();	$/;"	p	signature:()
+init_fdct	match/FDCTREF.C	/^void init_fdct()$/;"	f	signature:()
+init_fdct	match/FDCTREF.C	/^void init_fdct(void);$/;"	p	file:	signature:(void)
+init_fdct	match/Global.h	/^void init_fdct(void);$/;"	p	signature:(void)
+init_idct	match/Global.h	/^void init_idct(void);$/;"	p	signature:(void)
+init_idct	match/IDCT.C	/^void init_idct()$/;"	f	signature:()
+init_idct	match/IDCT.C	/^void init_idct(void);$/;"	p	file:	signature:(void)
+initbits	match/Global.h	/^void initbits(void);$/;"	p	signature:(void)
+initbits	match/PUTBITS.C	/^void initbits()$/;"	f	signature:()
+initquantmat	match/Avi2m1v.c	/^static void initquantmat()$/;"	f	file:
+initquantmat	match/Avi2m1v.c	/^static void initquantmat(void);$/;"	p	file:	signature:(void)
 input_image	deblur.h	/^int input_image();$/;"	p	signature:()
 input_image	main.c	/^int input_image()$/;"	f
+inputstream	match/SYSTEMS.C	/^FILE		 *inputstream;$/;"	v
+inputtype	match/Global.h	/^EXTERN int inputtype;            \/* 输入帧格式 *\/$/;"	v
+integrate	gprof2dot.py	/^    def integrate(self, outevent, inevent):$/;"	m	class:Profile	access:public
+inter_q	match/Global.h	/^EXTERN unsigned char intra_q[64], inter_q[64];$/;"	v
+intra_q	match/Global.h	/^EXTERN unsigned char intra_q[64], inter_q[64];$/;"	v
+intravlc	match/Global.h	/^EXTERN int intravlc_tab[3], intravlc;         \/* 帧内vlc格式 (I,P,B,current) *\/$/;"	v
+intravlc_tab	match/Global.h	/^EXTERN int intravlc_tab[3], intravlc;         \/* 帧内vlc格式 (I,P,B,current) *\/$/;"	v
+ipflag	match/MOTION.C	/^int ipflag;$/;"	v
+ipflag	match/MOTION.C	/^int secondfield,ipflag;$/;"	v
+iqname	match/Global.h	/^EXTERN char iqname[256], niqname[256];$/;"	v
+iquant_intra	match/Global.h	/^void iquant_intra(short *src, short *dst, int dc_prec,$/;"	p	signature:(short *src, short *dst, int dc_prec, unsigned char *quant_mat, int mquant)
+iquant_non_intra	match/Global.h	/^void iquant_non_intra(short *src, short *dst,$/;"	p	signature:(short *src, short *dst, unsigned char *quant_mat, int mquant)
+istream_a	match/MULTPLEX.C	/^FILE *istream_a;$/;"	v
+istream_v	match/MULTPLEX.C	/^FILE *istream_v;$/;"	v
+item	match/COMMON.C	/^char            *item;$/;"	v
+itransform	match/Global.h	/^void itransform(unsigned char *pred[], unsigned char *cur[],$/;"	p	signature:(unsigned char *pred[], unsigned char *cur[], struct mbinfo *mbi, short blocks[][64])
+j	match/MOTION.C	/^int imin2,j,sx,sy;$/;"	v
+j	match/MOTION.C	/^int imin2,j,sxf,syf,sxb,syb;$/;"	v
+j	match/MOTION.C	/^int imin2,j;$/;"	v
+j	match/RATECTL.C	/^int j;$/;"	v
+j	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+j0	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+j0	match/PREDICT.C	/^int i0, j0;$/;"	v
+jmin8lp	match/MOTION.C	/^int *imin8up, *jmin8up, *imin8lp, *jmin8lp;$/;"	v
+jmin8up	match/MOTION.C	/^int *imin8up, *jmin8up, *imin8lp, *jmin8lp;$/;"	v
+jminbp	match/MOTION.C	/^int *imintp,*jmintp,*iminbp,*jminbp;$/;"	v
+jmindmvp	match/MOTION.C	/^int *imindmvp, *jmindmvp;$/;"	v
+jminf	match/MOTION.C	/^int iminf[2][2], jminf[2][2];$/;"	v
+jminp	match/MOTION.C	/^int *iminp, *jminp;$/;"	v
+jminp	match/MOTION.C	/^int *iminp,*jminp;$/;"	v
+jmins	match/MOTION.C	/^int imins, jmins;$/;"	v
+jmins	match/MOTION.C	/^int imins[2][2],jmins[2][2];$/;"	v
+jminsp	match/MOTION.C	/^int *iminsp, *jminsp, *dsp;$/;"	v
+jmintp	match/MOTION.C	/^int *imintp,*jmintp,*iminbp,*jminbp;$/;"	v
+joint_stereo_parm	match/Global.h	/^EXTERN unsigned int joint_stereo_parm;$/;"	v
+js_bound	match/COMMON.H	/^extern int            js_bound(int, int);$/;"	p	signature:(int, int)
+jsbound	match/COMMON.H	/^    int         jsbound;        \/* first band of joint stereo coding *\/$/;"	m	struct:__anon5	access:public
+last_good_video_frame	match/Global.h	/^EXTERN unsigned long last_good_video_frame;$/;"	v
+last_sample	match/AVI2MP2.C	/^unsigned long length, last_sample = 0;$/;"	v
+lay	match/COMMON.C	/^int lay, m_ext;$/;"	v
+lay	match/COMMON.H	/^    int lay;$/;"	m	struct:__anon4	access:public
+lay	match/PSY.C	/^int   chn, lay;$/;"	v
+layer	match/COMMON.H	/^} layer, *the_layer;$/;"	t	typeref:struct:__anon4
+layer	match/MPLEX.H	/^    unsigned int layer		;$/;"	m	struct:audio_struc	access:public
+layer_names	match/COMMON.C	/^char *layer_names[2] = { "I", "II"};$/;"	v
+layr	match/COMMON.C	/^int     layr;           $/;"	v
+len	match/VLC.H	/^  char len;$/;"	m	struct:__anon1	access:public
+len	match/VLC.H	/^  char len;$/;"	m	struct:__anon2	access:public
+length	match/AVI2MP2.C	/^unsigned long length, last_sample = 0;$/;"	v
+length	match/COMMON.C	/^unsigned int data, length, *crc;$/;"	v
+length	match/Global.h	/^EXTERN unsigned long length;$/;"	v
+length	match/INPTSTRM.C	/^unsigned int length;$/;"	v
+length	match/MPLEX.H	/^{   unsigned int length		;$/;"	m	struct:vaunit_struc	access:public
+length	match/MPLEX.H	/^{   unsigned long length	;$/;"	m	struct:aaunit_struc	access:public
+length_of_packet_data	match/MPLEX.H	/^    unsigned int   length_of_packet_data ;$/;"	m	struct:sector_struc	access:public
+length_of_sector	match/MPLEX.H	/^    unsigned int   length_of_sector  ;$/;"	m	struct:sector_struc	access:public
+level	match/Global.h	/^EXTERN int profile, level; \/* 语法\/参数约束*\/$/;"	v
+level_limits	match/CONFORM.C	/^static struct level_limits {$/;"	s	file:
+level_limits::bit_rate	match/CONFORM.C	/^  int bit_rate; \/* Mbit\/s *\/$/;"	m	struct:level_limits	file:	access:public
+level_limits::hor_f_code	match/CONFORM.C	/^  int hor_f_code;$/;"	m	struct:level_limits	file:	access:public
+level_limits::hor_size	match/CONFORM.C	/^  int hor_size;$/;"	m	struct:level_limits	file:	access:public
+level_limits::sample_rate	match/CONFORM.C	/^  int sample_rate;$/;"	m	struct:level_limits	file:	access:public
+level_limits::vbv_buffer_size	match/CONFORM.C	/^  int vbv_buffer_size; \/* 16384 bit steps *\/$/;"	m	struct:level_limits	file:	access:public
+level_limits::vert_f_code	match/CONFORM.C	/^  int vert_f_code;$/;"	m	struct:level_limits	file:	access:public
+level_limits::vert_size	match/CONFORM.C	/^  int vert_size;$/;"	m	struct:level_limits	file:	access:public
+line	match/ENCODER.H	/^        int        line;$/;"	m	struct:__anon6	access:public
+load_ciquant	match/Global.h	/^EXTERN int load_ciquant,load_cniquant;$/;"	v
+load_cniquant	match/Global.h	/^EXTERN int load_ciquant,load_cniquant;$/;"	v
+load_iquant	match/Global.h	/^EXTERN int load_iquant, load_niquant;      \/* 不使用缺省的量化矩阵 *\/$/;"	v
+load_niquant	match/Global.h	/^EXTERN int load_iquant, load_niquant;      \/* 不使用缺省的量化矩阵 *\/$/;"	v
+look_ahead	match/BITSTRM.H	/^extern unsigned long  look_ahead(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+look_ahead	match/COMMON.H	/^extern unsigned long  look_ahead(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+lookahead	gprof2dot.py	/^    def lookahead(self):$/;"	m	class:LineParser	access:public
+low_delay	match/Global.h	/^EXTERN int low_delay;     $/;"	v
+low_pass	match/Encode.c	/^void low_pass( buffer, length, stereo, mult)$/;"	f
+lpbi	match/VIDEO.H	/^EXTERN	LPBITMAPINFOHEADER	lpbi;$/;"	v
+lpbitmp	match/VIDEO.H	/^EXTERN	unsigned char	*lpbitmp, *lpcurpix, *lpcurscanl;$/;"	v
+lpcurpix	match/VIDEO.H	/^EXTERN	unsigned char	*lpbitmp, *lpcurpix, *lpcurscanl;$/;"	v
+lpcurpixw	match/VIDEO.H	/^EXTERN  unsigned short *lpcurpixw;$/;"	v
+lpcurscanl	match/VIDEO.H	/^EXTERN	unsigned char	*lpbitmp, *lpcurpix, *lpcurscanl;$/;"	v
+lsb	match/MPLEX.H	/^    unsigned long lsb;$/;"	m	struct:timecode_struc	access:public
 luck	main.c	/^double luck[MAX_IMAGE];$/;"	v
 luck_diff	deblur.c	/^static double luck_diff(const IplImage *luck)$/;"	f	file:	signature:(const IplImage *luck)
 luck_image	deblur.h	/^double luck_image(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2);$/;"	p	signature:(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)
 luck_image	luckiness.c	/^double luck_image(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)$/;"	f	signature:(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)
 luck_pixel	luckiness.c	/^static double luck_pixel(int x, int y, const CvMat *hom1, const CvMat *hom2)$/;"	f	file:	signature:(int x, int y, const CvMat *hom1, const CvMat *hom2)
+lx	match/MOTION.C	/^int lx,hx,hy,h;$/;"	v
+lx	match/MOTION.C	/^int lx,hxf,hyf,hxb,hyb,h;$/;"	v
+lx	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+lx	match/MOTION.C	/^int lx;$/;"	v
+lx	match/PREDICT.C	/^int lx;$/;"	v
+lx	match/RATECTL.C	/^int lx;$/;"	v
+lx	match/STATS.C	/^int lx,w,h;$/;"	v
+lx	match/TRANSFRM.C	/^int lx;$/;"	v
+m_ext	match/COMMON.C	/^int lay, m_ext;$/;"	v
+m_search_size	match/Global.h	/^EXTERN int m_search_size;$/;"	v
+main	gprof2dot.py	/^    def main(self):$/;"	m	class:Main	access:public
 main	main.c	/^int main()$/;"	f
+main	match/Avi2mpg1.c	/^int main(int argc, char **argv)$/;"	f	signature:(int argc, char **argv)
+make_function	gprof2dot.py	/^    def make_function(self, module, filename, name):$/;"	m	class:CallgrindParser	access:public
+make_timecode	match/MPLEX.H	/^void make_timecode        ();	$/;"	p	signature:()
+map	match/ENCODER.H	/^        int        type, next, map;$/;"	m	struct:__anon7	access:public
+map_non_linear_mquant	match/Global.h	/^EXTERN unsigned char map_non_linear_mquant[113] $/;"	v
+marker	match/TIMECODE.C	/^unsigned char  marker;$/;"	v
+marker_bit	match/MPLEX.H	/^void marker_bit           ();	$/;"	p	signature:()
+marker_pack	match/MULTPLEX.C	/^unsigned char marker_pack;$/;"	v
+mask	match/COMMON.C	/^int mask[8]={0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80};$/;"	v
+mask	match/ENCODER.H	/^} mask, *mask_ptr;$/;"	t	typeref:struct:__anon7
+mask_ptr	match/ENCODER.H	/^} mask, *mask_ptr;$/;"	t	typeref:struct:__anon7
+masterPfi	match/VIDEO.H	/^EXTERN	AVIFILEINFO	masterPfi;$/;"	v
+match_element_end	gprof2dot.py	/^    def match_element_end(self, name):$/;"	m	class:XmlParser	access:public
+match_element_start	gprof2dot.py	/^    def match_element_start(self, name):$/;"	m	class:XmlParser	access:public
+match_header	gprof2dot.py	/^    def match_header(self):$/;"	m	class:OprofileParser	access:public
+match_primary	gprof2dot.py	/^    def match_primary(self):$/;"	m	class:OprofileParser	access:public
+match_secondary	gprof2dot.py	/^    def match_secondary(self):$/;"	m	class:OprofileParser	access:public
+match_separator	gprof2dot.py	/^    def match_separator(self):$/;"	m	class:OprofileParser	access:public
+matrix_coefficients	match/Global.h	/^EXTERN int matrix_coefficients;      \/* Eg,Eb,Er \/ Y,Cb,Cr 矩阵系数 *\/$/;"	v
+max_size	match/MPLEX.H	/^{   unsigned int max_size;	$/;"	m	struct:buffer_struc	access:public
+maxcolor	gprof2dot.py	/^    maxcolor = (0.0, 0.0, 0.0), # black$/;"	v
+maxcolor	gprof2dot.py	/^    maxcolor = (0.0, 1.0, 0.5), # satured red$/;"	v
+maxfontsize	gprof2dot.py	/^    maxfontsize = 24.0,$/;"	v
+maxpenwidth	gprof2dot.py	/^    maxpenwidth = 8.0,$/;"	v
+maxval_tab	match/CONFORM.C	/^} maxval_tab[4] =$/;"	v	typeref:struct:level_limits	file:
+mb	match/MOTION.C	/^unsigned char *org,*ref,*mb;$/;"	v
+mb	match/MOTION.C	/^unsigned char *ref, *mb;$/;"	v
+mb	match/MOTION.C	/^unsigned char *toporg, *topref, *botorg, *botref, *mb;$/;"	v
+mb	match/MOTION.C	/^unsigned char *topref, *botref, *mb;$/;"	v
+mb_height	match/Global.h	/^EXTERN int mb_width, mb_height;            \/* 宏块大小 *\/$/;"	v
+mb_height2	match/Global.h	/^EXTERN int width2, height2, mb_height2, chrom_width2; \/* 图像大小 *\/$/;"	v
+mb_type	match/AVI2M1V.H	/^  int mb_type;            \/* 帧内\/前向\/后向\/交织*\/$/;"	m	struct:mbinfo	access:public
+mb_type	match/PREDICT.C	/^int mb_type;$/;"	v
+mb_type	match/PUTVLC.C	/^int pict_type,mb_type;$/;"	v
+mb_width	match/Global.h	/^EXTERN int mb_width, mb_height;            \/* 宏块大小 *\/$/;"	v
+mbi	match/MOTION.C	/^struct mbinfo *mbi;$/;"	v	typeref:struct:mbinfo
+mbi	match/PREDICT.C	/^struct mbinfo *mbi;$/;"	v	typeref:struct:mbinfo
+mbi	match/TRANSFRM.C	/^struct mbinfo *mbi;$/;"	v	typeref:struct:mbinfo
+mbinfo	match/AVI2M1V.H	/^struct mbinfo {$/;"	s
+mbinfo	match/Global.h	/^EXTERN struct mbinfo *mbinfo;$/;"	v	typeref:struct:mbinfo
+mbinfo::MV	match/AVI2M1V.H	/^  int MV[2][2][2];        \/* 运动向量*\/$/;"	m	struct:mbinfo	access:public
+mbinfo::act	match/AVI2M1V.H	/^  double act;             \/* activity measure *\/$/;"	m	struct:mbinfo	access:public
+mbinfo::cbp	match/AVI2M1V.H	/^  int cbp;                \/* 编码后块模型*\/$/;"	m	struct:mbinfo	access:public
+mbinfo::dct_type	match/AVI2M1V.H	/^  int dct_type;           \/* 场或帧DCT *\/$/;"	m	struct:mbinfo	access:public
+mbinfo::dmvector	match/AVI2M1V.H	/^  int dmvector[2];        \/* dual prime向量 *\/$/;"	m	struct:mbinfo	access:public
+mbinfo::mb_type	match/AVI2M1V.H	/^  int mb_type;            \/* 帧内\/前向\/后向\/交织*\/$/;"	m	struct:mbinfo	access:public
+mbinfo::motion_type	match/AVI2M1V.H	/^  int motion_type;        \/* 帧\/场\/16*8\/dual_prime *\/$/;"	m	struct:mbinfo	access:public
+mbinfo::mquant	match/AVI2M1V.H	/^  int mquant;             \/* 量化参数*\/$/;"	m	struct:mbinfo	access:public
+mbinfo::mv_field_sel	match/AVI2M1V.H	/^  int mv_field_sel[2][2]; \/* 运动场选择*\/$/;"	m	struct:mbinfo	access:public
+mbinfo::skipped	match/AVI2M1V.H	/^  int skipped;            \/* skipped 宏块*\/$/;"	m	struct:mbinfo	access:public
+mbinfo::var	match/AVI2M1V.H	/^  int var;                \/* 用于调试*\/$/;"	m	struct:mbinfo	access:public
+mbtypetab	match/VLC.H	/^static VLCtable mbtypetab[3][32]=$/;"	v
+mem_alloc	match/BITSTRM.H	/^extern void           *mem_alloc(unsigned long, char*);$/;"	p	signature:(unsigned long, char*)
+mem_alloc	match/COMMON.H	/^extern void           *mem_alloc(unsigned long, char*);$/;"	p	signature:(unsigned long, char*)
+mem_free	match/BITSTRM.H	/^extern void           mem_free(void**);$/;"	p	signature:(void**)
+mem_free	match/COMMON.H	/^extern void           mem_free(void**);$/;"	p	signature:(void**)
+memcheck	match/BITSTRM.H	/^extern int            memcheck(char*, int, int);$/;"	p	signature:(char*, int, int)
+memcheck	match/COMMON.H	/^extern int            memcheck(char*, int, int);$/;"	p	signature:(char*, int, int)
+mfile	match/INPTSTRM.C	/^char *vfile, *afile, *mfile;$/;"	v
+mfile	match/MPLEX.C	/^char *vfile, *afile, *mfile;$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.0), # black$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.85), # light gray$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (0.0, 1.0, 0.90), # pink$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (2.0\/3.0, 0.80, 0.25), # dark blue$/;"	v
+minfontsize	gprof2dot.py	/^    minfontsize = 8.0,$/;"	v
+minimum	match/COMMON.C	/^int minimum;           $/;"	v
+minpenwidth	gprof2dot.py	/^    minpenwidth = 0.1,$/;"	v
+mod	match/ENCODER.H	/^extern double mod(double);$/;"	p	signature:(double)
+mod	match/Encode.c	/^double mod(a)$/;"	f
+mode	match/BITSTRM.H	/^    int         mode;           $/;"	m	struct:bit_stream_struc	access:public
+mode	match/COMMON.H	/^    int         mode;           \/* bit stream open in read or write mode *\/$/;"	m	struct:bit_stream_struc	access:public
+mode	match/COMMON.H	/^    int mode;$/;"	m	struct:__anon4	access:public
+mode	match/MPLEX.H	/^    unsigned int mode		;$/;"	m	struct:audio_struc	access:public
+mode	match/MPLEX.H	/^static char mode [4][15] =$/;"	v
+mode_ext	match/COMMON.H	/^    int mode_ext;$/;"	m	struct:__anon4	access:public
+mode_extension	match/MPLEX.H	/^    unsigned int mode_extension ;$/;"	m	struct:audio_struc	access:public
+mode_names	match/COMMON.C	/^char *mode_names[4] = { "stereo", "j-stereo", "dual-ch", "single-ch" };$/;"	v
+motion_code	match/PUTVLC.C	/^int motion_code;$/;"	v
+motion_data	match/AVI2M1V.H	/^struct motion_data {$/;"	s
+motion_data	match/Global.h	/^EXTERN struct motion_data *motion_data;$/;"	v	typeref:struct:motion_data
+motion_data::back_hor_f_code	match/AVI2M1V.H	/^  int back_hor_f_code,back_vert_f_code;$/;"	m	struct:motion_data	access:public
+motion_data::back_vert_f_code	match/AVI2M1V.H	/^  int back_hor_f_code,back_vert_f_code;$/;"	m	struct:motion_data	access:public
+motion_data::forw_hor_f_code	match/AVI2M1V.H	/^  int forw_hor_f_code,forw_vert_f_code; $/;"	m	struct:motion_data	access:public
+motion_data::forw_vert_f_code	match/AVI2M1V.H	/^  int forw_hor_f_code,forw_vert_f_code; $/;"	m	struct:motion_data	access:public
+motion_data::sxb	match/AVI2M1V.H	/^  int sxb,syb;$/;"	m	struct:motion_data	access:public
+motion_data::sxf	match/AVI2M1V.H	/^  int sxf,syf;                          $/;"	m	struct:motion_data	access:public
+motion_data::syb	match/AVI2M1V.H	/^  int sxb,syb;$/;"	m	struct:motion_data	access:public
+motion_data::syf	match/AVI2M1V.H	/^  int sxf,syf;                          $/;"	m	struct:motion_data	access:public
+motion_estimation	match/Global.h	/^void motion_estimation(unsigned char *oldorg, unsigned char *neworg,$/;"	p	signature:(unsigned char *oldorg, unsigned char *neworg, unsigned char *oldref, unsigned char *newref, unsigned char *cur, unsigned char *curref, int sxf, int syf, int sxb, int syb, struct mbinfo *mbi, int secondfield, int ipflag)
+motion_type	match/AVI2M1V.H	/^  int motion_type;        \/* 帧\/场\/16*8\/dual_prime *\/$/;"	m	struct:mbinfo	access:public
+motion_type	match/PREDICT.C	/^int motion_type;$/;"	v
+motion_type	match/PUTPIC.C	/^int s,motion_type,hor_f_code,vert_f_code;$/;"	v
+motionvectab	match/VLC.H	/^static VLCtable motionvectab[17]=$/;"	v
+mplex	match/Avi2mpg1.c	/^int mplex(char *, char *, char *);$/;"	p	file:	signature:(char *, char *, char *)
+mquant	match/AVI2M1V.H	/^  int mquant;             \/* 量化参数*\/$/;"	m	struct:mbinfo	access:public
+mquant	match/QUANTIZE.C	/^int mquant;$/;"	v
+msb	match/MPLEX.H	/^{   unsigned long msb;	$/;"	m	struct:timecode_struc	access:public
+multi_file	match/INPTSTRM.C	/^char** multi_file;$/;"	v
+multi_file	match/MULTPLEX.C	/^char 		*multi_file;$/;"	v
+multiple	match/COMMON.C	/^double multiple[64] = {$/;"	v
+mux_rate	match/MULTPLEX.C	/^unsigned int mux_rate;$/;"	v
+mux_rate	match/SYSTEMS.C	/^unsigned int 	 mux_rate;$/;"	v
+mv_field_sel	match/AVI2M1V.H	/^  int mv_field_sel[2][2]; \/* 运动场选择*\/$/;"	m	struct:mbinfo	access:public
+mv_field_sel	match/PREDICT.C	/^int PMV[2][2][2], mv_field_sel[2][2], dmvector[2];$/;"	v
+mv_field_sel	match/PUTPIC.C	/^int mv_field_sel[2][2];$/;"	v
+mvx	match/PREDICT.C	/^int mvx, mvy;$/;"	v
+mvy	match/PREDICT.C	/^int mvx, mvy;$/;"	v
+n	match/PUTBITS.C	/^int n;$/;"	v
+name	match/INTERACT.C	/^char *name;$/;"	v
+nb	match/RATECTL.C	/^int np,nb;$/;"	v
+nbytes	match/INTERACT.C	/^unsigned int nbytes;$/;"	v
+neworg	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur,*curref;$/;"	v
+neworg	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur;$/;"	v
+neworgframe	match/Global.h	/^EXTERN unsigned char *neworgframe[3], *oldorgframe[3], *auxorgframe[3];$/;"	v
+newref	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur,*curref;$/;"	v
+newref	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur;$/;"	v
+newref	match/PREDICT.C	/^unsigned char *oldref[],*newref[],*cur[];$/;"	v
+newrefframe	match/Global.h	/^EXTERN unsigned char *newrefframe[3], *oldrefframe[3], *auxframe[3];$/;"	v
+next	gprof2dot.py	/^    def next(self):$/;"	m	class:XmlTokenizer	access:public
+next	match/ENCODER.H	/^        int        type, next, map;$/;"	m	struct:__anon7	access:public
+next	match/MPLEX.H	/^    struct buffer_queue *next	;$/;"	m	struct:buffer_queue	typeref:struct:buffer_queue::buffer_queue	access:public
+nextFileFrames	match/VIDEO.H	/^EXTERN  unsigned int nextFileFrames[MAX_AVI_FILES];$/;"	v
+nextFileSamples	match/VIDEO.H	/^EXTERN  unsigned int nextFileSamples[MAX_AVI_FILES];$/;"	v
+next_audio_access_unit	match/MPLEX.H	/^void next_audio_access_unit ();	$/;"	p	signature:()
+next_video_access_unit	match/MPLEX.H	/^void next_video_access_unit ();	$/;"	p	signature:()
+nframes	match/Global.h	/^EXTERN int nframes;     \/* 用来编码的帧的总数 *\/$/;"	v
+niqname	match/Global.h	/^EXTERN char iqname[256], niqname[256];$/;"	v
+node	gprof2dot.py	/^    def node(self, node, **attrs):$/;"	m	class:DotWriter	access:public
+node_bgcolor	gprof2dot.py	/^    def node_bgcolor(self, weight):$/;"	m	class:Theme	access:public
+node_fgcolor	gprof2dot.py	/^    def node_fgcolor(self, weight):$/;"	m	class:Theme	access:public
+node_fontsize	gprof2dot.py	/^    def node_fontsize(self, weight):$/;"	m	class:Theme	access:public
+non_linear_mquant_table	match/Global.h	/^EXTERN unsigned char non_linear_mquant_table[32]$/;"	v
+np	match/RATECTL.C	/^int np,nb;$/;"	v
+nsectors_a	match/INTERACT.C	/^unsigned int nsectors_a;$/;"	v
+nsectors_p	match/INTERACT.C	/^unsigned int nsectors_p;$/;"	v
+nsectors_v	match/INTERACT.C	/^unsigned int nsectors_v;$/;"	v
+null	gprof2dot.py	/^    def null(self):$/;"	m	class:Event	access:public
+num	match/COMMON.C	/^int num;$/;"	v
+numAviFiles	match/VIDEO.H	/^EXTERN  int numAviFiles;$/;"	v
+num_frames	match/MPLEX.H	/^    unsigned int num_frames [2]	;$/;"	m	struct:audio_struc	access:public
+num_frames	match/MPLEX.H	/^    unsigned int num_frames[4] 	;$/;"	m	struct:video_struc	access:public
+num_groups	match/MPLEX.H	/^    unsigned int num_groups 	;$/;"	m	struct:video_struc	access:public
+num_pictures	match/MPLEX.H	/^    unsigned int num_pictures 	;$/;"	m	struct:video_struc	access:public
+num_samples	match/AVI2MP2.C	/^unsigned long *num_samples;$/;"	v
+num_seq_end	match/MPLEX.H	/^    unsigned int num_seq_end	;$/;"	m	struct:video_struc	access:public
+num_sequence	match/MPLEX.H	/^    unsigned int num_sequence 	;$/;"	m	struct:video_struc	access:public
+num_syncword	match/MPLEX.H	/^    unsigned int num_syncword	;$/;"	m	struct:audio_struc	access:public
+obtain_parameters	match/ENCODER.H	/^extern void   obtain_parameters(frame_params*, int*, unsigned long*,$/;"	p	signature:(frame_params*, int*, unsigned long*, char[MAX_NAME_SIZE], char[MAX_NAME_SIZE])
+offset	match/TIMECODE.C	/^Timecode_struc *time1, *time2, *offset;$/;"	v
+offset_timecode	match/MPLEX.H	/^void offset_timecode      ();	$/;"	p	signature:()
+oldorg	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur,*curref;$/;"	v
+oldorg	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur;$/;"	v
+oldorgframe	match/Global.h	/^EXTERN unsigned char *neworgframe[3], *oldorgframe[3], *auxorgframe[3];$/;"	v
+oldref	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur,*curref;$/;"	v
+oldref	match/MOTION.C	/^unsigned char *oldorg,*neworg,*oldref,*newref,*cur;$/;"	v
+oldref	match/PREDICT.C	/^unsigned char *oldref[],*newref[],*cur[];$/;"	v
+oldrefframe	match/Global.h	/^EXTERN unsigned char *newrefframe[3], *oldrefframe[3], *auxframe[3];$/;"	v
+open_bit_stream_r	match/BITSTRM.H	/^extern void           open_bit_stream_r(Bit_stream_struc*, char*, int);$/;"	p	signature:(Bit_stream_struc*, char*, int)
+open_bit_stream_r	match/COMMON.H	/^extern void           open_bit_stream_r(Bit_stream_struc*, char*, int);$/;"	p	signature:(Bit_stream_struc*, char*, int)
+open_bit_stream_w	match/BITSTRM.H	/^extern void           open_bit_stream_w(Bit_stream_struc*, char*, int);$/;"	p	signature:(Bit_stream_struc*, char*, int)
+open_bit_stream_w	match/COMMON.H	/^extern void           open_bit_stream_w(Bit_stream_struc*, char*, int);$/;"	p	signature:(Bit_stream_struc*, char*, int)
+open_file	match/MPLEX.H	/^int  open_file            ();	$/;"	p	signature:()
+org	match/MOTION.C	/^unsigned char *org,*ref,*blk;$/;"	v
+org	match/MOTION.C	/^unsigned char *org,*ref,*mb;$/;"	v
+org	match/STATS.C	/^unsigned char *org;$/;"	v
+org	match/STATS.C	/^unsigned char *org[3];$/;"	v
+original	match/COMMON.H	/^    int original;$/;"	m	struct:__anon4	access:public
+original	match/MPLEX.H	/^static char original [2][10] =$/;"	v
+original_copy	match/MPLEX.H	/^    unsigned int original_copy  ;$/;"	m	struct:audio_struc	access:public
+ostream	match/MULTPLEX.C	/^FILE *ostream;$/;"	v
+outbfr	match/PUTBITS.C	/^static unsigned char outbfr;$/;"	v	file:
+outcnt	match/PUTBITS.C	/^static int outcnt;$/;"	v	file:
+outfile	match/Global.h	/^EXTERN FILE *outfile, *statfile; \/* 文件描述 *\/$/;"	v
+output_audio	match/MPLEX.H	/^void output_audio         ();   $/;"	p	signature:()
+output_info_audio	match/MPLEX.H	/^void output_info_audio    ();	$/;"	p	signature:()
+output_info_video	match/MPLEX.H	/^void output_info_video    ();	$/;"	p	signature:()
+output_padding	match/MPLEX.H	/^void output_padding       ();	$/;"	p	signature:()
+output_video	match/MPLEX.H	/^void output_video         ();$/;"	p	signature:()
+outputstream	match/MPLEX.H	/^void outputstream         ();	$/;"	p	signature:()
+p	match/MOTION.C	/^unsigned char *p;$/;"	v
+p	match/RATECTL.C	/^unsigned char *p;$/;"	v
+p2	match/MOTION.C	/^unsigned char *pf,*pb,*p2;$/;"	v
+pAudioStreamInfo	match/VIDEO.H	/^EXTERN  AVISTREAMINFO pAudioStreamInfo[MAX_AVI_FILES];$/;"	v
+pAudioStreams	match/VIDEO.H	/^EXTERN  PAVISTREAM pAudioStreams[MAX_AVI_FILES];$/;"	v
+pWavFormat	match/Global.h	/^EXTERN WAVEFORMATEX pWavFormat;$/;"	v
+pack	match/MULTPLEX.C	/^Pack_struc *pack;$/;"	v
+pack	match/SYSTEMS.C	/^Pack_struc	 *pack;$/;"	v
+pack_struc	match/MPLEX.H	/^typedef struct pack_struc	$/;"	s
+pack_struc::SCR	match/MPLEX.H	/^    Timecode_struc SCR;$/;"	m	struct:pack_struc	access:public
+pack_struc::buf	match/MPLEX.H	/^{   unsigned char  buf [PACK_HEADER_SIZE];$/;"	m	struct:pack_struc	access:public
+packet_data_size	match/MULTPLEX.C	/^unsigned long packet_data_size;$/;"	v
+packet_size	match/SYSTEMS.C	/^unsigned int 	 packet_size;$/;"	v
+padding	match/COMMON.H	/^    int padding;$/;"	m	struct:__anon4	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:AQtimeParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:CallgrindParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:GprofParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:HProfParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:OprofileParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:Parser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:PerfParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:PstatsParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:SharkParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:SleepyParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:SysprofParser	access:public
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:XPerfParser	access:public
+parse_args	match/ENCODER.H	/^extern void   parse_args(int, char**, frame_params*, int*, unsigned long*,$/;"	p	signature:(int, char**, frame_params*, int*, unsigned long*, char[MAX_NAME_SIZE], char[MAX_NAME_SIZE])
+parse_association_spec	gprof2dot.py	/^    def parse_association_spec(self):$/;"	m	class:CallgrindParser	access:public
+parse_body_line	gprof2dot.py	/^    def parse_body_line(self):$/;"	m	class:CallgrindParser	access:public
+parse_call	gprof2dot.py	/^    def parse_call(self):$/;"	m	class:PerfParser	access:public
+parse_callchain	gprof2dot.py	/^    def parse_callchain(self):$/;"	m	class:PerfParser	access:public
+parse_callstacks	gprof2dot.py	/^    def parse_callstacks(self):$/;"	m	class:SleepyParser	access:public
+parse_cg	gprof2dot.py	/^    def parse_cg(self):$/;"	m	class:GprofParser	access:public
+parse_cg_entry	gprof2dot.py	/^    def parse_cg_entry(self, lines):$/;"	m	class:GprofParser	access:public
+parse_children	gprof2dot.py	/^    def parse_children(self):$/;"	m	class:AQtimeParser	access:public
+parse_comment	gprof2dot.py	/^    def parse_comment(self):$/;"	m	class:CallgrindParser	access:public
+parse_cost_line	gprof2dot.py	/^    def parse_cost_line(self, calls=None):$/;"	m	class:CallgrindParser	access:public
+parse_cost_line_def	gprof2dot.py	/^    def parse_cost_line_def(self):$/;"	m	class:CallgrindParser	access:public
+parse_cost_summary	gprof2dot.py	/^    def parse_cost_summary(self):$/;"	m	class:CallgrindParser	access:public
+parse_cycle_entry	gprof2dot.py	/^    def parse_cycle_entry(self, lines):$/;"	m	class:GprofParser	access:public
+parse_data	gprof2dot.py	/^    def parse_data(self):$/;"	m	class:AQtimeParser	access:public
+parse_description	gprof2dot.py	/^    def parse_description(self):$/;"	m	class:CallgrindParser	access:public
+parse_empty	gprof2dot.py	/^    def parse_empty(self):$/;"	m	class:CallgrindParser	access:public
+parse_entry	gprof2dot.py	/^    def parse_entry(self):$/;"	m	class:OprofileParser	access:public
+parse_event	gprof2dot.py	/^    def parse_event(self):$/;"	m	class:PerfParser	access:public
+parse_event_specification	gprof2dot.py	/^    def parse_event_specification(self):$/;"	m	class:CallgrindParser	access:public
+parse_field	gprof2dot.py	/^    def parse_field(self, field_types):$/;"	m	class:AQtimeParser	access:public
+parse_function_entry	gprof2dot.py	/^    def parse_function_entry(self, lines):$/;"	m	class:GprofParser	access:public
+parse_header	gprof2dot.py	/^    def parse_header(self):$/;"	m	class:OprofileParser	access:public
+parse_header	gprof2dot.py	/^    def parse_header(self, row):$/;"	m	class:XPerfParser	access:public
+parse_header_line	gprof2dot.py	/^    def parse_header_line(self):$/;"	m	class:CallgrindParser	access:public
+parse_headers	gprof2dot.py	/^    def parse_headers(self):$/;"	m	class:AQtimeParser	access:public
+parse_item	gprof2dot.py	/^    def parse_item(self, name):$/;"	m	class:SysprofParser	access:public
+parse_items	gprof2dot.py	/^    def parse_items(self, name):$/;"	m	class:SysprofParser	access:public
+parse_key	gprof2dot.py	/^    def parse_key(self, key):$/;"	m	class:CallgrindParser	access:public
+parse_keys	gprof2dot.py	/^    def parse_keys(self, keys):$/;"	m	class:CallgrindParser	access:public
+parse_part	gprof2dot.py	/^    def parse_part(self):$/;"	m	class:CallgrindParser	access:public
+parse_part_detail	gprof2dot.py	/^    def parse_part_detail(self):$/;"	m	class:CallgrindParser	access:public
+parse_position_spec	gprof2dot.py	/^    def parse_position_spec(self):$/;"	m	class:CallgrindParser	access:public
+parse_results	gprof2dot.py	/^    def parse_results(self):$/;"	m	class:AQtimeParser	access:public
+parse_row	gprof2dot.py	/^    def parse_row(self, field_types):$/;"	m	class:AQtimeParser	access:public
+parse_row	gprof2dot.py	/^    def parse_row(self, row):$/;"	m	class:XPerfParser	access:public
+parse_samples	gprof2dot.py	/^    def parse_samples(self):$/;"	m	class:HProfParser	access:public
+parse_subentries	gprof2dot.py	/^    def parse_subentries(self):$/;"	m	class:OprofileParser	access:public
+parse_subentry	gprof2dot.py	/^    def parse_subentry(self):$/;"	m	class:OprofileParser	access:public
+parse_symbols	gprof2dot.py	/^    def parse_symbols(self):$/;"	m	class:SleepyParser	access:public
+parse_table_field	gprof2dot.py	/^    def parse_table_field(self):$/;"	m	class:AQtimeParser	access:public
+parse_table_header	gprof2dot.py	/^    def parse_table_header(self):$/;"	m	class:AQtimeParser	access:public
+parse_trace	gprof2dot.py	/^    def parse_trace(self):$/;"	m	class:HProfParser	access:public
+parse_traces	gprof2dot.py	/^    def parse_traces(self):$/;"	m	class:HProfParser	access:public
+parse_value	gprof2dot.py	/^    def parse_value(self, tag):$/;"	m	class:SysprofParser	access:public
+parse_values	gprof2dot.py	/^    def parse_values(self):$/;"	m	class:SysprofParser	access:public
+pavgusbmm0mm2	match/MOTION.C	1868;"	d	file:
+pavgusbmm1mm3	match/MOTION.C	1869;"	d	file:
+pb	match/MOTION.C	/^unsigned char *pf,*pb,*p2;$/;"	v
+pe	match/STATS.C	/^double *pv,*pe;$/;"	v
+percentage	gprof2dot.py	/^def percentage(p):$/;"	f	access:public
+pf	match/MOTION.C	/^unsigned char *pf,*pb,*p2;$/;"	v
+pfile	match/VIDEO.H	/^EXTERN  PAVIFILE	pfile;$/;"	v
+pget	match/VIDEO.H	/^EXTERN	PGETFRAME	pget[MAX_AVI_FILES];$/;"	v
+phi	match/SUBS.C	/^FLOAT x_real[BLKSIZE], x_imag[BLKSIZE], energy[BLKSIZE], phi[BLKSIZE];$/;"	v
+pick_scale	match/ENCODER.H	/^extern void   pick_scale(unsigned int[2][3][SBLIMIT], frame_params*,$/;"	p	signature:(unsigned int[2][3][SBLIMIT], frame_params*, double[2][SBLIMIT])
+pick_scale	match/Encode.c	/^void pick_scale(scalar, fr_ps, max_sc)$/;"	f
+pick_table	match/COMMON.H	/^extern int            pick_table(frame_params*);$/;"	p	signature:(frame_params*)
+pict_struct	match/Global.h	/^EXTERN int pict_struct;                       \/* 图像结构*\/$/;"	v
+pict_struct	match/PREDICT.C	/^int pict_struct;$/;"	v
+pict_type	match/Global.h	/^EXTERN int pict_type; \/* 图像编码类型 (I, P 或 B) *\/$/;"	v
+pict_type	match/PREDICT.C	/^int pict_type;$/;"	v
+pict_type	match/PUTVLC.C	/^int pict_type,mb_type;$/;"	v
+picture_rate	match/MPLEX.H	/^    unsigned int picture_rate	;$/;"	m	struct:video_struc	access:public
+picture_rates	match/MPLEX.H	/^static double picture_rates [9] = { 0., 24000.\/1001., 24., 25., $/;"	v
+picture_start	match/MULTPLEX.C	/^unsigned char *picture_start;$/;"	v
+pix	match/VIDEO.H	/^EXTERN	unsigned char	pix;$/;"	v
+pixsz	match/Avi2mpg1.c	/^unsigned int pixsz;$/;"	v
+pointer	match/INITS.C	/^Aaunit_struc *pointer;$/;"	v
+pointer	match/INITS.C	/^Audio_struc *pointer;$/;"	v
+pointer	match/INITS.C	/^Buffer_struc *pointer;$/;"	v
+pointer	match/INITS.C	/^Sector_struc *pointer;$/;"	v
+pointer	match/INITS.C	/^Vaunit_struc *pointer;$/;"	v
+pointer	match/INITS.C	/^Video_struc *pointer;$/;"	v
+pointer	match/TIMECODE.C	/^Timecode_struc *pointer;$/;"	v
+pos	gprof2dot.py	/^    def pos(self):$/;"	m	class:XmlTokenizer	access:public
+pred	match/PREDICT.C	/^static void pred(unsigned char *src[], int sfield,$/;"	p	file:	signature:(unsigned char *src[], int sfield, unsigned char *dst[], int dfield, int lx, int w, int h, int x, int y, int dx, int dy, int addflag)
+pred	match/TRANSFRM.C	/^unsigned char *pred, *cur;$/;"	v
+pred	match/TRANSFRM.C	/^unsigned char *pred,*cur;$/;"	v
+pred	match/TRANSFRM.C	/^unsigned char *pred[], *cur[];$/;"	v
+pred	match/TRANSFRM.C	/^unsigned char *pred[],*cur[];$/;"	v
+pred_comp	match/PREDICT.C	/^static void pred_comp(unsigned char *src, unsigned char *dst,$/;"	p	file:	signature:(unsigned char *src, unsigned char *dst, int lx, int w, int h, int x, int y, int dx, int dy, int addflag)
+predframe	match/Global.h	/^EXTERN unsigned char *predframe[3];$/;"	v
+predict	match/Global.h	/^void predict(unsigned char *reff[], unsigned char *refb[],$/;"	p	signature:(unsigned char *reff[], unsigned char *refb[], unsigned char *cur[3], int secondfield, struct mbinfo *mbi)
+predict_mb	match/PREDICT.C	/^static void predict_mb($/;"	p	file:	signature:( unsigned char *oldref[], unsigned char *newref[], unsigned char *cur[], int lx, int bx, int by, int pict_type, int pict_struct, int mb_type, int motion_type, int secondfield, int PMV[2][2][2], int mv_field_sel[2][2], int dmvector[2])
+prev_mquant	match/RATECTL.C	/^static int prev_mquant;$/;"	v	file:
+print_config	match/ENCODER.H	/^extern void   print_config(frame_params*, int*, unsigned long*,$/;"	p	signature:(frame_params*, int*, unsigned long*, char[MAX_NAME_SIZE], char[MAX_NAME_SIZE])
+profile	match/Global.h	/^EXTERN int profile, level; \/* 语法\/参数约束*\/$/;"	v
+profile_level_defined	match/CONFORM.C	/^static char profile_level_defined[5][4] =$/;"	v	file:
+prog_frame	match/Global.h	/^EXTERN int prog_frame;                        \/* 前向帧 *\/$/;"	v
+prog_seq	match/Global.h	/^EXTERN int prog_seq;       \/* 前向序列 *\/$/;"	v
+programName	match/AVI2MP2.C	/^char             programName[] = "avi2mpg1";$/;"	v
+protection	match/MPLEX.H	/^    unsigned int protection	;$/;"	m	struct:audio_struc	access:public
+prune	gprof2dot.py	/^    def prune(self, node_thres, edge_thres):$/;"	m	class:Profile	access:public
+prune_leaf	gprof2dot.py	/^    def prune_leaf(self, leaf):$/;"	m	class:Profile	access:public
+prune_root	gprof2dot.py	/^    def prune_root(self, root):$/;"	m	class:Profile	access:public
+pstream	match/VIDEO.H	/^EXTERN	PAVISTREAM	pstream;$/;"	v
+psycho_anal	match/ENCODER.H	/^extern void        psycho_anal(short int*, short int[1056], int, int,$/;"	p	signature:(short int*, short int[1056], int, int, FLOAT[32], double)
+pt	match/BITSTRM.H	/^    FILE        *pt;            $/;"	m	struct:bit_stream_struc	access:public
+pt	match/COMMON.H	/^    FILE        *pt;            \/* pointer to bit stream device *\/$/;"	m	struct:bit_stream_struc	access:public
+ptr_addr	match/COMMON.C	/^void    **ptr_addr;$/;"	v
+ptr_which_streams	match/INPTSTRM.C	/^unsigned int *ptr_which_streams;$/;"	v
+put1bit	match/BITSTRM.H	/^extern void           put1bit(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+put1bit	match/COMMON.H	/^extern void           put1bit(Bit_stream_struc*, int);$/;"	p	signature:(Bit_stream_struc*, int)
+putAC	match/Global.h	/^void putAC(int run, int signed_level, int vlcformat);$/;"	p	signature:(int run, int signed_level, int vlcformat)
+putACfirst	match/Global.h	/^void putACfirst(int run, int val);$/;"	p	signature:(int run, int val)
+putDC	match/PUTVLC.C	/^static void putDC(sVLCtable *tab, int val);$/;"	p	file:	signature:(sVLCtable *tab, int val)
+putDCchrom	match/Global.h	/^void putDCchrom(int val);$/;"	p	signature:(int val)
+putDClum	match/Global.h	/^void putDClum(int val);$/;"	p	signature:(int val)
+put_scale	match/ENCODER.H	/^extern void   put_scale(unsigned int[2][3][SBLIMIT], frame_params*,$/;"	p	signature:(unsigned int[2][3][SBLIMIT], frame_params*, double[2][SBLIMIT])
+put_scale	match/Encode.c	/^void put_scale(scalar, fr_ps, max_sc)$/;"	f
+putabits	match/COMMON.H	/^extern void           putabits(Bit_stream_struc*, unsigned int, int);$/;"	p	signature:(Bit_stream_struc*, unsigned int, int)
+putaddrinc	match/Global.h	/^void putaddrinc(int addrinc);$/;"	p	signature:(int addrinc)
+putbits	match/Global.h	/^void putbits(int val, int n);$/;"	p	signature:(int val, int n)
+putcbp	match/Global.h	/^void putcbp(int cbp);$/;"	p	signature:(int cbp)
+putdmv	match/Global.h	/^void putdmv(int dmv);$/;"	p	signature:(int dmv)
+putgophdr	match/Global.h	/^void putgophdr(int frame, int closed_gop);$/;"	p	signature:(int frame, int closed_gop)
+putintrablk	match/Global.h	/^void putintrablk(short *blk, int cc);$/;"	p	signature:(short *blk, int cc)
+putmask	match/COMMON.C	/^int putmask[9]={0x0, 0x1, 0x3, 0x7, 0xf, 0x1f, 0x3f, 0x7f, 0xff};$/;"	v
+putmbtype	match/Global.h	/^void putmbtype(int pict_type, int mb_type);$/;"	p	signature:(int pict_type, int mb_type)
+putmotioncode	match/Global.h	/^void putmotioncode(int motion_code);$/;"	p	signature:(int motion_code)
+putmv	match/Global.h	/^void putmv(int dmv, int f_code);$/;"	p	signature:(int dmv, int f_code)
+putmvs	match/PUTPIC.C	/^static void putmvs(int MV[2][2][2], int PMV[2][2][2],$/;"	p	file:	signature:(int MV[2][2][2], int PMV[2][2][2], int mv_field_sel[2][2], int dmvector[2], int s, int motion_type, int hor_f_code, int vert_f_code)
+putnonintrablk	match/Global.h	/^void putnonintrablk(short *blk);$/;"	p	signature:(short *blk)
+putpict	match/Global.h	/^void putpict(unsigned char *frame);$/;"	p	signature:(unsigned char *frame)
+putpictcodext	match/Global.h	/^void putpictcodext(void);$/;"	p	signature:(void)
+putpictcodext	match/PUTHDR.C	/^void putpictcodext()$/;"	f	signature:()
+putpicthdr	match/Global.h	/^void putpicthdr(void);$/;"	p	signature:(void)
+putpicthdr	match/PUTHDR.C	/^void putpicthdr()$/;"	f	signature:()
+putseq	match/Global.h	/^void putseq(void);$/;"	p	signature:(void)
+putseq	match/Putseq.c	/^void putseq()$/;"	f
+putseqdispext	match/Global.h	/^void putseqdispext(void);$/;"	p	signature:(void)
+putseqdispext	match/PUTHDR.C	/^void putseqdispext()$/;"	f	signature:()
+putseqend	match/Global.h	/^void putseqend(void);$/;"	p	signature:(void)
+putseqend	match/PUTHDR.C	/^void putseqend()$/;"	f	signature:()
+putseqext	match/Global.h	/^void putseqext(void);$/;"	p	signature:(void)
+putseqext	match/PUTHDR.C	/^void putseqext()$/;"	f	signature:()
+putseqhdr	match/Global.h	/^void putseqhdr(void);$/;"	p	signature:(void)
+putseqhdr	match/PUTHDR.C	/^void putseqhdr()$/;"	f	signature:()
+putuserdata	match/Global.h	/^void putuserdata(char *userdata);$/;"	p	signature:(char *userdata)
+pv	match/STATS.C	/^double *pv,*pe;$/;"	v
+q_scale_type	match/Global.h	/^EXTERN int qscale_tab[3], q_scale_type;       \/* 线性\/非线性量化表 *\/$/;"	v
+qscale_tab	match/Global.h	/^EXTERN int qscale_tab[3], q_scale_type;       \/* 线性\/非线性量化表 *\/$/;"	v
+quant	match/COMMON.H	/^    unsigned int    quant;$/;"	m	struct:__anon3	access:public
+quant_intra	match/Global.h	/^int quant_intra(short *src, short *dst, int dc_prec,$/;"	p	signature:(short *src, short *dst, int dc_prec, unsigned char *quant_mat, unsigned short *recip_quant_mat, int mquant)
+quant_mat	match/QUANTIZE.C	/^unsigned char *quant_mat;$/;"	v
+quant_non_intra	match/Global.h	/^int quant_non_intra(short *src, short *dst,$/;"	p	signature:(short *src, short *dst, unsigned char *quant_mat, unsigned short *recip_quant_mat, int mquant)
+queue_buffer	match/MPLEX.H	/^void queue_buffer         ();	$/;"	p	signature:()
+quiet	match/Global.h	/^EXTERN int quiet;                \/* 关闭警告信息 *\/$/;"	v
+r	match/RATECTL.C	/^int Xi, Xp, Xb, r, d0i, d0p, d0b;$/;"	v
+range_checks	match/CONFORM.C	/^void range_checks()$/;"	f	signature:()
+range_checks	match/Global.h	/^void range_checks(void);$/;"	p	signature:(void)
+rate_bound	match/SYSTEMS.C	/^unsigned int	 rate_bound;$/;"	v
+ratio	gprof2dot.py	/^    def ratio(self, outevent, inevent):$/;"	m	class:Profile	access:public
+ratio	gprof2dot.py	/^def ratio(numerator, denominator):$/;"	f	access:public
+ratio	match/MPLEX.H	/^static double ratio [16] = { 0., 1., 0.6735, 0.7031, 0.7615, 0.8055,$/;"	v
+rc_calc_mquant	match/Global.h	/^int rc_calc_mquant(int j);$/;"	p	signature:(int j)
+rc_init_GOP	match/Global.h	/^void rc_init_GOP(int np, int nb);$/;"	p	signature:(int np, int nb)
+rc_init_pict	match/Global.h	/^void rc_init_pict(unsigned char *frame);$/;"	p	signature:(unsigned char *frame)
+rc_init_seq	match/Global.h	/^void rc_init_seq(void);$/;"	p	signature:(void)
+rc_init_seq	match/RATECTL.C	/^void rc_init_seq()$/;"	f	signature:()
+rc_start_mb	match/Global.h	/^int rc_start_mb(void);$/;"	p	signature:(void)
+rc_start_mb	match/RATECTL.C	/^int rc_start_mb()$/;"	f	signature:()
+rc_update_pict	match/Global.h	/^void rc_update_pict(void);$/;"	p	signature:(void)
+rc_update_pict	match/RATECTL.C	/^void rc_update_pict()$/;"	f	signature:()
+read_absthr	match/COMMON.H	/^extern void           read_absthr(FLOAT*, int);$/;"	p	signature:(FLOAT*, int)
+read_ana_window	match/ENCODER.H	/^extern void   read_ana_window(double[HAN_SIZE]);$/;"	p	signature:(double[HAN_SIZE])
+read_ana_window	match/Encode.c	/^void read_ana_window(ana_win)$/;"	f
+read_bit_alloc	match/COMMON.H	/^extern int            read_bit_alloc(int, al_table*);$/;"	p	signature:(int, al_table*)
+read_samples	match/ENCODER.H	/^extern unsigned long    read_samples(short[2304], unsigned long,$/;"	p	signature:(short[2304], unsigned long, unsigned long)
+read_samples	match/Encode.c	/^unsigned long read_samples(sample_buffer, num_samples, frame_size)$/;"	f
+readframe	match/Global.h	/^void readframe(unsigned long lCurFrame, unsigned char *frame[]);$/;"	p	signature:(unsigned long lCurFrame, unsigned char *frame[])
+readframe	match/Readpic.c	/^void readframe(lCurFrame,frame)$/;"	f
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:GprofParser	access:public
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:LineParser	access:public
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:PerfParser	access:public
+rec	match/STATS.C	/^unsigned char *rec;$/;"	v
+rec	match/STATS.C	/^unsigned char *rec[3];$/;"	v
+recip_inter_q	match/Global.h	/^EXTERN unsigned short recip_intra_q[64], recip_inter_q[64]; $/;"	v
+recip_intra_q	match/Global.h	/^EXTERN unsigned short recip_intra_q[64], recip_inter_q[64]; $/;"	v
+recip_quant_mat	match/QUANTIZE.C	/^unsigned short *recip_quant_mat;$/;"	v
+ref	match/MOTION.C	/^unsigned char *org,*ref,*blk;$/;"	v
+ref	match/MOTION.C	/^unsigned char *org,*ref,*mb;$/;"	v
+ref	match/MOTION.C	/^unsigned char *ref, *mb;$/;"	v
+refb	match/PREDICT.C	/^unsigned char *reff[],*refb[],*cur[3];$/;"	v
+reff	match/PREDICT.C	/^unsigned char *reff[],*refb[],*cur[3];$/;"	v
+refill_buffer	match/BITSTRM.H	/^extern void            refill_buffer(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+refill_buffer	match/COMMON.H	/^extern void           refill_buffer(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+repeatfirst	match/Global.h	/^EXTERN int repeatfirst;                       \/* 在第二场图像之后重复第一场*\/$/;"	v
+run	match/PUTVLC.C	/^int run,signed_level,vlcformat;$/;"	v
+run	match/PUTVLC.C	/^int run,val;$/;"	v
+s	match/COMMON.C	/^FILE *s;$/;"	v
+s	match/COMMON.C	/^char *s;$/;"	v
+s	match/PUTPIC.C	/^int s,motion_type,hor_f_code,vert_f_code;$/;"	v
+sRate	match/COMMON.C	/^long sRate; $/;"	v
+sVLCtable	match/VLC.H	/^} sVLCtable;$/;"	t	typeref:struct:__anon2
+s_freq	match/COMMON.C	/^double  s_freq[4] = {44.1, 48, 32, 0};$/;"	v
+sample	match/COMMON.C	/^unsigned int sample[SBLIMIT];$/;"	v
+sample_rate	match/CONFORM.C	/^  int sample_rate;$/;"	m	struct:level_limits	file:	access:public
+samples	match/MPLEX.H	/^static unsigned int samples [4] = {384, 1152, 0, 0};$/;"	v
+sampling_frequency	match/COMMON.H	/^    int sampling_frequency;$/;"	m	struct:__anon4	access:public
+savebuf	match/PSY.C	/^short int savebuf[1056];$/;"	v
+sb_alloc	match/COMMON.H	/^} sb_alloc, *alloc_ptr;$/;"	t	typeref:struct:__anon3
+sblim_0	match/ALLOC_0.H	/^static int sblim_0 = 27;$/;"	v
+sblim_1	match/ALLOC_1.H	/^static int sblim_1 = 30;$/;"	v
+sblim_2	match/ALLOC_2.H	/^static int sblim_2 = 8;$/;"	v
+sblimit	match/COMMON.H	/^    int         sblimit;        \/* total number of sub bands *\/$/;"	m	struct:__anon5	access:public
+scalar	match/COMMON.C	/^unsigned int bit_alloc[2][SBLIMIT], scfsi[2][SBLIMIT], scalar[2][3][SBLIMIT];$/;"	v
+scfsi	match/COMMON.C	/^unsigned int bit_alloc[2][SBLIMIT], scfsi[2][SBLIMIT], scalar[2][3][SBLIMIT];$/;"	v
+scfsi	match/COMMON.C	/^unsigned int bit_alloc[2][SBLIMIT], scfsi[2][SBLIMIT];$/;"	v
+search	deblur.c	/^static double search(IplImage *blur , IplImage *image , IplImage *luck ,  int* x , int* y , int* index , int step)$/;"	f	file:	signature:(IplImage *blur , IplImage *image , IplImage *luck , int* x , int* y , int* index , int step)
+sec_remaining	match/Putseq.c	/^int sec_remaining = 0;$/;"	v
+secondfield	match/MOTION.C	/^int secondfield,ipflag;$/;"	v
+secondfield	match/PREDICT.C	/^int secondfield;$/;"	v
+sector	match/MULTPLEX.C	/^Sector_struc *sector;$/;"	v
+sector	match/SYSTEMS.C	/^Sector_struc 	 *sector;$/;"	v
+sector_struc	match/MPLEX.H	/^typedef struct sector_struc	$/;"	s
+sector_struc::TS	match/MPLEX.H	/^    Timecode_struc TS                ;$/;"	m	struct:sector_struc	access:public
+sector_struc::buf	match/MPLEX.H	/^{   unsigned char  buf [MAX_SECTOR_SIZE] ;$/;"	m	struct:sector_struc	access:public
+sector_struc::length_of_packet_data	match/MPLEX.H	/^    unsigned int   length_of_packet_data ;$/;"	m	struct:sector_struc	access:public
+sector_struc::length_of_sector	match/MPLEX.H	/^    unsigned int   length_of_sector  ;$/;"	m	struct:sector_struc	access:public
+seek_sync	match/BITSTRM.H	/^extern int            seek_sync(Bit_stream_struc*, long, int);$/;"	p	signature:(Bit_stream_struc*, long, int)
+seek_sync	match/COMMON.H	/^extern int            seek_sync(Bit_stream_struc*, long, int);$/;"	p	signature:(Bit_stream_struc*, long, int)
+sel8lp	match/MOTION.C	/^int *selp, *sel8up, *sel8lp;$/;"	v
+sel8up	match/MOTION.C	/^int *selp, *sel8up, *sel8lp;$/;"	v
+selp	match/MOTION.C	/^int *selp, *sel8up, *sel8lp;$/;"	v
+setparm	match/Avi2m1v.c	/^static void setparm()$/;"	f	file:
+setparm	match/Avi2m1v.c	/^static void setparm(void);$/;"	p	file:	signature:(void)
+sfield	match/PREDICT.C	/^int sfield;$/;"	v
+sfreq	match/PSY.C	/^double sfreq;        $/;"	v
+signed_level	match/PUTVLC.C	/^int run,signed_level,vlcformat;$/;"	v
+size	match/COMMON.C	/^int size;               $/;"	v
+size	match/COMMON.C	/^int size;              $/;"	v
+size	match/COMMON.C	/^int size;$/;"	v
+size	match/INITS.C	/^unsigned int size;$/;"	v
+size	match/MPLEX.H	/^{   unsigned int size	;	$/;"	m	struct:buffer_queue	access:public
+size_frames	match/MPLEX.H	/^    unsigned int size_frames[2] ;$/;"	m	struct:audio_struc	access:public
+skip_separator	gprof2dot.py	/^    def skip_separator(self):$/;"	m	class:OprofileParser	access:public
+skipped	match/AVI2M1V.H	/^  int skipped;            \/* skipped 宏块*\/$/;"	m	struct:mbinfo	access:public
+slots	match/MPLEX.H	/^static unsigned int slots [4] = {12, 144, 0, 0};$/;"	v
+snr	match/Encode.c	/^static double snr[18] = {0.00, 7.00, 11.00, 16.00, 20.84,$/;"	v	file:
+snr32	match/PSY.C	/^FLOAT snr32[32];$/;"	v
+softfilter	match/Readpic.c	/^void softfilter(unsigned char* dest, unsigned char* src, int width, int height)$/;"	f	signature:(unsigned char* dest, unsigned char* src, int width, int height)
+sourcefile	match/VIDEO.H	/^EXTERN	char	sourcefile[256], destfile[256];$/;"	v
 sqrdiff	deblur.c	/^int sqrdiff(const IplImage *p1, const IplImage *p2)$/;"	f	signature:(const IplImage *p1, const IplImage *p2)
 sqrdiff	deblur.h	/^int sqrdiff(const IplImage *p1, const IplImage *p2);$/;"	p	signature:(const IplImage *p1, const IplImage *p2)
+src	match/PREDICT.C	/^unsigned char *src;$/;"	v
+src	match/PREDICT.C	/^unsigned char *src[];$/;"	v
+src	match/QUANTIZE.C	/^short *src, *dst;$/;"	v
+sstell	match/BITSTRM.H	/^extern unsigned long  sstell(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
+sstell	match/COMMON.H	/^extern unsigned long  sstell(Bit_stream_struc*);$/;"	p	signature:(Bit_stream_struc*)
 st1	homo.c	/^int st1 = 0;$/;"	v
 st2	homo.c	/^int st2 = 0;$/;"	v
 st3	homo.c	/^int st3 = 0;$/;"	v
 st4	homo.c	/^int st4 = 0;$/;"	v
-weighted_average	deblur.c	/^static CvScalar weighted_average(const CvScalar *s, const double *w, int n)$/;"	f	file:	signature:(const CvScalar *s, const double *w, int n)
+start_time	match/Global.h	/^EXTERN time_t   start_time;$/;"	v
+startf	match/VIDEO.H	/^EXTERN	unsigned long	framenum, startf, endf;$/;"	v
+startup_delay	match/INPTSTRM.C	/^double *startup_delay;$/;"	v
+statfile	match/Global.h	/^EXTERN FILE *outfile, *statfile; \/* 文件描述 *\/$/;"	v
+statname	match/Global.h	/^EXTERN char statname[256];$/;"	v
+stats	match/Global.h	/^void stats(void);$/;"	p	signature:(void)
+stats	match/STATS.C	/^void stats()$/;"	f	signature:()
+status_footer	match/INTERACT.C	/^void status_footer ()$/;"	f	signature:()
+status_footer	match/MPLEX.H	/^void status_footer	  ();	$/;"	p	signature:()
+status_header	match/INTERACT.C	/^void status_header ()$/;"	f	signature:()
+status_header	match/MPLEX.H	/^void status_header	  ();	$/;"	p	signature:()
+status_info	match/MPLEX.H	/^void status_info          ();	$/;"	p	signature:()
+status_message	match/MPLEX.H	/^void status_message	  ();	$/;"	p	signature:()
+steps	match/COMMON.H	/^    unsigned int    steps;$/;"	m	struct:__anon3	access:public
+stereo	match/COMMON.H	/^    int         stereo;         \/* 1 for mono, 2 for stereo *\/$/;"	m	struct:__anon5	access:public
+stream1	match/SYSTEMS.C	/^unsigned char 	 stream1;$/;"	v
+stream2	match/SYSTEMS.C	/^unsigned char 	 stream2;$/;"	v
+stream_length	match/MPLEX.H	/^{   unsigned int stream_length  ;$/;"	m	struct:audio_struc	access:public
+stream_length	match/MPLEX.H	/^{   unsigned int stream_length  ;$/;"	m	struct:video_struc	access:public
+strip	gprof2dot.py	/^    strip = False$/;"	v	class:DotWriter
+stripped_name	gprof2dot.py	/^    def stripped_name(self):$/;"	m	class:Function	access:public
+sub_pred	match/TRANSFRM.C	/^static void sub_pred(unsigned char *pred, unsigned char *cur,$/;"	p	file:	signature:(unsigned char *pred, unsigned char *cur, int lx, short *blk)
+sx	match/MOTION.C	/^int imin2,j,sx,sy;$/;"	v
+sx	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+sxb	match/AVI2M1V.H	/^  int sxb,syb;$/;"	m	struct:motion_data	access:public
+sxb	match/MOTION.C	/^int imin2,j,sxf,syf,sxb,syb;$/;"	v
+sxb	match/MOTION.C	/^int sxf,syf,sxb,syb;$/;"	v
+sxf	match/AVI2M1V.H	/^  int sxf,syf;                          $/;"	m	struct:motion_data	access:public
+sxf	match/MOTION.C	/^int imin2,j,sxf,syf,sxb,syb;$/;"	v
+sxf	match/MOTION.C	/^int sxf,syf,sxb,syb;$/;"	v
+sy	match/MOTION.C	/^int imin2,j,sx,sy;$/;"	v
+sy	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+syb	match/AVI2M1V.H	/^  int sxb,syb;$/;"	m	struct:motion_data	access:public
+syb	match/MOTION.C	/^int imin2,j,sxf,syf,sxb,syb;$/;"	v
+syb	match/MOTION.C	/^int sxf,syf,sxb,syb;$/;"	v
+syf	match/AVI2M1V.H	/^  int sxf,syf;                          $/;"	m	struct:motion_data	access:public
+syf	match/MOTION.C	/^int imin2,j,sxf,syf,sxb,syb;$/;"	v
+syf	match/MOTION.C	/^int sxf,syf,sxb,syb;$/;"	v
+sync	match/COMMON.C	/^long sync;      $/;"	v
+sys_header	match/MULTPLEX.C	/^Sys_header_struc *sys_header;$/;"	v
+sys_header	match/SYSTEMS.C	/^Sys_header_struc *sys_header;$/;"	v
+sys_header_struc	match/MPLEX.H	/^typedef struct sys_header_struc	$/;"	s
+sys_header_struc::buf	match/MPLEX.H	/^{   unsigned char  buf [SYS_HEADER_SIZE];$/;"	m	struct:sys_header_struc	access:public
+system_byterate_parm	match/Global.h	/^EXTERN unsigned int system_byterate_parm;$/;"	v
+tab	match/PUTVLC.C	/^sVLCtable *tab;$/;"	v
+tab_num	match/COMMON.H	/^    int         tab_num;        \/* number of table as loaded *\/$/;"	m	struct:__anon5	access:public
+table	match/COMMON.C	/^int table;$/;"	v
+table	match/PSY.C	/^int table;$/;"	v
+tc0	match/Global.h	/^EXTERN int frame0, tc0; \/* 第一帧的编号及时间代码 *\/$/;"	v
+temp_ref	match/Global.h	/^EXTERN int temp_ref;  $/;"	v
+tempfile	match/AVI2MP2.C	/^char * tempfile;$/;"	v
+test	match/COMMON.C	/^int test;       $/;"	v
+the_layer	match/COMMON.H	/^} layer, *the_layer;$/;"	t	typeref:struct:__anon4
+themes	gprof2dot.py	/^    themes = {$/;"	v	class:Main
+time1	match/TIMECODE.C	/^Timecode_struc *time1, *time2, *offset;$/;"	v
+time2	match/TIMECODE.C	/^Timecode_struc *time1, *time2, *offset;$/;"	v
+time_copy	match/TIMECODE.C	/^Timecode_struc *time_original, *time_copy;$/;"	v
+time_original	match/TIMECODE.C	/^Timecode_struc *time_original, *time_copy;$/;"	v
+time_valid	match/Putseq.c	/^int time_valid = 0;$/;"	v
+timecode	match/TIMECODE.C	/^Timecode_struc *timecode;$/;"	v
+timecode_struc	match/MPLEX.H	/^typedef struct timecode_struc	$/;"	s
+timecode_struc::lsb	match/MPLEX.H	/^    unsigned long lsb;$/;"	m	struct:timecode_struc	access:public
+timecode_struc::msb	match/MPLEX.H	/^{   unsigned long msb;	$/;"	m	struct:timecode_struc	access:public
+times	gprof2dot.py	/^def times(x):$/;"	f	access:public
+timestamp	match/TIMECODE.C	/^double timestamp;$/;"	v
+timestamps	match/SYSTEMS.C	/^unsigned char 	 timestamps;$/;"	v
+tmpResult	match/MOTION.C	/^static unsigned char tmpResult[16];$/;"	v	file:
+to	match/TIMECODE.C	/^Timecode_struc *to;$/;"	v
+tol	gprof2dot.py	/^tol = 2 ** -23$/;"	v
+topblank	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+topfirst	match/Global.h	/^EXTERN int topfirst;                          \/* 先显示上半部分场图像 *\/$/;"	v
+toporg	match/MOTION.C	/^unsigned char *toporg, *topref, *botorg, *botref, *mb;$/;"	v
+topref	match/MOTION.C	/^unsigned char *toporg, *topref, *botorg, *botref, *mb;$/;"	v
+topref	match/MOTION.C	/^unsigned char *topref, *botref, *mb;$/;"	v
+totalFrames	match/VIDEO.H	/^EXTERN  int totalFrames;$/;"	v
+total_sec	match/MPLEX.C	/^    long total_sec = 0;$/;"	v
+total_usec	match/MPLEX.C	/^    long total_usec = 0;$/;"	v
+totbit	match/BITSTRM.H	/^    long        totbit;         $/;"	m	struct:bit_stream_struc	access:public
+totbit	match/COMMON.H	/^    long        totbit;         \/* bit counter of bit stream *\/$/;"	m	struct:bit_stream_struc	access:public
+tp_end	match/MPLEX.C	/^    struct timeval  tp_end;$/;"	v	typeref:struct:timeval
+tp_global_end	match/MPLEX.C	/^    struct timeval  tp_global_end;$/;"	v	typeref:struct:timeval
+tp_global_start	match/MPLEX.C	/^    struct timeval  tp_global_start;$/;"	v	typeref:struct:timeval
+tp_start	match/MPLEX.C	/^    struct timeval  tp_start;$/;"	v	typeref:struct:timeval
+tplorg	match/Global.h	/^EXTERN char id_string[256], tplorg[256], tplref[256];$/;"	v
+tplref	match/Global.h	/^EXTERN char id_string[256], tplorg[256], tplref[256];$/;"	v
+trace_id_re	gprof2dot.py	/^    trace_id_re = re.compile(r'^TRACE (\\d+):$')$/;"	v	class:HProfParser
+trace_re	gprof2dot.py	/^    trace_re = re.compile(r'\\t(.*)\\((.*):(.*)\\)')$/;"	v	class:HProfParser
+transfer_characteristics	match/Global.h	/^EXTERN int transfer_characteristics; $/;"	v
+transform	match/Global.h	/^void transform(unsigned char *pred[], unsigned char *cur[],$/;"	p	signature:(unsigned char *pred[], unsigned char *cur[], struct mbinfo *mbi, short blocks[][64])
+translate	gprof2dot.py	/^    def translate(self, mo):$/;"	m	class:GprofParser	access:public
+tselp	match/MOTION.C	/^int *tselp,*bselp;$/;"	v
+type	match/ENCODER.H	/^        int        type, next, map;$/;"	m	struct:__anon7	access:public
+type	match/MPLEX.H	/^    unsigned int type		;$/;"	m	struct:vaunit_struc	access:public
+type	match/SYSTEMS.C	/^unsigned char 	 type;$/;"	v
+u	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+update_CRC	match/COMMON.H	/^extern void           update_CRC(unsigned int, unsigned int, unsigned int*);$/;"	p	signature:(unsigned int, unsigned int, unsigned int*)
+update_subentries_dict	gprof2dot.py	/^    def update_subentries_dict(self, totals, partials):$/;"	m	class:OprofileParser	access:public
+usage	match/Avi2mpg1.c	/^void usage()$/;"	f
+usage	match/Avi2mpg1.c	/^void usage(void);$/;"	p	file:	signature:(void)
+usage	match/ENCODER.H	/^extern void   usage(void);$/;"	p	signature:(void)
+use_image_noise_reduction	match/Global.h	/^EXTERN unsigned int use_image_noise_reduction; \/* 滤除输入AVI的噪声*\/$/;"	v
+use_v_param_file	match/Global.h	/^EXTERN unsigned int use_v_param_file;$/;"	v
+userdata	match/PUTHDR.C	/^char *userdata;$/;"	v
+v	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+val	match/COMMON.C	/^unsigned int val;       $/;"	v
+val	match/PUTBITS.C	/^int val;$/;"	v
+val	match/PUTVLC.C	/^int run,val;$/;"	v
+val	match/PUTVLC.C	/^int val;$/;"	v
+validate	gprof2dot.py	/^    def validate(self):$/;"	m	class:Profile	access:public
+var	match/AVI2M1V.H	/^  int var;                \/* 用于调试*\/$/;"	m	struct:mbinfo	access:public
+var_sblk	match/RATECTL.C	/^static double var_sblk(unsigned char *p, int lx);$/;"	p	file:	signature:(unsigned char *p, int lx)
+variance	match/MOTION.C	/^static int variance(unsigned char *p, int lx);$/;"	p	file:	signature:(unsigned char *p, int lx)
+vaunit_struc	match/MPLEX.H	/^typedef struct vaunit_struc	$/;"	s
+vaunit_struc::DTS	match/MPLEX.H	/^    Timecode_struc DTS		;$/;"	m	struct:vaunit_struc	access:public
+vaunit_struc::PTS	match/MPLEX.H	/^    Timecode_struc PTS		;$/;"	m	struct:vaunit_struc	access:public
+vaunit_struc::length	match/MPLEX.H	/^{   unsigned int length		;$/;"	m	struct:vaunit_struc	access:public
+vaunit_struc::type	match/MPLEX.H	/^    unsigned int type		;$/;"	m	struct:vaunit_struc	access:public
+vblank	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+vbv_buffer_size	match/CONFORM.C	/^  int vbv_buffer_size; \/* 16384 bit steps *\/$/;"	m	struct:level_limits	file:	access:public
+vbv_buffer_size	match/Global.h	/^EXTERN int vbv_buffer_size;                \/* VBV 缓存器的大小 *\/$/;"	v
+vbv_buffer_size	match/MPLEX.H	/^    unsigned int vbv_buffer_size;$/;"	m	struct:video_struc	access:public
+vbv_delay	match/Global.h	/^EXTERN int vbv_delay; \/* 视频缓存确认器延时(1\/90000 seconds) *\/$/;"	v
+vbv_end_of_picture	match/Global.h	/^void vbv_end_of_picture(void);$/;"	p	signature:(void)
+vbv_end_of_picture	match/RATECTL.C	/^void vbv_end_of_picture()$/;"	f	signature:()
+vbv_ovflow	match/Global.h	/^EXTERN unsigned int vbv_ovflow;$/;"	v
+vbv_size	match/Global.h	/^EXTERN unsigned int vbv_size;$/;"	v
+vbv_unflow	match/Global.h	/^EXTERN unsigned int vbv_unflow;$/;"	v
+vcd_parm	match/Global.h	/^EXTERN unsigned int vcd_parm;$/;"	v
+vcrop	match/Readpic.c	/^unsigned int u, v, bpscanl, dib_offset, j, hblank, vblank, hcrop, vcrop, topblank;$/;"	v
+verbose	match/INTERACT.C	/^unsigned char verbose;$/;"	v
+version	match/COMMON.H	/^    int version;$/;"	m	struct:__anon4	access:public
+version	match/Global.h	/^EXTERN char version[]$/;"	v
+vert_f_code	match/CONFORM.C	/^  int vert_f_code;$/;"	m	struct:level_limits	file:	access:public
+vert_f_code	match/PUTPIC.C	/^int s,motion_type,hor_f_code,vert_f_code;$/;"	v
+vert_size	match/CONFORM.C	/^  int vert_size;$/;"	m	struct:level_limits	file:	access:public
+vertical_size	match/Global.h	/^EXTERN int horizontal_size, vertical_size; \/* 帧的大小*\/$/;"	v
+vertical_size	match/MPLEX.H	/^    unsigned int vertical_size 	;$/;"	m	struct:video_struc	access:public
+vfile	match/INPTSTRM.C	/^char *vfile, *afile, *mfile;$/;"	v
+vfile	match/MPLEX.C	/^char *vfile, *afile, *mfile;$/;"	v
+video_au	match/MULTPLEX.C	/^Vaunit_struc *video_au;$/;"	v
+video_bound	match/SYSTEMS.C	/^unsigned char	 video_bound;$/;"	v
+video_buffer_size	match/MULTPLEX.C	/^unsigned long video_buffer_size;$/;"	v
+video_bytes	match/INPTSTRM.C	/^unsigned int *video_bytes;$/;"	v
+video_end_early	match/Global.h	/^EXTERN unsigned int video_end_early;$/;"	v
+video_file	match/INPTSTRM.C	/^char *video_file;	$/;"	v
+video_file	match/INPTSTRM.C	/^char** video_file;$/;"	v
+video_file	match/MULTPLEX.C	/^char 		*video_file;$/;"	v
+video_format	match/Global.h	/^EXTERN int video_format;             \/* PAL, NTSC, SECAM 或MAC *\/$/;"	v
+video_info	match/INPTSTRM.C	/^Video_struc *video_info;$/;"	v
+video_info	match/MULTPLEX.C	/^Video_struc 	*video_info;$/;"	v
+video_lock	match/SYSTEMS.C	/^unsigned char	 video_lock;$/;"	v
+video_only	match/Global.h	/^EXTERN unsigned int video_only;$/;"	v
+video_param_filename	match/Global.h	/^EXTERN char video_param_filename[_MAX_PATH];$/;"	v
+video_struc	match/MPLEX.H	/^typedef struct video_struc	$/;"	s
+video_struc::CSPF	match/MPLEX.H	/^    unsigned int CSPF 		;$/;"	m	struct:video_struc	access:public
+video_struc::aspect_ratio	match/MPLEX.H	/^    unsigned int aspect_ratio	;$/;"	m	struct:video_struc	access:public
+video_struc::avg_frames	match/MPLEX.H	/^    unsigned int avg_frames[4]  ;$/;"	m	struct:video_struc	access:public
+video_struc::bit_rate	match/MPLEX.H	/^    unsigned int bit_rate 	;$/;"	m	struct:video_struc	access:public
+video_struc::comp_bit_rate	match/MPLEX.H	/^    unsigned int comp_bit_rate	;$/;"	m	struct:video_struc	access:public
+video_struc::horizontal_size	match/MPLEX.H	/^    unsigned int horizontal_size;$/;"	m	struct:video_struc	access:public
+video_struc::num_frames	match/MPLEX.H	/^    unsigned int num_frames[4] 	;$/;"	m	struct:video_struc	access:public
+video_struc::num_groups	match/MPLEX.H	/^    unsigned int num_groups 	;$/;"	m	struct:video_struc	access:public
+video_struc::num_pictures	match/MPLEX.H	/^    unsigned int num_pictures 	;$/;"	m	struct:video_struc	access:public
+video_struc::num_seq_end	match/MPLEX.H	/^    unsigned int num_seq_end	;$/;"	m	struct:video_struc	access:public
+video_struc::num_sequence	match/MPLEX.H	/^    unsigned int num_sequence 	;$/;"	m	struct:video_struc	access:public
+video_struc::picture_rate	match/MPLEX.H	/^    unsigned int picture_rate	;$/;"	m	struct:video_struc	access:public
+video_struc::stream_length	match/MPLEX.H	/^{   unsigned int stream_length  ;$/;"	m	struct:video_struc	access:public
+video_struc::vbv_buffer_size	match/MPLEX.H	/^    unsigned int vbv_buffer_size;$/;"	m	struct:video_struc	access:public
+video_struc::vertical_size	match/MPLEX.H	/^    unsigned int vertical_size 	;$/;"	m	struct:video_struc	access:public
+video_time_out	match/Global.h	/^EXTERN unsigned int video_time_out;$/;"	v
+video_units	match/INPTSTRM.C	/^char *video_units;$/;"	v
+video_units	match/MULTPLEX.C	/^char 		*video_units;$/;"	v
+videocd	match/Avi2mpg1.c	/^void videocd()$/;"	f
+videocd	match/Avi2mpg1.c	/^void videocd();$/;"	p	file:
+vlcformat	match/PUTVLC.C	/^int run,signed_level,vlcformat;$/;"	v
+vmcp	match/MOTION.C	/^int *dmcp,*vmcp;$/;"	v
+vunits_info	match/MULTPLEX.C	/^FILE *vunits_info;$/;"	v
+w	match/PREDICT.C	/^int w, h;$/;"	v
+w	match/STATS.C	/^int lx,w,h;$/;"	v
+what	match/INPTSTRM.C	/^unsigned int what;$/;"	v
+what	match/INTERACT.C	/^unsigned char what;$/;"	v
+which_streams	match/MULTPLEX.C	/^unsigned int    which_streams;$/;"	v
+which_streams	match/MULTPLEX.C	/^unsigned int which_streams;$/;"	v
+which_streams	match/SYSTEMS.C	/^unsigned int     which_streams;$/;"	v
+width	match/Global.h	/^EXTERN int width, height;                  \/* 编码后的帧的大小再乘上16或32 *\/$/;"	v
+width2	match/Global.h	/^EXTERN int width2, height2, mb_height2, chrom_width2; \/* 图像大小 *\/$/;"	v
+window_subband	match/ENCODER.H	/^extern void   window_subband(short**, double[HAN_SIZE], int);$/;"	p	signature:(short**, double[HAN_SIZE], int)
+window_subband	match/Encode.c	/^void window_subband(buffer, z, k)$/;"	f
+wr_seqh2gop	match/Global.h	/^EXTERN int wr_seqh2gop; $/;"	v
+wrap	gprof2dot.py	/^    wrap = False$/;"	v	class:DotWriter
+wrap_function_name	gprof2dot.py	/^    def wrap_function_name(self, name):$/;"	m	class:DotWriter	access:public
+write	gprof2dot.py	/^    def write(self, s):$/;"	m	class:DotWriter	access:public
+write_graph	gprof2dot.py	/^    def write_graph(self):$/;"	m	class:Main	access:public
+writeframe	match/Global.h	/^void writeframe(char *fname, unsigned char *frame[]);$/;"	p	signature:(char *fname, unsigned char *frame[])
+x	match/ENCODER.H	/^        double     bark, hear, x;$/;"	m	struct:__anon6	access:public
+x	match/ENCODER.H	/^        double     x;$/;"	m	struct:__anon7	access:public
+x	match/PREDICT.C	/^int x, y;$/;"	v
+x	match/Readpic.c	/^int x, y;$/;"	v
+x_imag	match/SUBS.C	/^FLOAT x_real[BLKSIZE], x_imag[BLKSIZE], energy[BLKSIZE], phi[BLKSIZE];$/;"	v
+x_real	match/SUBS.C	/^FLOAT x_real[BLKSIZE], x_imag[BLKSIZE], energy[BLKSIZE], phi[BLKSIZE];$/;"	v
+xmax	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+y	match/PREDICT.C	/^int x, y;$/;"	v
+y	match/Readpic.c	/^int x, y;$/;"	v
+ymax	match/MOTION.C	/^int lx,i0,j0,sx,sy,h,xmax,ymax;$/;"	v
+zig_zag_scan	match/Global.h	/^EXTERN unsigned char zig_zag_scan[64]$/;"	v
