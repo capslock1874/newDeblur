@@ -140,21 +140,6 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 			searchY = my ; 
 			tmpDiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 2 ) ;
 
-			/*if( searchX == mx && searchY == my)*/
-			/*{*/
-				/*flag = CENTER ;*/
-			/*}else*/
-			/*if( searchX == mx -2 && searchY == my -2*/
-					/*|| searchX == mx -2 && searchY == my + 2*/
-					/*|| searchX == mx + 2 && searchY == my + 2*/
-					/*|| searchX == mx +2 && searchY == my -2 )*/
-			/*{*/
-				/*flag = CORNER ;*/
-			/*} else*/
-			/*{*/
-				/*flag = BORD ;*/
-			/*}*/
-
 			if( pos == CENTER )
 			{
 					flag = -1 ;
@@ -172,20 +157,9 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 				if( searchX -2 >= left && searchX + 2 <= right 
 						&& searchY -2 >= top && searchY + 2 <= bottom)
 				{
-					/*search(blur[j] , images[n] , luck[j] , &newX , &newY , &pos , 2 ) ;*/
-					/*if( newX == searchX && newY == searchY  )*/
-					/*{*/
-						/*mindiff = search(blur[j] , images[n] , luck[j] , &newX , &newY , &pos , 1 ) ;*/
-						/*minj = j ; */
-						/*minx = newX ;*/
-						/*miny = newY ;*/
-						/*flag = -1; */
-					/*}*/
-					/*else*/
-					/*{*/
-					/* */   mx = newX ;
-					/* */   my = newY ;
-					/*}*/
+					   mx = newX ;
+					   my = newY ;
+					
 				}
 				else
 				{
@@ -196,26 +170,6 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 					flag = -1; 
 				}
 			}
-			/*else */
-			/*{*/
-				/*int newX , newY ;*/
-				/*newX = searchX ;*/
-				/*newY = searchY ;*/
-				/*search(blur[j] , images[n] , luck[j] , &newX , &newY , 2 ) ;*/
-				/*if( newX == searchX && newY == searchY  )*/
-				/*{*/
-					/*mindiff = search(blur[j] , images[n] , luck[j] , &newX , &newY , 1 ) ;*/
-					/*minj = j ; */
-					/*minx = newX ;*/
-					/*miny = newY ;*/
-					/*flag = CENTER ;*/
-				/*}*/
-				/*else*/
-				/*{*/
-					/*mx = newX ;*/
-					/*my = newY ;*/
-				/*}*/
-			/*}*/
 			if( flag == -1)
 				break ;
 		}
