@@ -42,13 +42,6 @@ int input_image()
 	}
 	cvReleaseCapture(&cap);
 	return i;
-	/*
-	images[0] = cvLoadImage("p0.png", CV_LOAD_IMAGE_COLOR);
-	images[1] = cvLoadImage("p1.png", CV_LOAD_IMAGE_COLOR);
-	images[2] = cvLoadImage("p2.png", CV_LOAD_IMAGE_COLOR);
-	image_size = cvSize(images[0]->width, images[0]->height);
-	fps = 24;
-	return 3;*/
 }
 
 int main()
@@ -71,27 +64,6 @@ int main()
 	printf("T3: %d ms\n", st3*1000/CLOCKS_PER_SEC);
 	printf("T4: %d ms\n", st4*1000/CLOCKS_PER_SEC);
 	
-	/*
-	CvVideoWriter *writer = cvCreateVideoWriter("t.avi", -1, fps, image_size, 1);
-	IplImage *temp = cvCreateImage(image_size, IPL_DEPTH_8U, 3);
-	cvWriteFrame(writer, images[0]);
-	//cvSaveImage("origin0.png", images[0], NULL);
-	char wname[16];
-	for (int i = 1; i < image_num-1; ++i)
-	{
-		blur_function(images[i], temp, hom[i-1][i], hom[i][i+1]);
-		cvWriteFrame(writer, temp);
-		//sprintf(wname, "origin%d.png", i);
-		//cvSaveImage(wname, images[i], NULL);
-		sprintf(wname, "b%d.png", i);
-		cvSaveImage(wname, temp, NULL);
-	}
-	cvWriteFrame(writer, images[image_num-1]);
-	
-	//sprintf(wname, "origin%d.png", image_num-1);
-	//cvSaveImage(wname, images[image_num-1], NULL);
-	cvReleaseVideoWriter(&writer);
-	cvReleaseImage(&temp);*/
 	
 	printf("Calculating luckiness.\n");
 	CvMat *id_mat = cvCreateMat(3, 3, CV_32FC1);
@@ -125,11 +97,6 @@ int main()
 		//cvMoveWindow(wname, i*50, i*50);
 		cvMoveWindow(wname, 0, 0);
 		cvShowImage(wname, images[i]);
-		/*
-		sprintf(wname, "FrameLuck%d", i);
-		cvNamedWindow(wname, CV_WINDOW_AUTOSIZE);
-		cvMoveWindow(wname, i*50+100, i*50);
-		cvShowImage(wname, images_luck[i]);*/
 	}
 	cvWaitKey(0);
 	cvDestroyAllWindows();
