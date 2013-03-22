@@ -8,12 +8,19 @@
 #define DEBLUR_WIN_SIZE 11
 #define SIGMA_W 10
 #define LAMBDA 10
+#define LEFT_TOP_CORNER 1
+#define TOP 2
+#define RIGHT_TOP_CORNER 3
+#define LEFT 4
 #define CENTER 5 
-#define BORD 3 
-#define CORNER 4
+#define RIGHT 6
+#define LEFT_BOTTOM_CORNER 7
+#define BOTTOM 8
+#define RIGHT_BOTTOM_CORNER 9
 
 #define P(E) printf(#E"=%d\n",E);
 
+#define PF(E) printf(#E"=%f\n",E);
 extern IplImage *images[MAX_IMAGE];
 extern IplImage *images_luck[MAX_IMAGE];
 extern CvMat *hom[MAX_IMAGE][MAX_IMAGE];
@@ -37,11 +44,12 @@ extern CvSize image_size;
 
 
 // 纯手工，性能比上面那个好
-int sqrdiff(const IplImage *p1, const IplImage *p2)
+double sqrdiff(const IplImage *p1, const IplImage *p2)
 {
 	CvRect roi = cvGetImageROI(p1);
 	int v = p1->nChannels;
-	int sum = 0;
+	double sum = 0;
+	/*printf("v=%d heigh = %d width = %d\n" , v , roi.height , roi.width) ;*/
 	for (int i = 0; i < roi.height; ++i)
 		for (int j = 0; j < roi.width; ++j)
 		{
@@ -49,10 +57,12 @@ int sqrdiff(const IplImage *p1, const IplImage *p2)
 			CvScalar s2 = cvGet2D(p2, i, j);
 			for (int k = 0; k < v; ++k)
 			{
-				int t = s1.val[k]-s2.val[k];
+				/*printf("in for and sum = %f \n" , sum);*/
+				double t = s1.val[k]-s2.val[k];
 				sum += t*t;
 			}
 		}
+	/*printf("sqrdiffsum = %f \n" ,sum);*/
 	return sum;
 }
 
@@ -67,9 +77,169 @@ static double luck_diff(const IplImage *luck)
 			double t = 1-s.val[3];
 			sum += t*t;
 		}
+	/*printf("in luckdiff sum = %f \n" , sum);*/
 	return sum;
 }
 
+static void search_aux(IplImage *blur , IplImage *image , IplImage *luck ,int points[][2] , int pointsNum ,  int* index , double* centerDiff)
+{
+	double mindiff = *centerDiff;
+	double diff , diff2 ; 
+	int pos = 1 ;
+	/*P(*centerDiff) ;	*/
+	
+	for( int i = 0 ; i < pointsNum ; i++ )
+	{
+		/*printf("points[i][0] = %d points[i][1] = %d\n " , points[i][0] , points[i][1]);*/
+		cvSetImageROI(blur, cvRect(points[i][0]-PATCH_SIZE/2, points[i][1]-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
+		diff = sqrdiff(image , blur) ;
+		/*PF(diff) ;*/
+		cvSetImageROI(luck, cvRect(points[i][0]-PATCH_SIZE/2, points[i][1]-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));
+		diff2 = luck_diff(luck);
+		/*PF(diff2) ;*/
+		diff += LAMBDA * diff2 ; 
+		/*PF(diff) ;*/
+		/*PF(mindiff) ;*/
+		if( diff < mindiff )
+		{
+			/*printf("diff < mindiff\n") ;*/
+			*index = pos ;
+			mindiff = diff;
+		}/*else*/
+			/*printf("diff > mindff\n");*/
+		++pos ;
+	}
+	*centerDiff = mindiff ;
+	/*printf("in search_aux the pos is %d\n" , *index) ;*/
+}
+
+static void  searchLeftTopCorner(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff)
+{
+	/*printf("left top corner x = %d y = %d \n" , *x , *y) ;*/
+	int points[5][2] = {{*x - 2 , *y + 2} , {*x - 2 , *y } ,{*x - 2 , *y - 2 } ,{*x , *y - 2 }, {*x + 2 , *y - 2}} ;
+	int status[6] = { CENTER ,LEFT_BOTTOM_CORNER , LEFT , LEFT_TOP_CORNER , TOP , RIGHT_TOP_CORNER };
+	int pos = 0 ;
+    search_aux(blur , image , luck , points , 5 , &pos , centerDiff);
+	*index = status[pos];	
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+}
+
+static void  searchRightTopCorner(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff)
+{
+	/*printf("right top corner x = %d y = %d \n" , *x , *y) ;*/
+	int points[5][2] = {{*x - 2 , *y - 2} , {*x  , *y - 2 } ,{*x + 2 , *y - 2 } ,{*x + 2 , *y }, {*x + 2 , *y + 2}} ;
+	int status[6] = { CENTER , LEFT_TOP_CORNER , TOP , RIGHT_TOP_CORNER , RIGHT , RIGHT_BOTTOM_CORNER};
+	int pos = 0 ;
+    search_aux(blur , image , luck , points , 5 , &pos , centerDiff);
+	*index = status[pos];	
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+}
+
+static void  searchLeftBottomCorner(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff)
+{
+	/*printf("left bottom x = %d y = %d \n" , *x ,*y) ;*/
+	int points[5][2] = {{*x - 2 , *y - 2} , {*x - 2  , *y } ,{*x - 2 , *y + 2 } ,{*x , *y + 2 }, {*x + 2 , *y + 2}} ;
+	int status[6] = { CENTER , LEFT_TOP_CORNER , LEFT  , LEFT_BOTTOM_CORNER, BOTTOM , RIGHT_BOTTOM_CORNER};
+	int pos = 0 ;
+    search_aux(blur , image , luck , points , 5 , &pos , centerDiff);
+	*index = status[pos];	
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+}
+
+static void  searchRightBottomCorner(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff)
+{
+	/*printf("in right bottom corner \n") ;*/
+	int points[5][2] = {{*x - 2 , *y + 2} , {*x  , *y + 2 } ,{*x + 2 , *y + 2 } ,{*x + 2 , *y }, {*x + 2 , *y - 2}} ;
+	int status[6] = { CENTER , LEFT_BOTTOM_CORNER, BOTTOM , RIGHT_BOTTOM_CORNER, RIGHT, RIGHT_TOP_CORNER};
+	int pos = 0 ;
+	/*printf("x = %d y = %d \n" , *x , *y) ;*/
+
+    search_aux(blur , image , luck , points , 5 , &pos , centerDiff);
+	*index = status[pos];	
+	/*printf("in right bottom corner the pos after aux is %d and x = %d y = %d \n" , pos , *x , *y ) ;*/
+	if( CENTER != *index )
+	{
+		/*printf("ther is in center\n" );*/
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+	/*printf("x = %d y = %d \n" , *x , *y) ;*/
+}
+
+
+static void searchTop(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff) 
+{
+	/*printf("top x = %d y = %d \n" , *x , *y) ;*/
+	int points[3][2] = {{*x - 2  , *y - 2} ,{ *x , *y -2 } , {*x + 2 , *y - 2 }} ;
+	int status[4] = { CENTER , LEFT_TOP_CORNER , TOP , RIGHT_TOP_CORNER} ;
+	int pos = 0 ;
+	search_aux(blur , image , luck , points , 3 , &pos , centerDiff);
+	*index = status[pos] ;
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+}
+
+static void searchRight(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff) 
+{
+	/*printf("right x = %d y = %d \n" , *x , *y) ;*/
+	int points[3][2] = {{*x + 2  , *y - 2} ,{ *x + 2, *y } , {*x + 2 , *y + 2 }} ;
+	int status[4] = { CENTER , RIGHT_TOP_CORNER , RIGHT , RIGHT_BOTTOM_CORNER} ;
+	int pos = 0 ;
+	search_aux(blur , image , luck , points , 3 , &pos , centerDiff);
+	*index = status[pos] ;
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+}
+
+static void searchBottom(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff) 
+{
+	/*printf("bottom x = %d y = %d \n" , *x , *y) ;*/
+	int points[3][2] = {{*x - 2  , *y + 2} ,{ *x , *y + 2 } , {*x + 2 , *y + 2 }} ;
+	int status[4] = { CENTER , LEFT_BOTTOM_CORNER , BOTTOM , RIGHT_BOTTOM_CORNER} ;
+	int pos = 0 ;
+	search_aux(blur , image , luck , points , 3 , &pos , centerDiff);
+	/*printf("after search_aux the pos is %d \n" , pos) ;*/
+	*index = status[pos] ;
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+	/*printf("the last x = %d y = %d \n" , *x , *y) ;*/
+}
+
+static void searchLeft(IplImage *blur , IplImage *image , IplImage *luck , int *x , int *y , int* index , double* centerDiff) 
+{
+	/*printf("left x = %d y = %d \n" , *x , *y) ;*/
+	int points[3][2] = {{*x - 2  , *y - 2} ,{ *x - 2, *y } , {*x - 2 , *y + 2 }} ;
+	int status[4] = { CENTER , LEFT_TOP_CORNER , LEFT  , LEFT_BOTTOM_CORNER} ;
+	int pos = 0 ;
+	search_aux(blur , image , luck , points , 3 , &pos , centerDiff);
+	*index = status[pos] ;
+	if( CENTER != *index )
+	{
+		*x = points[pos-1][0] ;
+		*y = points[pos-1][1] ;
+	}
+}
 static double search(IplImage *blur , IplImage *image , IplImage *luck ,  int* x , int* y , int* index , int step)
 {
 	int minx = -1;
@@ -93,12 +263,11 @@ static double search(IplImage *blur , IplImage *image , IplImage *luck ,  int* x
 				mindiff = diff;
 				minx = i;
 				miny = j;
+				/*printf("pos = %d minx = %d miny = %d\n" ,pos , minx , miny) ;*/
 			}
-			/*P(pos);*/
 			++pos ;
 		}
 	}
-	
 	/*P(*index);*/
 	*x = minx ;
 	*y = miny ;
@@ -121,58 +290,123 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 	top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;
 	int bottom = y+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
 	bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;
-
+	
+	/*P(left);*/
+	/*P(right) ;*/
+	/*P(top) ;*/
+	/*P(bottom) ;*/
 	int minj = -21;
 	int minx = -21;
 	int miny = -21;
 	int mx = x , my = y ; 
 	double mindiff = 200000000000 ;
+	double tmpDiff = 200000000000 ;
 	int pos = 0 ;
 	for (int j = 0; j < image_num; ++j)
 	{
-		while( mx + 2 <= right && mx - 2 >= left
-				&& my + 2 <= bottom && my - 2 >= top)
+		pos = 0 ;
+		if( mx + 2 <= right && mx - 2 >= left
+				&& my + 2 <= bottom && my -2 >= top)
 		{
-			int flag = 0 ;
 			int searchX , searchY ;
-			double tmpDiff ;
 			searchX = mx ;
-			searchY = my ; 
-			tmpDiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 2 ) ;
-
+            searchY = my ;
+			/*printf("mx = %d my =%d\n" , mx , my);*/
+			tmpDiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 2) ;
+			/*P(tmpDiff);*/
+			/*printf("searchx = %d searchy = %d pos = %d\n" ,searchX , searchY , pos) ;*/
 			if( pos == CENTER )
 			{
-					flag = -1 ;
-					mindiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 1 ) ;
-					minj = j ; 
-					minx = searchX ; 
-					miny = searchY ;
-					break ;
-			}
-			else/* if( flag == CORNER )*/
+				mindiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 1 ) ;
+				minj = j ;
+				minx = searchX ;
+				miny = searchY ;
+				continue ;
+			} else 
 			{
-				int newX , newY ;
-				newX = searchX ;
-				newY = searchY ;
-				if( searchX -2 >= left && searchX + 2 <= right 
-						&& searchY -2 >= top && searchY + 2 <= bottom)
+				typedef void (*searchFuncPtr)(IplImage*, IplImage*, IplImage*, int* , int* , int* , double* ) ;
+				searchFuncPtr searchFuncArray[10] = {NULL , searchLeftTopCorner , searchTop , searchRightTopCorner  ,
+									searchLeft , NULL , searchRight , 
+									searchLeftBottomCorner , searchBottom , searchRightBottomCorner} ;
+				for( ; CENTER != pos && searchX - 2 >= left && searchX + 2 <= right 
+						&& searchY + 2 <= bottom && searchY - 2 >= top ;  )
 				{
-					   mx = newX ;
-					   my = newY ;
-					
+					searchFuncPtr searchFunc = searchFuncArray[pos] ; 
+					/*printf("in for pos = %d searchx = %d searchy = %d\n" ,pos ,  searchX , searchY) ;*/
+					searchFunc( blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , &tmpDiff);
+					/*printf("after searchFunc with pos = %d searchx = %d searchy = %d\n" , pos , searchX , searchY) ;*/
 				}
-				else
+				/*printf("out of for with pos = %d x = %d y = %d \n" , pos , searchX , searchY);*/
+				if( CENTER == pos )
 				{
-					mindiff = tmpDiff ;
-					minj = j ; 
+					if( searchX - 1 >= left && searchX + 1 <= right
+							&& searchY -1 >= top && searchY + 1 <= bottom)
+					{
+						mindiff = tmpDiff ;
+						minj = j ;
+						minx = searchX ;
+						miny = searchY ;
+						continue ;
+					}
+					mindiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 1 ) ;
+					minj = j ;
 					minx = searchX ;
 					miny = searchY ;
-					flag = -1; 
+					continue ;
+				}else
+				{
+					mindiff = tmpDiff ;
+					minj = j ;
+					minx = searchX ;
+					miny = searchY ;
+					continue ;
 				}
+
 			}
-			if( flag == -1)
-				break ;
 		}
+		/*while( mx + 2 <= right && mx - 2 >= left*/
+				/*&& my + 2 <= bottom && my - 2 >= top)*/
+		/*{*/
+			/*int flag = 0 ;*/
+			/*int searchX , searchY ;*/
+			/*double tmpDiff ;*/
+			/*searchX = mx ;*/
+			/*searchY = my ; */
+			/*tmpDiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 2 ) ;*/
+
+			/*if( pos == CENTER )*/
+			/*{*/
+					/*flag = -1 ;*/
+					/*mindiff = search(blur[j] , images[n] , luck[j] , &searchX , &searchY , &pos , 1 ) ;*/
+					/*minj = j ; */
+					/*minx = searchX ; */
+					/*miny = searchY ;*/
+					/*break ;*/
+			/*}*/
+			/*else[> if( flag == CORNER )<]*/
+			/*{*/
+				/*int newX , newY ;*/
+				/*newX = searchX ;*/
+				/*newY = searchY ;*/
+				/*if( searchX -2 >= left && searchX + 2 <= right */
+						/*&& searchY -2 >= top && searchY + 2 <= bottom)*/
+				/*{*/
+					   /*mx = newX ;*/
+					   /*my = newY ;*/
+					
+				/*}*/
+				/*else*/
+				/*{*/
+					/*mindiff = tmpDiff ;*/
+					/*minj = j ; */
+					/*minx = searchX ;*/
+					/*miny = searchY ;*/
+					/*flag = -1; */
+				/*}*/
+			/*}*/
+			/*if( flag == -1)*/
+				/*break ;*/
+		/*}*/
 		cvResetImageROI(blur[j]);
 		cvResetImageROI(luck[j]);
 	}
@@ -190,11 +424,11 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 
 }
 
-/*static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)*/
+/*static int deblur_patch(iplimage *blur[], iplimage *luck[], int image_num, int n, int x, int y, cvscalar *res)*/
 /*{*/
-	/*if (n < 1 || n >= image_num-1 || x-PATCH_SIZE/2 < 0 || y-PATCH_SIZE/2 < 0 || x+PATCH_SIZE/2 >= image_size.width || y+PATCH_SIZE/2 >= image_size.height) return -1;*/
+	/*if (n < 1 || n >= image_num-1 || x-patch_size/2 < 0 || y-patch_size/2 < 0 || x+patch_size/2 >= image_size.width || y+patch_size/2 >= image_size.height) return -1;*/
 	
-	/*cvSetImageROI(images[n], cvRect(x-PATCH_SIZE/2, y-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));*/
+	/*cvsetimageroi(images[n], cvrect(x-patch_size/2, y-patch_size/2, patch_size, patch_size));*/
 	
 	/*int minj = -1;*/
 	/*int minx = -1;*/
@@ -202,24 +436,24 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 	/*double mindiff = 2000000000;*/
 	/*for (int j = 0; j < image_num; ++j)*/
 	/*{*/
-		/*int left = x-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;*/
-		/*left = left < 0 ? PATCH_SIZE/2 : left+PATCH_SIZE/2;*/
-		/*int right = x+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;*/
-		/*right = right >= image_size.width ? image_size.width-1-PATCH_SIZE/2 : right-PATCH_SIZE/2;*/
-		/*int top = y-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;*/
-		/*top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;*/
-		/*int bottom = y+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;*/
-		/*bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;*/
+		/*int left = x-deblur_win_size/2-patch_size/2;*/
+		/*left = left < 0 ? patch_size/2 : left+patch_size/2;*/
+		/*int right = x+deblur_win_size/2+patch_size/2;*/
+		/*right = right >= image_size.width ? image_size.width-1-patch_size/2 : right-patch_size/2;*/
+		/*int top = y-deblur_win_size/2-patch_size/2;*/
+		/*top = top < 0 ? patch_size/2 : top+patch_size/2;*/
+		/*int bottom = y+deblur_win_size/2+patch_size/2;*/
+		/*bottom = bottom >= image_size.height ? image_size.height-1-patch_size/2 : bottom-patch_size/2;*/
 		
 		/*for (int my = top; my <= bottom; ++my)*/
 			/*for (int mx = left; mx <= right; ++mx)*/
 			/*{*/
-				/*cvSetImageROI(blur[j], cvRect(mx-PATCH_SIZE/2, my-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));*/
+				/*cvsetimageroi(blur[j], cvrect(mx-patch_size/2, my-patch_size/2, patch_size, patch_size));*/
 				/*double diff = sqrdiff(images[n], blur[j]);*/
-				/*cvSetImageROI(luck[j], cvRect(mx-PATCH_SIZE/2, my-PATCH_SIZE/2, PATCH_SIZE, PATCH_SIZE));*/
+				/*cvsetimageroi(luck[j], cvrect(mx-patch_size/2, my-patch_size/2, patch_size, patch_size));*/
 				/*double diff2 = luck_diff(luck[j]);*/
 				/*//printf("%d:%d,%d <- %d:%d,%d : %f %f\n", n, x, y, j, mx, my, diff, diff2);*/
-				/*diff += LAMBDA * diff2;*/
+				/*diff += lambda * diff2;*/
 				/*if (diff < mindiff)*/
 				/*{*/
 					/*mindiff = diff;*/
@@ -228,8 +462,8 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 					/*miny = my;*/
 				/*}*/
 			/*}*/
-		/*cvResetImageROI(blur[j]);*/
-		/*cvResetImageROI(luck[j]);*/
+		/*cvresetimageroi(blur[j]);*/
+		/*cvresetimageroi(luck[j]);*/
 	/*}*/
 	
 	/*
@@ -238,7 +472,7 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 		/*printf("optimal %d:%d,%d <- %d:%d,%d : %f\n", n, x, y, minj, minx, miny, mindiff);*/
 	/*}*/
 		
-	/*cvResetImageROI(images[n]);*/
+	/*cvresetimageroi(images[n]);*/
 	/*res->val[0] = minj;*/
 	/*res->val[1] = minx;*/
 	/*res->val[2] = miny;*/
@@ -247,11 +481,11 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 /*}*/
 
 /*
-static void copy_pixel(IplImage *dst, int x1, int y1, const IplImage *src, int x2, int y2)
+static void copy_pixel(iplimage *dst, int x1, int y1, const iplimage *src, int x2, int y2)
 {
-	unsigned char *base1 = (unsigned char*)(dst->imageData+y1*dst->widthStep+x1*dst->nChannels);
-	const unsigned char *base2 = (const unsigned char*)(src->imageData+y2*src->widthStep+x2*src->nChannels);
-	for (int i = 0; i < dst->nChannels; ++i) base1[i] = base2[i];
+	unsigned char *base1 = (unsigned char*)(dst->imagedata+y1*dst->widthstep+x1*dst->nchannels);
+	const unsigned char *base2 = (const unsigned char*)(src->imagedata+y2*src->widthstep+x2*src->nchannels);
+	for (int i = 0; i < dst->nchannels; ++i) base1[i] = base2[i];
 }*/
 
 static CvScalar weighted_average(const CvScalar *s, const double *w, int n)
