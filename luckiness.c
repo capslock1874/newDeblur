@@ -27,12 +27,17 @@ static double luck_pixel(int x, int y, const CvMat *hom1, const CvMat *hom2)
 double luck_image(const IplImage *img, IplImage *img_luck, const CvMat *hom1, const CvMat *hom2)
 {
 	double sum = 0;
+	double luck ;
 	for (int i = 0; i < img->height; ++i)
 		for (int j = 0; j < img->width; ++j)
 		{
-			double luck = luck_pixel(j, i, hom1, hom2);
+			luck = luck_pixel(j, i, hom1, hom2);
 			CvScalar p = cvGet2D(img, i, j);
-			for (int k = 0; k < 3; ++k) p.val[k] /= 255.0;//?
+			/*for (int k = 0; k < 3; ++k) p.val[k] /= 255.0;//?*/
+			p.val[0] /= 255 ;
+			p.val[1] /= 255 ;
+			p.val[2] /= 255 ;
+
 			p.val[3] = luck;
 			cvSet2D(img_luck, i, j, p);
 			sum += luck;

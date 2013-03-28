@@ -2,6 +2,7 @@
 #include <time.h>
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc_c.h>
+#include  <pthread.h>
 #include "deblur.h"
 
 IplImage *images[MAX_IMAGE];
@@ -11,7 +12,9 @@ CvMat *hom[MAX_IMAGE][MAX_IMAGE];
 CvSize image_size;
 int fps;
 long long fourcc;
-
+int mid = 0 ;
+int image_num = 0 ;
+static int RANK_ELEM = 0 ;
 extern int st1, st2, st3, st4;
 
 int input_image()
@@ -44,12 +47,71 @@ int input_image()
 	return i;
 }
 
+static void calLuck_pthread(void* flag)
+{
+	int mflag = (int)flag ;
+	if( 0 == mflag )
+	{
+		for( int i = 1; i < mid ; i++ )
+		{
+			images_luck[i] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
+			luck[i] = luck_image(images[i], images_luck[i], hom[i-1][i], hom[i][i+1]);
+			/*printf("Frame %d : luckiness %f\n",i, luck[i]);*/
+		}
+
+	}
+	else 
+	{
+		for( int i = mid; i < image_num - 1 ; i++ )
+		{
+			images_luck[i] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
+			luck[i] = luck_image(images[i], images_luck[i], hom[i-1][i], hom[i][i+1]);
+/*printf("Frame %d : luckiness %f\n",i, luck[i]);*/
+		}
+	}
+}
+
+static void calHomo_pthread(void* rank)
+{
+	int my_rank = (int)rank ;
+	int low = my_rank * RANK_ELEM ;
+	int high =( my_rank + 1) * RANK_ELEM - 1 ;
+
+	for( int i = low;  i <= high ; ++i )
+	{
+		for( int j = 0 ; j < image_num  ; ++j )
+			hom[i][j] = cvCreateMat(3, 3, CV_32FC1);
+		calc_homography(images[i], images, hom[i], image_num);
+	}
+}
+
 int main()
 {
 	
-	int image_num = input_image();
+	image_num = input_image();
+	pthread_t* thread_handles ;
+	thread_handles = malloc(4 * sizeof(pthread_t));
+
 	printf("%d images acquired.\n", image_num);
 	printf("Calculating homography...");
+
+	pthread_create(&thread_handles[0] , NULL ,calHomo_pthread , (void*)0) ;
+	pthread_create(&thread_handles[1] , NULL ,calHomo_pthread , (void*)1) ;
+	pthread_create(&thread_handles[2] , NULL ,calHomo_pthread , (void*)2) ;
+	pthread_create(&thread_handles[3] , NULL ,calHomo_pthread , (void*)3) ;
+	pthread_join(thread_handles[0] , NULL) ;
+	pthread_join(thread_handles[1] , NULL) ;
+	pthread_join(thread_handles[2] , NULL) ;
+	pthread_join(thread_handles[3] , NULL) ;
+	free(thread_handles) ;
+	
+	for( int i = 4 * RANK_ELEM; i < image_num ; ++i )
+	{
+		for( int j = 0 ; j < image_num ; ++j )
+			hom[i][j] = cvCreateMat(3, 3, CV_32FC1);
+		calc_homography(images[i], images, hom[i], image_num);
+	}
+	
 	for (int i = 0; i < image_num; ++i)
 	{
 		for (int j = 0; j < image_num; ++j)
@@ -57,49 +119,44 @@ int main()
 		calc_homography(images[i], images, hom[i], image_num);
 	}
 	printf("Done.\n");
-	
-	printf("Time Consuming:\n");
-	printf("T1: %d ms\n", st1*1000/CLOCKS_PER_SEC);
-	printf("T2: %d ms\n", st2*1000/CLOCKS_PER_SEC);
-	printf("T3: %d ms\n", st3*1000/CLOCKS_PER_SEC);
-	printf("T4: %d ms\n", st4*1000/CLOCKS_PER_SEC);
+	/*printf("Time Consuming:\n");*/
+	/*printf("T1: %d ms\n", st1*1000/CLOCKS_PER_SEC);*/
+	/*printf("T2: %d ms\n", st2*1000/CLOCKS_PER_SEC);*/
+	/*printf("T3: %d ms\n", st3*1000/CLOCKS_PER_SEC);*/
+	/*printf("T4: %d ms\n", st4*1000/CLOCKS_PER_SEC);*/
 	
 	
 	printf("Calculating luckiness.\n");
 	CvMat *id_mat = cvCreateMat(3, 3, CV_32FC1);
 	cvSetIdentity(id_mat, cvRealScalar(1));
-	for (int i = 0; i < image_num; ++i)
-	{
-		images_luck[i] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
-		if (i > 0 && i < image_num-1)
-		{
-			luck[i] = luck_image(images[i], images_luck[i], hom[i-1][i], hom[i][i+1]);
-		}
-		else if (i == 0)
-		{
-			luck[i] = luck_image(images[i], images_luck[i], id_mat, hom[i][i+1]);
-		}
-		else
-		{
-			luck[i] = luck_image(images[i], images_luck[i], hom[i-1][i], id_mat);
-		}
-		printf("Frame %d : luckiness %f\n",i, luck[i]);
-	}
+	images_luck[0] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
+	images_luck[image_num - 1] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
+
+	luck[0] = luck_image(images[0], images_luck[0], id_mat, hom[0][1]) ; 
+	mid = image_num / 2 ;
+	thread_handles = malloc(2 * sizeof(pthread_t));
+	pthread_create(&thread_handles[0] , NULL ,calLuck_pthread  , (void*)0) ;
+	pthread_create(&thread_handles[1] , NULL ,calLuck_pthread  , (void*)1) ;
+	pthread_join(thread_handles[0] , NULL) ;
+	pthread_join(thread_handles[1] , NULL) ;
+
+	free(thread_handles) ;
+	luck[image_num -1] = luck_image(images[image_num -1], images_luck[image_num -1], hom[image_num-2][image_num -1], id_mat) ;
 	cvReleaseMat(&id_mat);
 	
 	
 	
-	for (int i = 0; i < image_num; ++i)
-	{
-		char wname[16];
-		sprintf(wname, "Frame%d", i);
-		cvNamedWindow(wname, CV_WINDOW_AUTOSIZE);
-		//cvMoveWindow(wname, i*50, i*50);
-		cvMoveWindow(wname, 0, 0);
-		cvShowImage(wname, images[i]);
-	}
-	cvWaitKey(0);
-	cvDestroyAllWindows();
+	/*for (int i = 0; i < image_num; ++i)*/
+	/*{*/
+		/*char wname[16];*/
+		/*sprintf(wname, "Frame%d", i);*/
+		/*cvNamedWindow(wname, CV_WINDOW_AUTOSIZE);*/
+		/*//cvMoveWindow(wname, i*50, i*50);*/
+		/*cvMoveWindow(wname, 0, 0);*/
+		/*cvShowImage(wname, images[i]);*/
+	/*}*/
+	/*cvWaitKey(0);*/
+	/*cvDestroyAllWindows();*/
 	
 	IplImage *result = cvCreateImage(image_size, IPL_DEPTH_8U, 3);
 	IplImage *result_luck = cvCreateImage(image_size, IPL_DEPTH_32F, 4);

@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -pg -c -std=c99 -Wall 
 LINK = gcc
-LINKFLAGS = -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_video -lopencv_calib3d
+LINKFLAGS = -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_video -lopencv_calib3d -lpthread
 
 OBJS = main.o homo.o blurfunc.o deblur.o luckiness.o
 EXES = deblur.exe
