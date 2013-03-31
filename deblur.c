@@ -4,8 +4,8 @@
 #include <opencv2/imgproc/imgproc_c.h>
 #include <opencv2/highgui/highgui_c.h>
 #include "deblur.h"
-#define PATCH_SIZE 11
-#define DEBLUR_WIN_SIZE 11
+#define PATCH_SIZE 5 
+#define DEBLUR_WIN_SIZE 21
 #define SIGMA_W 10
 #define LAMBDA 10
 #define LEFT_TOP_CORNER 1
@@ -259,14 +259,6 @@ static double search(IplImage *blur , IplImage *image , IplImage *luck ,  int* x
 static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n, int x, int y, CvScalar *res)
 {
 	if (n < 1 || n >= image_num-1 || x-PATCH_SIZE/2 < 0 || y-PATCH_SIZE/2 < 0 || x+PATCH_SIZE/2 >= image_size.width || y+PATCH_SIZE/2 >= image_size.height) return -1;
-	int left = x-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
-	left = left < 0 ? PATCH_SIZE/2 : left+PATCH_SIZE/2;
-	int right = x+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
-	right = right >= image_size.width ? image_size.width-1-PATCH_SIZE/2 : right-PATCH_SIZE/2;
-	int top = y-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
-	top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;
-	int bottom = y+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
-	bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;
 	int minj = -21;
 	int minx = -21;
 	int miny = -21;
@@ -278,9 +270,30 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 	searchFuncPtr searchFuncArray[10] = {NULL , searchLeftTopCorner , searchTop , searchRightTopCorner  ,
 		searchLeft , NULL , searchRight ,
 		searchLeftBottomCorner , searchBottom , searchRightBottomCorner} ;
+	float oriIndex[] = {(float)x , (float)y , 1.0} ;
+	float warpIndex[] = {(float)x , (float)y , 1.0} ;
+	CvMat oriMat , warpMat ;
+	int left , right , top , bottom ;
+	cvInitMatHeader(&oriMat , 3 , 1 , CV_32FC1 ,oriIndex ,  CV_AUTOSTEP) ;
+	cvInitMatHeader(&warpMat , 3 , 1 , CV_32FC1 , warpIndex , CV_AUTOSTEP) ;
 	for (int j = 0; j < image_num; ++j)
 	{
+		cvMatMul(hom[n][j] ,&oriMat,  &warpMat) ;
+		/*printf("1========= %f %f %f \n2==========%f %f %f\n" ,oriIndex[0] , oriIndex[1] , oriIndex[2] , warpIndex[0] , warpIndex[1] , warpIndex[2]) ;*/
 		pos = 0 ;
+		mx = (int)warpIndex[0] ;
+		my = (int)warpIndex[1] ;
+		left = mx-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
+		left = left < 0 ? PATCH_SIZE/2 : left+PATCH_SIZE/2;
+		right = mx+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
+		right = right >= image_size.width ? image_size.width-1-PATCH_SIZE/2 : right-PATCH_SIZE/2;
+		top = my-DEBLUR_WIN_SIZE/2-PATCH_SIZE/2;
+		top = top < 0 ? PATCH_SIZE/2 : top+PATCH_SIZE/2;
+		bottom = my+DEBLUR_WIN_SIZE/2+PATCH_SIZE/2;
+		bottom = bottom >= image_size.height ? image_size.height-1-PATCH_SIZE/2 : bottom-PATCH_SIZE/2;
+
+		if (n < 1 || n >= image_num-1 || mx-PATCH_SIZE/2 < 0 || my-PATCH_SIZE/2 < 0 || mx+PATCH_SIZE/2 >= image_size.width || my+PATCH_SIZE/2 >= image_size.height) return -1;
+
 		if( mx + 2 <= right && mx - 2 >= left
 				&& my + 2 <= bottom && my -2 >= top)
 		{
@@ -331,9 +344,13 @@ static int deblur_patch(IplImage *blur[], IplImage *luck[], int image_num, int n
 	}
 	return 0;
 }
-static CvScalar weighted_average(const CvScalar *s, const double *w, int n)
+static CvScalar weighted_average(const CvScalar *s,  double *w, int n)
 {
 	CvScalar res = {{0, 0, 0, 0}};
+	w[0] = w[0] * 10000000 + 1 ;
+	w[1] = w[0] * 10000000 + 1 ;
+	w[2] = w[0] * 10000000 + 1 ;
+	w[3] = w[0] * 10000000 + 1 ;
 	if (n > 0)
 	{
 		double wsum = 0;
@@ -379,38 +396,38 @@ void* deblur_Image_pthread(void* rank)
 			CvScalar res;
 			x = (j+1)*(PATCH_SIZE/2)+2;
 			/*printf("in pthread x= %d y = %d\n" , x , y) ;*/
-			if (deblur_patch(blur, trans_luck, global_image_num, global_n, x, y, &res) != 0)
+			if (deblur_patch(blur,images_luck , global_image_num, global_n, x, y, &res) != 0)
 			{
-				printf("deblur_patch: %d:%d,%d failed.\n", global_n, x, y);
+				/*printf("deblur_patch: %d:%d,%d failed.\n", global_n, x, y);*/
 				res.val[0] = global_n;
 				res.val[1] = x;
 				res.val[2] = y;
-				res.val[3] = 0;
+				res.val[3] = 1;
 			}
 			res.val[3] = exp(-res.val[3]/(2*SIGMA_W*SIGMA_W));
 			CV_MAT_ELEM(*patch, CvScalar, i, j) = res;
 		}
 		int t2 = clock();
-		printf("y:%d/%d  %d ms\n", y, image_size.height, (t2-t1)*1000/CLOCKS_PER_SEC);
+		/*printf("y:%d/%d  %d ms\n", y, image_size.height, (t2-t1)*1000/CLOCKS_PER_SEC);*/
 	}
 	return NULL ;
 }
 
 void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 {
-	cvSetZero(result);
-	cvSetZero(result_luck);
+	/*cvSetZero(result);*/
+	/*cvSetZero(result_luck);*/
 	/*IplImage *trans[MAX_IMAGE];*/
 	/*IplImage *trans_luck[MAX_IMAGE];*/
 	/*IplImage *blur[MAX_IMAGE];*/
 	for (int i = 0; i < image_num; ++i)
 	{
-		trans[i] = cvCreateImage(image_size, IPL_DEPTH_8U, 3);
-		cvWarpPerspective(images[i], trans[i], hom[i][n], CV_INTER_LINEAR+CV_WARP_FILL_OUTLIERS, cvScalarAll(0));
-		trans_luck[i] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
-		cvWarpPerspective(images_luck[i], trans_luck[i], hom[i][n], CV_INTER_LINEAR+CV_WARP_FILL_OUTLIERS, cvScalarAll(0));
+		/*trans[i] = cvCreateImage(image_size, IPL_DEPTH_8U, 3);*/
+		/*cvWarpPerspective(images[i], trans[i], hom[i][n], CV_INTER_LINEAR+CV_WARP_FILL_OUTLIERS, cvScalarAll(0));*/
+		/*trans_luck[i] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);*/
+		/*cvWarpPerspective(images_luck[i], trans_luck[i], hom[i][n], CV_INTER_LINEAR+CV_WARP_FILL_OUTLIERS, cvScalarAll(0));*/
 		blur[i] = cvCreateImage(image_size, IPL_DEPTH_8U, 3);
-		blur_function(trans[i], blur[i], hom[n-1][n], hom[n][n+1]);
+		blur_function(images[i], blur[i], hom[n-1][n], hom[n][n+1]);
 	}
 	/*for (int i = 0; i < image_num; ++i)*/
 	/*{*/
@@ -426,8 +443,8 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 	/*}*/
 	/*cvWaitKey(0);*/
 	/*cvDestroyAllWindows();*/
-	grid_r = (image_size.height-PATCH_SIZE/2-5) / (PATCH_SIZE/2);
-	grid_c = (image_size.width-PATCH_SIZE/2-5) / (PATCH_SIZE/2);
+	grid_r = (image_size.height-PATCH_SIZE/2 - 5) / (PATCH_SIZE/2);
+	grid_c = (image_size.width-PATCH_SIZE/2 - 5) / (PATCH_SIZE/2);
 	grid_patch = grid_r / PTHREAD_NUM ;
 	/*P(grid_r) ;*/
 	/*P(grid_c) ;*/
@@ -457,13 +474,13 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 			{
 				CvScalar res;
 				x = (j+1)*(PATCH_SIZE/2)+2;
-				if (deblur_patch(blur, trans_luck, image_num, n, x, y, &res) != 0)
+				if (deblur_patch(blur, images_luck , image_num, n, x, y, &res) != 0)
 				{
-					printf("deblur_patch: %d:%d,%d failed.\n", n, x, y);
+					/*printf("deblur_patch: %d:%d,%d failed.\n", n, x, y);*/
 					res.val[0] = n;
 					res.val[1] = x;
 					res.val[2] = y;
-					res.val[3] = 0;
+					res.val[3] = 1;
 				}
 				res.val[3] = exp(-res.val[3]/(2*SIGMA_W*SIGMA_W));
 				CV_MAT_ELEM(*patch, CvScalar, i, j) = res;
@@ -484,7 +501,7 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 		cvNamedWindow("result", CV_WINDOW_AUTOSIZE);
 		printf("deblur starting ...\n") ;
 		CvScalar v[4];
-		CvScalar pv;
+		CvScalar pv ;
 		// 中心部分
 		for (int i = 1; i < grid_r; ++i)
 		{
@@ -499,33 +516,43 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 				for (int y = 0; y < PATCH_SIZE/2; ++y)
 					for (int x = 0; x < PATCH_SIZE/2; ++x)
 					{
-						v[0] = cvGet2D(trans[(int)pres1.val[0]], (int)pres1.val[2]+y, (int)pres1.val[1]+x);
-						v[1] = cvGet2D(trans[(int)pres2.val[0]], (int)pres2.val[2]+y, (int)pres2.val[1]+x-PATCH_SIZE/2);
-						v[2] = cvGet2D(trans[(int)pres3.val[0]], (int)pres3.val[2]+y-PATCH_SIZE/2, (int)pres3.val[1]+x);
-						v[3] = cvGet2D(trans[(int)pres4.val[0]], (int)pres4.val[2]+y-PATCH_SIZE/2, (int)pres4.val[1]+x-PATCH_SIZE/2);
+						v[0] = cvGet2D(images[(int)pres1.val[0]], (int)pres1.val[2]+y, (int)pres1.val[1]+x);
+						v[1] = cvGet2D(images[(int)pres2.val[0]], (int)pres2.val[2]+y, (int)pres2.val[1]+x-PATCH_SIZE/2);
+						v[2] = cvGet2D(images[(int)pres3.val[0]], (int)pres3.val[2]+y-PATCH_SIZE/2, (int)pres3.val[1]+x);
+						v[3] = cvGet2D(images[(int)pres4.val[0]], (int)pres4.val[2]+y-PATCH_SIZE/2, (int)pres4.val[1]+x-PATCH_SIZE/2);
 						double w[4] = {pres1.val[3], pres2.val[3], pres3.val[3], pres4.val[3]};
 						pv = weighted_average(v, w, 4);
-						cvSet2D(result, y+miny, x+minx, pv);
+						/*if( pv.val[0] == 0 && pv.val[1] == 0 && pv.val[2] == 0 )*/
+						/*{*/
+							/*CvScalar replace = {{112 ,112 ,112 ,112}} ;*/
+							/*CvScalar oriEle = cvGet2D(images[n] , i , j);*/
+							/*[>printf("ori is %f %f %f\n" , oriEle.val[0] , oriEle.val[1] , oriEle.val[2]);<]*/
+							/*cvSet2D(result, miny+y, x + minx, oriEle);*/
+							/*[>printf("it's black with %d %d\n" , miny + y , x + minx);<]*/
+							/*continue ;*/
+						/*}*/
+						/*else */
+							cvSet2D(result, y+miny, x+minx, pv);
 					}
 			}
 			cvShowImage("result", result);
 			cvWaitKey(20);
 		}
-		// 四周特殊情况
+		 /*四周特殊情况*/
 		for (int y = 0; y < PATCH_SIZE/2; ++y)
 			for (int x = 0; x < PATCH_SIZE/2; ++x)
 			{
 				CvScalar pres = CV_MAT_ELEM(*patch, CvScalar, 0, 0);
-				CvScalar pv = cvGet2D(trans[(int)pres.val[0]], (int)pres.val[2]+y-PATCH_SIZE/2, (int)pres.val[1]+x-PATCH_SIZE/2);
+				CvScalar pv = cvGet2D(images[(int)pres.val[0]], (int)pres.val[2]+y-PATCH_SIZE/2, (int)pres.val[1]+x-PATCH_SIZE/2);
 				cvSet2D(result, y, x, pv);
 				pres = CV_MAT_ELEM(*patch, CvScalar, 0, grid_c-1);
-				pv = cvGet2D(trans[(int)pres.val[0]], (int)pres.val[2]+y-PATCH_SIZE/2, (int)pres.val[1]+x);
+				pv = cvGet2D(images[(int)pres.val[0]], (int)pres.val[2]+y-PATCH_SIZE/2, (int)pres.val[1]+x);
 				cvSet2D(result, y, grid_c*(PATCH_SIZE/2)+x, pv);
 				pres = CV_MAT_ELEM(*patch, CvScalar, grid_r-1, 0);
-				pv = cvGet2D(trans[(int)pres.val[0]], (int)pres.val[2]+y, (int)pres.val[1]+x-PATCH_SIZE/2);
+				pv = cvGet2D(images[(int)pres.val[0]], (int)pres.val[2]+y, (int)pres.val[1]+x-PATCH_SIZE/2);
 				cvSet2D(result, grid_r*(PATCH_SIZE/2)+y, x, pv);
 				pres = CV_MAT_ELEM(*patch, CvScalar, grid_r-1, grid_c-1);
-				pv = cvGet2D(trans[(int)pres.val[0]], (int)pres.val[2]+y, (int)pres.val[1]+x);
+				pv = cvGet2D(images[(int)pres.val[0]], (int)pres.val[2]+y, (int)pres.val[1]+x);
 				cvSet2D(result, grid_r*(PATCH_SIZE/2)+y, grid_c*(PATCH_SIZE/2)+x, pv);
 			}
 		for (int j = 1; j < grid_c; ++j)
@@ -539,13 +566,13 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 				for (int x = 0; x < PATCH_SIZE/2; ++x)
 				{
 					CvScalar v[2];
-					v[0] = cvGet2D(trans[(int)pres1.val[0]], (int)pres1.val[2]+y-PATCH_SIZE/2, (int)pres1.val[1]+x);
-					v[1] = cvGet2D(trans[(int)pres2.val[0]], (int)pres2.val[2]+y-PATCH_SIZE/2, (int)pres2.val[1]+x-PATCH_SIZE/2);
+					v[0] = cvGet2D(images[(int)pres1.val[0]], (int)pres1.val[2]+y-PATCH_SIZE/2, (int)pres1.val[1]+x);
+					v[1] = cvGet2D(images[(int)pres2.val[0]], (int)pres2.val[2]+y-PATCH_SIZE/2, (int)pres2.val[1]+x-PATCH_SIZE/2);
 					double w[2] = {pres1.val[3], pres2.val[3]};
 					CvScalar pv = weighted_average(v, w, 2);
 					cvSet2D(result, y, minx+x, pv);
-					v[0] = cvGet2D(trans[(int)pres3.val[0]], (int)pres3.val[2]+y, (int)pres3.val[1]+x);
-					v[1] = cvGet2D(trans[(int)pres4.val[0]], (int)pres4.val[2]+y, (int)pres4.val[1]+x-PATCH_SIZE/2);
+					v[0] = cvGet2D(images[(int)pres3.val[0]], (int)pres3.val[2]+y, (int)pres3.val[1]+x);
+					v[1] = cvGet2D(images[(int)pres4.val[0]], (int)pres4.val[2]+y, (int)pres4.val[1]+x-PATCH_SIZE/2);
 					w[0] = pres3.val[3];
 					w[0] = pres4.val[3];
 					pv = weighted_average(v, w, 2);
@@ -563,19 +590,43 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 				for (int x = 0; x < PATCH_SIZE/2; ++x)
 				{
 					CvScalar v[2];
-					v[0] = cvGet2D(trans[(int)pres1.val[0]], (int)pres1.val[2]+y, (int)pres1.val[1]+x-PATCH_SIZE/2);
-					v[1] = cvGet2D(trans[(int)pres2.val[0]], (int)pres2.val[2]+y-PATCH_SIZE/2, (int)pres2.val[1]+x-PATCH_SIZE/2);
+					v[0] = cvGet2D(images[(int)pres1.val[0]], (int)pres1.val[2]+y, (int)pres1.val[1]+x-PATCH_SIZE/2);
+					v[1] = cvGet2D(images[(int)pres2.val[0]], (int)pres2.val[2]+y-PATCH_SIZE/2, (int)pres2.val[1]+x-PATCH_SIZE/2);
 					double w[2] = {pres1.val[3], pres2.val[3]};
 					CvScalar pv = weighted_average(v, w, 2);
 					cvSet2D(result, miny+y, x, pv);
-					v[0] = cvGet2D(trans[(int)pres3.val[0]], (int)pres3.val[2]+y, (int)pres3.val[1]+x);
-					v[1] = cvGet2D(trans[(int)pres4.val[0]], (int)pres4.val[2]+y-PATCH_SIZE/2, (int)pres4.val[1]+x);
+					v[0] = cvGet2D(images[(int)pres3.val[0]], (int)pres3.val[2]+y, (int)pres3.val[1]+x);
+					v[1] = cvGet2D(images[(int)pres4.val[0]], (int)pres4.val[2]+y-PATCH_SIZE/2, (int)pres4.val[1]+x);
 					w[0] = pres3.val[3];
 					w[0] = pres4.val[3];
 					pv = weighted_average(v, w, 2);
-					cvSet2D(result, miny+y, grid_c*(PATCH_SIZE/2)+x, pv);
+					if( pv.val[0] == 0 && pv.val[1] == 0 && pv.val[2] == 0 )
+					{
+						CvScalar replace = {{112 ,112 ,112 ,112}} ;
+						cvSet2D(result, miny+y, x, replace);
+						/*printf("it's black\n");*/
+						continue ;
+					}
+					else 
+						cvSet2D(result, miny+y, grid_c*(PATCH_SIZE/2)+x, pv);
 				}
 		}
+
+		/*CvScalar replace = {{133,133,133,133}} ;*/
+		/*for( int i = 0; i < result->height ; i++ )*/
+		/*{*/
+			/*for( int j = 0; j < result->width ; j++ )*/
+			/*{*/
+				/*CvScalar ele = cvGet2D(result , i , j) ;*/
+				/*if( ele.val[0] == 0 && ele.val[1] == 0 && ele.val[2] == 0 )*/
+				/*{*/
+					/*printf("it's black\n");*/
+					/*cvSet2D(result , i , j , replace) ;*/
+				/*}*/
+			/*}*/
+			
+		/*}*/
+		
 		cvShowImage("result", result);
 		char name[16];
 		sprintf(name, "result%d.png", n);
