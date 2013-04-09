@@ -187,7 +187,8 @@ int main()
 
 	IplImage *result = cvClone(images[luckiestImage]);
 	IplImage *result_luck = cvCreateImage(image_size, IPL_DEPTH_32F, 4);
-	deblur_image(image_num, luckiestImage, result, result_luck);
+	printf("luck iamge is %d\n",luckiestImage);
+	deblur_image(image_num, 0, result, result_luck);
 	cvReleaseImage(&result);
 	long endT =  0 ;
 	endT = clock();

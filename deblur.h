@@ -1,7 +1,7 @@
 #ifndef _DEBLUR_H
 #define _DEBLUR_H
 
-#define MAX_IMAGE 10
+#define MAX_IMAGE 15
 
 int input_image();
 void calc_homography(const IplImage *src, IplImage *dst[], CvMat *hom[], int image_num);

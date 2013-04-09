@@ -420,6 +420,19 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 	/*IplImage *trans[MAX_IMAGE];*/
 	/*IplImage *trans_luck[MAX_IMAGE];*/
 	/*IplImage *blur[MAX_IMAGE];*/
+	CvMat *id_mat = cvCreateMat(3, 3, CV_32FC1);
+	cvSetIdentity(id_mat, cvRealScalar(1));
+
+	CvMat *preHom = hom[n-1][n] ;
+	CvMat *postHom = hom[n][n+1] ;
+	if( n == image_num - 1)
+	{
+		postHom = id_mat ;
+	}
+	if( 0 == n )
+	{
+		preHom = id_mat ;
+	}
 	for (int i = 0; i < image_num; ++i)
 	{
 		/*trans[i] = cvCreateImage(image_size, IPL_DEPTH_8U, 3);*/
@@ -427,7 +440,10 @@ void deblur_image(int image_num, int n, IplImage *result, IplImage *result_luck)
 		/*trans_luck[i] = cvCreateImage(image_size, IPL_DEPTH_32F, 4);*/
 		/*cvWarpPerspective(images_luck[i], trans_luck[i], hom[i][n], CV_INTER_LINEAR+CV_WARP_FILL_OUTLIERS, cvScalarAll(0));*/
 		blur[i] = cvCreateImage(image_size, IPL_DEPTH_8U, 3);
-		blur_function(images[i], blur[i], hom[n-1][n], hom[n][n+1]);
+		printf("befor\n");
+		blur_function(images[i], blur[i], preHom , postHom);
+		printf("after\n");
+
 	}
 	/*for (int i = 0; i < image_num; ++i)*/
 	/*{*/
